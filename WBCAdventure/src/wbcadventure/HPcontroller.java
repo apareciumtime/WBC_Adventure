@@ -3,8 +3,14 @@ package wbcadventure;
 public class HPcontroller {
     private int healthPoint;
     private int maxHealthPoint;
-    public HPcontroller(int hp,int maxhp){
-        healthPoint=hp;
+    
+    public HPcontroller(){
+        healthPoint=0;
+        maxHealthPoint=0;
+    }
+    
+    public HPcontroller(int maxhp){
+        healthPoint=maxhp;
         maxHealthPoint=maxhp;
     }
     /**

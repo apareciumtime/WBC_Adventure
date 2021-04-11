@@ -10,6 +10,10 @@ public abstract class Character {
         //characIcon=icon;
         powerDefault=pw;
     }
+    public Character(){
+        characHP=new HPcontroller();
+        powerDefault=0;
+    }
     /**
      * get HP controller of character
      * @return 
@@ -35,5 +39,13 @@ public abstract class Character {
      */
     public int getPowerDefault(){
         return powerDefault;
+    }
+    
+    /**
+     * plus default power of character when use skill
+     * @return 
+     */
+    public void plusPowerDefault(int amt){
+        powerDefault+=amt;
     }
 }
