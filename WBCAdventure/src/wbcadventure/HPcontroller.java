@@ -48,4 +48,10 @@ public class HPcontroller {
     public void increaseMaxHP(int plusMax){
         maxHealthPoint+=plusMax;
     }
+    /**
+     * fully restore HP
+     */
+    public void heal(){
+        healthPoint=maxHealthPoint;
+    }
 }

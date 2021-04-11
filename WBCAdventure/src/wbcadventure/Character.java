@@ -48,4 +48,8 @@ public abstract class Character {
     public void plusPowerDefault(int amt){
         powerDefault+=amt;
     }
+    
+    public void minusPowerDefault(int amt){
+        powerDefault-=amt;
+    }
 }
