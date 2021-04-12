@@ -1,5 +1,7 @@
 package wbcadventure;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -12,10 +14,10 @@ public class Uplayer extends JPanel{
     
     
     public Uplayer(){
-        skillBarPanel.setBounds(10,620, 616, 154);
+        skillBarPanel.setBounds(50,800, 616, 154);
         skillBarPanel.setOpaque(false);
         
-        hpBarPanel.setBounds(0,0,1920,100);
+        hpBarPanel.setBounds(10,10,1900,100);
         hpBarPanel.setOpaque(false);
         
         this.setLayout(null);

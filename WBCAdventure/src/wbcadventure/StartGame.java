@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Point;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,6 +16,8 @@ import javax.swing.border.Border;
 public class StartGame extends JFrame {
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private JLayeredPane layerPane = new JLayeredPane();
+    
+    private KeyListen key = new KeyListen();
 
     /**
      * background Set
@@ -46,6 +50,7 @@ public class StartGame extends JFrame {
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
         this.add(layerPane);
+        this.addKeyListener(key);
         
     }
     
@@ -55,14 +60,14 @@ public class StartGame extends JFrame {
          */
         JLabel backgroundLabel = new JLabel();
         backgroundLabel.setIcon(background.getBackgroundImage());
-        backgroundLabel.setBounds(0, -50, 1920, 1080);
+        backgroundLabel.setBounds(0, -5, 1920, 1080);
         backgroundLabel.setOpaque(false);
         
         /**
          * background Panel Setting
          */
         backgroundPanel.add(backgroundLabel);
-        backgroundPanel.setBounds(0,-50,1920,1080);
+        backgroundPanel.setBounds(0,-5,1920,1080);
         backgroundPanel.setOpaque(false);
         
         /**
