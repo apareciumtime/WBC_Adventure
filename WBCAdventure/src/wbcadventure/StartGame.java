@@ -58,7 +58,7 @@ public class StartGame extends JFrame {
         this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        this.setUndecorated(true);            //FullScreen
+        this.setUndecorated(true);            //FullScreen
         this.setLayout(null);  
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
