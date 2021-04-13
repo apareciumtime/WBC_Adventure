@@ -2,47 +2,50 @@ package wbcadventure;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 public class PathWay {
-    ArrayList<ImageIcon> rowSquareImage = new ArrayList<>();
-    ArrayList<ArrayList> squareImage = new ArrayList<>();
-    public PathWay(){        
+    private int pathType;
+    private ArrayList<ImageIcon> platePlain = new ArrayList<>();
+    private ArrayList<ImageIcon> square = new ArrayList<>();
+    public PathWay(int pathType){
+        this.pathType = pathType;
+        platePlain.add(new ImageIcon("src/source/background/platePlain.png"));  //0
+        platePlain.add(new ImageIcon("src/source/background/plateTurnTB.png")); //1
+        platePlain.add(new ImageIcon("src/source/background/plateTurnTT.png")); //2
+        platePlain.add(new ImageIcon("src/source/background/plateTurnBT.png")); //3
+        platePlain.add(new ImageIcon("src/source/background/plateTurnBB.png")); //4
+        platePlain.add(new ImageIcon("src/source/background/plateCross.png"));  //5
+        platePlain.add(new ImageIcon("src/source/background/plateSecT.png"));   //6
+        platePlain.add(new ImageIcon("src/source/background/platePlainT.png")); //7
+        platePlain.add(new ImageIcon("src/source/background/plateSecB.png"));   //8
+        platePlain.add(new ImageIcon("src/source/background/platePlainB.png")); //9
+        platePlain.add(new ImageIcon("src/source/background/plateMergeB.png")); //10
+        platePlain.add(new ImageIcon("src/source/background/plateMergeT.png")); //11
+        platePlain.add(new ImageIcon("src/source/background/semiPermible.png"));//12
         
+        square.add(new ImageIcon("src/source/background/squareCenter.png"));    //0
+        square.add(new ImageIcon("src/source/background/squareCornerLT.png"));  //1
+        square.add(new ImageIcon("src/source/background/squareBorderT.png"));   //2
+        square.add(new ImageIcon("src/source/background/squareCornerRT.png"));  //3
+        square.add(new ImageIcon("src/source/background/squareCornerLB.png"));  //4
+        square.add(new ImageIcon("src/source/background/squareBorderB.png"));   //5
+        square.add(new ImageIcon("src/source/background/squareCornerRB.png"));  //6
+        square.add(new ImageIcon("src/source/background/squareBorderL.png"));   //7
+        square.add(new ImageIcon("src/source/background/squareBorderR.png"));   //8
+        square.add(new ImageIcon("src/source/background/squareGateL.png"));     //9
+        square.add(new ImageIcon("src/source/background/squareGateR.png"));     //10
         
-        ImageIcon squareCornerLT = new ImageIcon("src/source/background/squareCornerLT.png");
-        ImageIcon squareBorderT = new ImageIcon("src/source/background/squareBorderT.png");
-        ImageIcon squareCornerRT = new ImageIcon("src/source/background/squareCornerRT.png");
-        
-        rowSquareImage.add(squareCornerLT);
-        rowSquareImage.add(squareBorderT);
-        rowSquareImage.add(squareCornerRT);
-        squareImage.add(rowSquareImage);
-        
-        for(int i = 0 ; i<3 ; i++){
-            rowSquareImage.remove(i);
+    }
+    
+    public ImageIcon getIcon(int index){
+        if(pathType == 0){
+            return platePlain.get(index);
         }
-        
-        ImageIcon squareGateL = new ImageIcon("src/source/background/squareGateL.png");
-        ImageIcon squareCenter = new ImageIcon("src/source/background/squareCenter.png");
-        ImageIcon squareGateR = new ImageIcon("src/source/background/squareGateR.png");
-        
-        rowSquareImage.add(squareGateL);
-        rowSquareImage.add(squareCenter);
-        rowSquareImage.add(squareGateR);
-        squareImage.add(rowSquareImage);
-        
-        for(int i = 0 ; i<3 ; i++){
-            rowSquareImage.remove(i);
+        else if(pathType == 1){
+            return square.get(index);
         }
-        
-        ImageIcon squareCornerLB = new ImageIcon("src/source/background/squareCornerLB.png");
-        ImageIcon squareBorderB = new ImageIcon("src/source/background/squareBorderB.png");
-        ImageIcon squareCornerRB = new ImageIcon("src/source/background/squareCornerRB.png");
-        rowSquareImage.add(squareCornerLB);
-        rowSquareImage.add(squareBorderB);
-        rowSquareImage.add(squareCornerRB);
-        squareImage.add(rowSquareImage);
-        
-        for(int i = 0 ; i<3 ; i++){
-            rowSquareImage.remove(i);
-        }   
+        return null;
+    }
+    
+    public int getPathType(){
+        return pathType;
     }
 }

@@ -1,15 +1,19 @@
 package wbcadventure;
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 public class WBCAdventure {
     public static void main(String[] args) {
-        StartGame start = new StartGame();
+        /*StartGame start = new StartGame();
         start.setBackground();
         start.setStartPoint();
-        start.setUplayer();
-        
+        start.setUplayer();*/
+        MainMenu menu = new MainMenu();
+        /*JPanel p=new JPanel();
+        p.setBounds(0, 0, 1920, 1080);
+        p.add(new WBC());
+        menu.add(p);*/
         
 //        JFrame frame = new JFrame();
 //        frame.setSize(1920,1080);
@@ -25,4 +29,5 @@ public class WBCAdventure {
 //        frame.add(label);
         
     }
+    
 }
