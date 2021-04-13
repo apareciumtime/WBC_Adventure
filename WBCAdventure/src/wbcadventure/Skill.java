@@ -21,10 +21,10 @@ public class Skill{
     
     /**
      * Constructor to create new Skill
-     * @param skillNumber
-     * @param power 
-     * @param cooldown
-     * @param duration
+     * @param skillNumber : which skill
+     * @param power : power of the skill
+     * @param cooldown : cooldown of the skill
+     * @param duration : duration of the skill
      */
     public Skill(int skillNumber, int power, int duration, int cooldown){
         this.skillNumber = skillNumber;
@@ -122,7 +122,11 @@ public class Skill{
         return icon;
     }
     
-    
+    /**
+     * Method return Skill ArraysList
+     * @param skillNumber : which skill
+     * @return Skill ArraysList as ArrayList<ImageIcon> object
+     */
     public ArrayList<ImageIcon> getSkillArr(int skillNumber){
         switch(skillNumber){
             case 0: 
