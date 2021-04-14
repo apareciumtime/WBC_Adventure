@@ -21,7 +21,7 @@ public class WBC extends Character{
     private ImageIcon iconNowWBC;
     private JLabel wbclabel=new JLabel();
     public WBC(){
-        super(new HPcontroller(150),5);
+        super(new HPcontroller(100),1000);
         
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCHappyForever.gif"));
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCAngryStep1.png"));
@@ -46,44 +46,45 @@ public class WBC extends Character{
         
         this.add(wbclabel);
         
-        ClickListener clickListener=new ClickListener();
-        DragListener dragListener=new DragListener();
-        wbclabel.addMouseListener(clickListener);
-        wbclabel.addMouseMotionListener(dragListener);
+//        ClickListener clickListener=new ClickListener();
+//        DragListener dragListener=new DragListener();
+//        wbclabel.addMouseListener(clickListener);
+//        wbclabel.addMouseMotionListener(dragListener);
     }
 
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        iconNowWBC.paintIcon(wbclabel, g,(int)imagecorner.getX(),(int)imagecorner.getY());
-    }
-    
-    public class ClickListener extends MouseAdapter{
-        public void mousePressed(MouseEvent e){
-            wbclabel.setIcon(getCharacIcon(1));
-            prevpt=e.getPoint();
-        }
-        public void mouseClicked ( MouseEvent e ){
-            wbclabel.setIcon(getCharacIcon(1));
-        }
-	public void mouseEntered ( MouseEvent e ){}
-	public void mouseExited ( MouseEvent e ){}
-	public void mouseReleased ( MouseEvent e ){
-            wbclabel.setIcon(getCharacIcon(0));
-        }
-    }
-    
-    public class DragListener extends MouseMotionAdapter{
-        public void mouseDragged(MouseEvent e){
-            Point currentpt=e.getPoint();
-            imagecorner.translate(
-                    (int)(currentpt.getX()-prevpt.getX()+2),
-                    (int)(currentpt.getY()-prevpt.getY())
-            );
-            wbclabel.setLocation((int)imagecorner.getX()+3,(int)imagecorner.getY());
-            prevpt=currentpt;  
-            wbclabel.repaint();
-        }
-    }
+//    public void paintComponent(Graphics g){
+//        super.paintComponent(g);
+//        iconNowWBC.paintIcon(wbclabel, g,(int)imagecorner.getX(),(int)imagecorner.getY());
+//    }
+//    
+//    public class ClickListener extends MouseAdapter{
+//        public void mousePressed(MouseEvent e){
+//            wbclabel.setIcon(getCharacIcon(1));
+//            prevpt=e.getPoint();
+//        }
+//        public void mouseClicked ( MouseEvent e ){
+//            wbclabel.setIcon(getCharacIcon(1));
+//        }
+//	public void mouseEntered ( MouseEvent e ){}
+//	public void mouseExited ( MouseEvent e ){}
+//	public void mouseReleased ( MouseEvent e ){
+//            wbclabel.setIcon(getCharacIcon(0));
+//            
+//        }
+//    }
+//    
+//    public class DragListener extends MouseMotionAdapter{
+//        public void mouseDragged(MouseEvent e){
+//            Point currentpt=e.getPoint();
+//            imagecorner.translate(
+//                    (int)(currentpt.getX()-prevpt.getX()+2),
+//                    (int)(currentpt.getY()-prevpt.getY())
+//            );
+//            wbclabel.setLocation((int)imagecorner.getX()+3,(int)imagecorner.getY());
+//            prevpt=currentpt;  
+//            wbclabel.repaint();
+//        }
+//    }
     
     /**
      * get object Skill at index i
@@ -94,5 +95,27 @@ public class WBC extends Character{
     public Skill getSkill(int i){
         return skillArr.get(i);
     }
+        public void setPrevPt(Point p){
+        prevpt=p;
+    }
+    public Point getPrevPt(){
+        return prevpt;
+    }
     
+    public void setImgCorner(int x,int y){
+        imagecorner.translate(x,y);
+    }
+    
+    public Point getImgCorner(){
+        return imagecorner;
+    }
+    public void setIconNowWBC(ImageIcon i){
+        iconNowWBC=i;
+    }
+    public ImageIcon getIconNowWBC(){
+        return iconNowWBC;
+    }
+    public JLabel getWBCLabel(){
+        return wbclabel;
+    } 
 }

@@ -1,7 +1,7 @@
 package wbcadventure;
 public class AttackController {
     private Character attacker;
-    private Character reciever;
+    private Character receiver;
     private boolean haveWinner;
     private boolean isDuel=false;
     private boolean isAttack=false;
@@ -11,7 +11,7 @@ public class AttackController {
     private int damage=0;
     public AttackController(Character at,Character re){
         attacker=at;
-        reciever=re;
+        receiver=re;
     }
     
     /**
@@ -34,27 +34,29 @@ public class AttackController {
     }
     
     private boolean checkHP(){
-        return attacker.getHPcontrol().getHP()!=0&&reciever.getHPcontrol().getHP()!=0;
+        return attacker.getHPcontrol().getHP()>0&&receiver.getHPcontrol().getHP()>0;
     }
     
     private void attack(){
         isAttack=true;
-        if(reciever.getHPcontrol().getHP()-attacker.getPowerDefault()<0){
-            reciever.getHPcontrol().decreaseHP(reciever.getHPcontrol().getHP());
+        if(receiver.getHPcontrol().getHP()-attacker.getPowerDefault()<=0){
+            receiver.getHPcontrol().decreaseHP(receiver.getHPcontrol().getHP());
             haveWinner=true;
             winner=attacker;
-            loser=reciever;
+            loser=receiver;
+//            System.out.println(winner);
         }
         else{
-            reciever.getHPcontrol().decreaseHP(attacker.getPowerDefault());
+            receiver.getHPcontrol().decreaseHP(attacker.getPowerDefault());
+            System.out.println("attack!");
         }
     } 
 
     private void swapRole(){
         Character mid;
         mid=attacker;
-        attacker=reciever;
-        reciever=mid;
+        attacker=receiver;
+        receiver=mid;
     }
     
     private void winnerControl(){
@@ -78,4 +80,12 @@ public class AttackController {
     private boolean getIsAttack(){
         return isAttack;
     }
+    
+    public Character getWinner(){
+        return winner;
+    }
+    /*
+    public Character getWinner(){
+        return winner;
+    }*/
 }
