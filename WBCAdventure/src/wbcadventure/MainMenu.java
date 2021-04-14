@@ -12,10 +12,9 @@ public class MainMenu extends JFrame {
         this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLayout(null);  
+        this.setLayout(null);
+//        this.setUndecorated(true);            //FullScreen
         this.setVisible(true);
-        this.setBackground();
-        this.setButtons();
         layerPane.setBounds(0,0,1920,1080);
         this.add(layerPane);
         
@@ -27,19 +26,19 @@ public class MainMenu extends JFrame {
         pa.setLayout(null);
         
         Buttons start = new Buttons("Start",456,637);
-        //start.setBorder(border);
+//        start.setBorder(border);
         pa.add(start);
         
         Buttons load = new Buttons("Load",996,637);
-        //load.setBorder(border);
+//        load.setBorder(border);
         pa.add(load);
         
         Buttons setting = new Buttons("Setting",456,816);
-        //setting.setBorder(border);
+//        setting.setBorder(border);
         pa.add(setting);
         
         Buttons exit = new Buttons("Exit",996,816);
-        //exit.setBorder(border);
+//        exit.setBorder(border);
         pa.add(exit);
         
         layerPane.add(pa,Integer.valueOf(1));
@@ -87,8 +86,9 @@ public class MainMenu extends JFrame {
               if(name.equals("Start")){
                   StartGame start=new StartGame();
                     start.setBackground();
-                    start.setStartPoint();
+                    start.setPath();
                     start.setUplayer();
+                    start.setBattle();
                   setVisibleToFalse();
               }
               else if(name.equals("Load")){

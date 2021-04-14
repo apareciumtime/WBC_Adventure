@@ -1,4 +1,4 @@
-package wbcadventure;
+ package wbcadventure;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -35,20 +35,24 @@ public class StartGame extends JFrame {
     private Background background = new Background();
     
     /**
-     * start point Set
+     * Path Layer Set
      */
-    private JPanel startPointPanel = new JPanel();
-    
-    /**
-     * up layer Set
-     */
-    private JPanel uplayerPanel = new JPanel();
+    private JPanel pathPanel = new JPanel();
     
     /**
      * Call Up-layer for KeyListener
      */
     private Uplayer uplayer = new Uplayer();
     
+    /**
+     * Battle layer Set
+     */
+    private JPanel battlePanel = new JPanel();
+    
+    /**
+     * Call battle for KeyListener , MouseListenter();
+     */
+    private Battle battle = new Battle();    
     
     
     public StartGame(){
@@ -58,7 +62,7 @@ public class StartGame extends JFrame {
         this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setUndecorated(true);            //FullScreen
+//        this.setUndecorated(true);            //FullScreen
         this.setLayout(null);  
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
@@ -212,6 +216,8 @@ public class StartGame extends JFrame {
         
     }
     
+     
+    
     public void setBackground(){
         /**
          * background Label Setting
@@ -235,7 +241,7 @@ public class StartGame extends JFrame {
         layerPane.setBorder(border);
     }
     
-    public void setStartPoint(){
+    public void setPath(){
         
         /**
          * Set starting path with Square
@@ -311,26 +317,26 @@ public class StartGame extends JFrame {
         /**
          * start point Panel Setting
          */
-        startPointPanel.setBounds(0, 300, 600, 450);
-        startPointPanel.setOpaque(false);
+        pathPanel.setBounds(0, 300, 600, 450);
+        pathPanel.setOpaque(false);
 //        startPointPanel.setBorder(border);
-        startPointPanel.setLayout(null);
+        pathPanel.setLayout(null);
         
-        startPointPanel.add(squareCornerLT);
-        startPointPanel.add(squareBorderT1);
-        startPointPanel.add(squareBorderT2);
-        startPointPanel.add(squareCornerRT);
-        startPointPanel.add(squareBorderL);
-        startPointPanel.add(squareCenterLabel1);
-        startPointPanel.add(squareCenterLabel2);
-        startPointPanel.add(squareGateR);
-        startPointPanel.add(squareCornerLB);
-        startPointPanel.add(squareBorderB1);
-        startPointPanel.add(squareBorderB2);
-        startPointPanel.add(squareCornerRB);
+        pathPanel.add(squareCornerLT);
+        pathPanel.add(squareBorderT1);
+        pathPanel.add(squareBorderT2);
+        pathPanel.add(squareCornerRT);
+        pathPanel.add(squareBorderL);
+        pathPanel.add(squareCenterLabel1);
+        pathPanel.add(squareCenterLabel2);
+        pathPanel.add(squareGateR);
+        pathPanel.add(squareCornerLB);
+        pathPanel.add(squareBorderB1);
+        pathPanel.add(squareBorderB2);
+        pathPanel.add(squareCornerRB);
         
         
-        layerPane.add(startPointPanel, Integer.valueOf(1));
+        layerPane.add(pathPanel, Integer.valueOf(1));
         layerPane.setBorder(border);
         
     }
@@ -338,14 +344,17 @@ public class StartGame extends JFrame {
     public void setUplayer(){
         uplayer.setBounds(0, 0, 1920, 1080);
         uplayer.setOpaque(false);
-//        uplayer.setBorder(border);
+        uplayer.setLayout(null);
         
-        uplayerPanel.setBounds(0, 0, 1920, 1080);
-        uplayerPanel.setOpaque(false);
-        uplayerPanel.setLayout(null);
+        layerPane.add(uplayer, Integer.valueOf(3));
+    }
+    
+    public void setBattle(){
+        battle.setBounds(0,0,1920,1080);
+        battle.setOpaque(false);
+        battle.setLayout(null);
         
-        uplayerPanel.add(uplayer);
-        layerPane.add(uplayerPanel, Integer.valueOf(5));
-//        layerPane.setBorder(border);
+        layerPane.add(battle,Integer.valueOf(2));
+        
     }
 }
