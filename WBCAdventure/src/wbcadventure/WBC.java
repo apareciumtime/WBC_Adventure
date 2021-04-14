@@ -76,10 +76,10 @@ public class WBC extends Character{
         public void mouseDragged(MouseEvent e){
             Point currentpt=e.getPoint();
             imagecorner.translate(
-                    (int)(currentpt.getX()-prevpt.getX()),
+                    (int)(currentpt.getX()-prevpt.getX()+2),
                     (int)(currentpt.getY()-prevpt.getY())
             );
-            wbclabel.setLocation((int)imagecorner.getX(),(int)imagecorner.getY());
+            wbclabel.setLocation((int)imagecorner.getX()+3,(int)imagecorner.getY());
             prevpt=currentpt;  
             wbclabel.repaint();
         }
@@ -95,7 +95,4 @@ public class WBC extends Character{
         return skillArr.get(i);
     }
     
-    public JLabel getWBCLabel(){
-        return wbclabel;
-    }
 }

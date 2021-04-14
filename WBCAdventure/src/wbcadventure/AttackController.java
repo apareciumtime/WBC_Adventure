@@ -4,9 +4,11 @@ public class AttackController {
     private Character reciever;
     private boolean haveWinner;
     private boolean isDuel=false;
+    private boolean isAttack=false;
     private Character winner=null;
     private Character loser=null;
     private String winnerSide;
+    private int damage=0;
     public AttackController(Character at,Character re){
         attacker=at;
         reciever=re;
@@ -36,6 +38,7 @@ public class AttackController {
     }
     
     private void attack(){
+        isAttack=true;
         if(reciever.getHPcontrol().getHP()-attacker.getPowerDefault()<0){
             reciever.getHPcontrol().decreaseHP(reciever.getHPcontrol().getHP());
             haveWinner=true;
@@ -69,5 +72,10 @@ public class AttackController {
             //เชื่อมไปแสดงผลหน้า game over
         }
     }
-    
+    private void setIsAttack(boolean isatk){
+        isAttack=isatk;
+    }
+    private boolean getIsAttack(){
+        return isAttack;
+    }
 }

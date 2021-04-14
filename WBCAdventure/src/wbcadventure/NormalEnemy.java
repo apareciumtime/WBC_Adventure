@@ -1,8 +1,40 @@
 package wbcadventure;
+import java.awt.Color;
 import java.util.Random;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.border.Border;
 public class NormalEnemy extends Enemy {
+    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     public NormalEnemy(WBC wbc){
         super(wbc);
+        
+        this.addCharacIcon(new ImageIcon("src/source/character/Enemies/Enemy.gif"));
+        this.addCharacIcon(new ImageIcon("src/source/character/Enemies/Enemy2.gif"));
+        
+        Random rand=new Random();
+        int randIcon=rand.nextInt(2);
+        
+        this.setBounds(0,0,150,200);
+        //this.getEnemyLabel().setBounds(0,0,150,200);
+        
+        if(randIcon==0){
+            this.getEnemyLabel().setIcon(this.getCharacIcon(0));
+            this.getEnemyLabel().setOpaque(false);
+            this.getEnemyLabel().setVisible(true);
+            this.getEnemyLabel().setLayout(null);
+            this.getEnemyLabel().setBounds(0,0,150,200);
+            this.add(this.getEnemyLabel());
+            System.out.println("Rand 0");
+        }
+        else{
+            this.getEnemyLabel().setIcon(this.getCharacIcon(1));
+            this.getEnemyLabel().setOpaque(false);
+            this.getEnemyLabel().setVisible(true);
+            this.getEnemyLabel().setLayout(null);
+            this.getEnemyLabel().setBounds(0,0,150,200);
+            System.out.println("Rand 1");
+        }
     }
     
     public int randomHP(WBC wbc){
@@ -34,4 +66,5 @@ public class NormalEnemy extends Enemy {
         }
         return enemyRandPower;
     }
+    
 }
