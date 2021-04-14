@@ -40,4 +40,8 @@ public class Uplayer extends JPanel{
     public wbcadventure.SkillBar getSkillBarPanel(){
         return skillBarPanel;
     }
+    
+    public ProgressBar getHPBarPanel(){
+        return hpBarPanel;
+    }
 }

@@ -52,7 +52,7 @@ public class StartGame extends JFrame {
     /**
      * Call battle for KeyListener , MouseListenter();
      */
-    private Battle battle = new Battle();    
+    private Battle battle = new Battle(this);    
     
     
     public StartGame(){
@@ -347,6 +347,10 @@ public class StartGame extends JFrame {
         uplayer.setLayout(null);
         
         layerPane.add(uplayer, Integer.valueOf(3));
+    }
+    
+    public Uplayer getUplayer(){
+        return uplayer;
     }
     
     public void setBattle(){

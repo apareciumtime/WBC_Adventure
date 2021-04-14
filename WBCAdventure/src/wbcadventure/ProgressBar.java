@@ -33,6 +33,7 @@ public class ProgressBar extends JPanel{
     private JProgressBar hpBarBoss = new JProgressBar();
     
     public ProgressBar(){
+        layer.setBounds(0, 0, 1920 , 75);
         this.add(layer);
         this.setLayout(null);
         this.setBounds(0, 0, 1920, 100);
@@ -59,7 +60,7 @@ public class ProgressBar extends JPanel{
         
         layer.add(wbcProgressBarLabel, Integer.valueOf(0));
         layer.add(wbcHPBarIcon,Integer.valueOf(1));
-        layer.setBounds(0, 0, 1920 , 75);
+        
 //        layer.setBorder(border);
     }
     
@@ -83,7 +84,7 @@ public class ProgressBar extends JPanel{
         
         layer.add(enemyProgressBarLabel, Integer.valueOf(0));
         layer.add(enemyHPBarIcon,Integer.valueOf(1));
-        layer.setBounds(0, 0, 1920 , 75);
+
 //        layer.setBorder(border);        
         
     }
@@ -108,8 +109,35 @@ public class ProgressBar extends JPanel{
         
         layer.add(bossProgressBarLabel, Integer.valueOf(0));
         layer.add(bossHPBarIcon,Integer.valueOf(1));
-        layer.setBounds(0, 0, 1920 , 75);
+
 //        layer.setBorder(border);        
+    }
+    
+    public void turnOffWBCHPBar(){
+        wbcHPBarIcon.setVisible(false);
+        wbcProgressBarLabel.setVisible(false);
+        hpBarWBC.setVisible(false);
+        remove(wbcHPBarIcon);
+        remove(wbcProgressBarLabel);
+        remove(hpBarWBC);
+    }
+
+    public void turnOffEnemyHPBar(){
+        enemyHPBarIcon.setVisible(false);
+        enemyProgressBarLabel.setVisible(false);
+        hpBarEnemy.setVisible(false);
+        remove(enemyHPBarIcon);
+        remove(enemyProgressBarLabel);
+        remove(hpBarEnemy);
+    }
+
+    public void turnOffBossHPBar(){
+        bossHPBarIcon.setVisible(false);
+        bossProgressBarLabel.setVisible(false);
+        hpBarBoss.setVisible(false);
+        remove(bossHPBarIcon);
+        remove(bossProgressBarLabel);
+        remove(hpBarBoss);
     }
     
     public wbcadventure.Character getWBCCharacter(){
@@ -135,6 +163,8 @@ public class ProgressBar extends JPanel{
     public JProgressBar getHPBarBoss(){
         return hpBarBoss;
     }
+    
+    
     
     
 }

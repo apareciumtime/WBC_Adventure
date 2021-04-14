@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -18,8 +19,10 @@ public class Battle extends JPanel{
     private JLabel wbcLabel = new JLabel();
     private JLayeredPane layerPane = new JLayeredPane();
     ArrayList<Enemy> enemyArrayList=new ArrayList<>();
-    public Battle(){
+    private StartGame stgame;
+    public Battle(StartGame stgame){
         
+        this.stgame=stgame;
         NormalEnemy e1=new NormalEnemy(wbc);
         e1.setLocation(500,400);
         e1.setLayout(null);
@@ -40,66 +43,72 @@ public class Battle extends JPanel{
         layerPane.setLayout(null);
         this.add(layerPane);
 
-        ClickListener clickListener=new ClickListener();
-        DragListener dragListener=new DragListener();
-        wbc.getWBCLabel().addMouseListener(clickListener);
-        wbc.getWBCLabel().addMouseMotionListener(dragListener);
-        
-    /*public wbcadventure.WBC getWBCLabel(){
-        return wbc;
-    }*/
+        WBCMovement move=new WBCMovement(wbc,this,stgame);
+//        ClickListener clickListener=new ClickListener();
+//        DragListener dragListener=new DragListener();
+//        wbc.getWBCLabel().addMouseListener(clickListener);
+//        wbc.getWBCLabel().addMouseMotionListener(dragListener);
+
     }
     
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        wbc.getIconNowWBC().paintIcon(wbc.getWBCLabel(), g,(int)wbc.getImgCorner().getX(),(int)wbc.getImgCorner().getY());
+    public ArrayList<Enemy> getEnemyArr(){
+        return enemyArrayList;
+    }
+    public void removeEnemy(int i){
+        this.remove(enemyArrayList.get(i));
+        enemyArrayList.remove(i);
     }
     
-    public class ClickListener extends MouseAdapter{
-        public void mousePressed(MouseEvent e){
-            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(1));
-            wbc.setPrevPt(e.getPoint());
-        }
-        public void mouseClicked ( MouseEvent e ){
-            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(1));
-        }
-	public void mouseEntered ( MouseEvent e ){}
-	public void mouseExited ( MouseEvent e ){}
-	public void mouseReleased ( MouseEvent e ){
-            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(0));
-            if (wbc.getWBCLabel().getBounds().intersects(enemyArrayList.get(0).getBounds())){
-                System.out.println("Enemy mHP : "+enemyArrayList.get(0).getHPcontrol().getMaxHP());
-                System.out.println("Enemy HP : "+enemyArrayList.get(0).getHPcontrol().getHP());
-                System.out.println("wbc mHP : "+wbc.getHPcontrol().getMaxHP());
-                System.out.println("wbc HP : "+wbc.getHPcontrol().getHP());
-                wbc.getWBCLabel().setLocation(enemyArrayList.get(0).getX()-200,enemyArrayList.get(0).getY());
-                AttackController atk=new AttackController(wbc,enemyArrayList.get(0));
-                atk.duel();
-                Character win=atk.getWinner();
-                
-                if(win instanceof WBC){
-                    System.out.println("winnnn");
-                    enemyArrayList.get(0).setVisible(false);
-                    //remove(enemyArrayList.get(0));
-                    enemyArrayList.remove(0);
-                }
-                else{
-                    System.out.print("lose");
-                }
-                wbc.setImgCorner(enemyArrayList.get(0).getX()-200,enemyArrayList.get(0).getY());
-            }
-            
-        }
-    }
-    
-    public class DragListener extends MouseMotionAdapter{
-        public void mouseDragged(MouseEvent e){
-            Point currentpt=e.getPoint();
-            wbc.setImgCorner( (int)((currentpt.getX()+wbc.getPrevPt().getX()-563/2)*.05f),
-                    (int)((currentpt.getY()+wbc.getPrevPt().getY()-563/2)*.05f));
-            wbc.getWBCLabel().setLocation((int)wbc.getImgCorner().getX()+3,(int)wbc.getImgCorner().getY());
-            wbc.setPrevPt(currentpt); 
-            wbc.getWBCLabel().repaint();
-        }
-    }
+//    public void paintComponent(Graphics g){
+//        super.paintComponent(g);
+//        wbc.getIconNowWBC().paintIcon(wbc.getWBCLabel(), g,(int)wbc.getImgCorner().getX(),(int)wbc.getImgCorner().getY());
+//    }
+//    
+//    public class ClickListener extends MouseAdapter{
+//        public void mousePressed(MouseEvent e){
+//            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(1));
+//            wbc.setPrevPt(e.getPoint());
+//        }
+//        public void mouseClicked ( MouseEvent e ){
+//            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(1));
+//        }
+//	public void mouseEntered ( MouseEvent e ){}
+//	public void mouseExited ( MouseEvent e ){}
+//	public void mouseReleased ( MouseEvent e ){
+//            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(0));
+//            if (wbc.getWBCLabel().getBounds().intersects(enemyArrayList.get(0).getBounds())){
+//                System.out.println("Enemy mHP : "+enemyArrayList.get(0).getHPcontrol().getMaxHP());
+//                System.out.println("Enemy HP : "+enemyArrayList.get(0).getHPcontrol().getHP());
+//                System.out.println("wbc mHP : "+wbc.getHPcontrol().getMaxHP());
+//                System.out.println("wbc HP : "+wbc.getHPcontrol().getHP());
+//                wbc.getWBCLabel().setLocation(enemyArrayList.get(0).getX()-200,enemyArrayList.get(0).getY());
+//                AttackController atk=new AttackController(wbc,enemyArrayList.get(0));
+//                atk.duel();
+//                Character win=atk.getWinner();
+//                
+//                if(win instanceof WBC){
+//                    System.out.println("winnnn");
+//                    enemyArrayList.get(0).setVisible(false);
+//                    //remove(enemyArrayList.get(0));
+//                    enemyArrayList.remove(0);
+//                }
+//                else{
+//                    System.out.print("lose");
+//                }
+//                wbc.setImgCorner(enemyArrayList.get(0).getX()-200,enemyArrayList.get(0).getY());
+//            }
+//            
+//        }
+//    }
+//    
+//    public class DragListener extends MouseMotionAdapter{
+//        public void mouseDragged(MouseEvent e){
+//            Point currentpt=e.getPoint();
+//            wbc.setImgCorner( (int)((currentpt.getX()+wbc.getPrevPt().getX()-563/2)*.05f),
+//                    (int)((currentpt.getY()+wbc.getPrevPt().getY()-563/2)*.05f));
+//            wbc.getWBCLabel().setLocation((int)wbc.getImgCorner().getX(),(int)wbc.getImgCorner().getY());
+//            wbc.setPrevPt(currentpt); 
+//            wbc.getWBCLabel().repaint();
+//        }
+//    }
 }
