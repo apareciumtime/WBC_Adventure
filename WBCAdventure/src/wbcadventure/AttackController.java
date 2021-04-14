@@ -1,9 +1,9 @@
 package wbcadventure;
-
 public class AttackController {
     private Character attacker;
     private Character reciever;
     private boolean haveWinner;
+    private boolean isDuel=false;
     private Character winner=null;
     private Character loser=null;
     private String winnerSide;
@@ -12,14 +12,23 @@ public class AttackController {
         reciever=re;
     }
     
+    /**
+     * Start one match of fighting
+     */
     public void duel(){
+        isDuel=true;
         while(checkHP()){
             attack();
             if(winner==null){
                 swapRole();
             }
         }
+        isDuel=false;
         winnerControl();
+    }
+    
+    public boolean getIsDuel(){
+        return isDuel;
     }
     
     private boolean checkHP(){
@@ -30,22 +39,11 @@ public class AttackController {
         if(reciever.getHPcontrol().getHP()-attacker.getPowerDefault()<0){
             reciever.getHPcontrol().decreaseHP(reciever.getHPcontrol().getHP());
             haveWinner=true;
-            winner=attacker; 
+            winner=attacker;
             loser=reciever;
         }
         else{
             reciever.getHPcontrol().decreaseHP(attacker.getPowerDefault());
-        }
-        if(!haveWinner){
-            if(attacker.getHPcontrol().getHP()-reciever.getPowerDefault()<0){
-                attacker.getHPcontrol().decreaseHP(attacker.getHPcontrol().getHP());
-                haveWinner=true;
-                winner=reciever;
-                loser=attacker;
-            }
-            else{
-                attacker.getHPcontrol().decreaseHP(reciever.getPowerDefault());
-            }
         }
     } 
 
@@ -55,6 +53,7 @@ public class AttackController {
         attacker=reciever;
         reciever=mid;
     }
+    
     private void winnerControl(){
         if(winner instanceof WBC){
             if(loser instanceof BossEnemy){
@@ -69,7 +68,6 @@ public class AttackController {
         else if(winner instanceof Enemy){
             //เชื่อมไปแสดงผลหน้า game over
         }
-        
     }
     
 }

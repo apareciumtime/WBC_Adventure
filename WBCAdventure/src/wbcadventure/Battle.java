@@ -12,19 +12,18 @@ public class Battle extends JPanel{
     private JLabel wbcLabel = new JLabel();
     
     public Battle(){
-        wbc.setBounds(0, 0, 150, 200);
-        wbc.setOpaque(false);
+//        wbc.setBounds(0, 0, 1920,1080);
+//        wbc.setOpaque(false);
+//        wbcLabel.add(wbc);
+//        wbcLabel.setBounds(500, 500, 300, 200);
+//        wbcLabel.setLayout(null);
         
-        wbcLabel.add(wbc);
-        wbcLabel.setBounds(500, 500, 300, 200);
-        wbcLabel.setLayout(null);
-        
-        this.add(wbcLabel);
+        this.add(wbc);
     }
 
     
-    public wbcadventure.WBC getWBCLabel(){
-        return wbc;
+    public JLabel getWBCLabel(){
+        return wbc.getWBCLabel();
     }
 
     

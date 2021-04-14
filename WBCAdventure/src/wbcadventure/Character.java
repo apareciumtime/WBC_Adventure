@@ -1,7 +1,7 @@
 package wbcadventure;
 import javax.swing.*;
 import java.util.ArrayList;
-public abstract class Character extends JLabel {
+public abstract class Character extends JPanel {
     private HPcontroller characHP;
     private ArrayList<ImageIcon> characIcon=new ArrayList<>();
     private int powerDefault;

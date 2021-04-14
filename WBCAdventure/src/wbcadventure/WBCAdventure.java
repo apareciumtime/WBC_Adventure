@@ -10,10 +10,9 @@ public class WBCAdventure {
         start.setStartPoint();
         start.setUplayer();*/
         MainMenu menu = new MainMenu();
-        /*JPanel p=new JPanel();
-        p.setBounds(0, 0, 1920, 1080);
-        p.add(new WBC());
-        menu.add(p);*/
+        menu.setBackground();
+        menu.setButtons();
+        //menu.add(new WBC());
         
 //        JFrame frame = new JFrame();
 //        frame.setSize(1920,1080);
