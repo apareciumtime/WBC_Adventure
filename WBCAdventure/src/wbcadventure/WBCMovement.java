@@ -50,7 +50,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().setWBCHPBar();
             }
             wbc.getWBCLabel().setLocation(bt.getEnemyArr().get(0).getX()-200,bt.getEnemyArr().get(0).getY());
-            AttackController atk=new AttackController(wbc,bt.getEnemyArr().get(0));
+            AttackController atk=new AttackController(wbc,bt.getEnemyArr().get(0),stgame.getUplayer().getHPBarPanel());
             atk.duel();
             Character win=atk.getWinner();
             if(bt.getEnemyArr().get(0) instanceof NormalEnemy){

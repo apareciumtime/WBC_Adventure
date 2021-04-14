@@ -9,8 +9,9 @@ public class AttackController {
     private Character loser=null;
     private String winnerSide;
     private int damage=0;
-//    private ProgressBar HPbar=new ProgressBar();
-    public AttackController(Character at,Character re){
+    private ProgressBar hpbar;
+    public AttackController(Character at,Character re,ProgressBar hpbar){
+        this.hpbar=hpbar;
         attacker=at;
         receiver=re;
     }
