@@ -37,6 +37,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
         WBClabel.setIcon(wbc.getCharacIcon(0));
         
         if (wbc.getWBCLabel().getBounds().intersects(bt.getEnemyArr().get(0).getBounds())){
+              wbc.getWBCLabel().setLocation(bt.getEnemyArr().get(0).getX()-200,bt.getEnemyArr().get(0).getY());
 //            System.out.println("Enemy mHP : "+enemyArrayList.get(0).getHPcontrol().getMaxHP());
 //            System.out.println("Enemy HP : "+enemyArrayList.get(0).getHPcontrol().getHP());
 //            System.out.println("wbc mHP : "+wbc.getHPcontrol().getMaxHP());
@@ -49,7 +50,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel();
                 stgame.getUplayer().getHPBarPanel().setWBCHPBar();
             }
-            wbc.getWBCLabel().setLocation(bt.getEnemyArr().get(0).getX()-200,bt.getEnemyArr().get(0).getY());
+            
             AttackController atk=new AttackController(wbc,bt.getEnemyArr().get(0),stgame.getUplayer().getHPBarPanel());
             atk.duel();
             Character win=atk.getWinner();
