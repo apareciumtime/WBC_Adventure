@@ -50,6 +50,10 @@ public class ProgressBar extends JPanel{
         wbcProgressBarLabel.add(hpBarWBC);
         wbcProgressBarLabel.setBounds(210,15,565,42);
         
+        wbcProgressBarLabel.setVisible(false);
+        wbcHPBarIcon.setVisible(false);
+        hpBarWBC.setVisible(false);
+        
         layer.add(wbcProgressBarLabel, Integer.valueOf(0));
         layer.add(wbcHPBarIcon,Integer.valueOf(1));
 //        layer.setBorder(border);
@@ -68,6 +72,10 @@ public class ProgressBar extends JPanel{
         enemyProgressBarLabel.add(hpBarEnemy);
         enemyProgressBarLabel.setBounds(1129,15,565,42);
         
+        enemyProgressBarLabel.setVisible(false);
+        enemyHPBarIcon.setVisible(false);
+        hpBarEnemy.setVisible(false);
+        
         layer.add(enemyProgressBarLabel, Integer.valueOf(0));
         layer.add(enemyHPBarIcon,Integer.valueOf(1));
         
@@ -83,6 +91,10 @@ public class ProgressBar extends JPanel{
         bossProgressBarLabel.add(hpBarBoss);
         bossProgressBarLabel.setBounds(1129,15,565,42);
         
+        bossProgressBarLabel.setVisible(false);
+        bossHPBarIcon.setVisible(false);
+        hpBarBoss.setVisible(false);
+        
         layer.add(bossProgressBarLabel, Integer.valueOf(0));
         layer.add(bossHPBarIcon,Integer.valueOf(1));
     }
@@ -91,7 +103,6 @@ public class ProgressBar extends JPanel{
         hpBarWBC.setMaximum(wbcCharacter.getHPcontrol().getMaxHP());
         hpBarWBC.setStringPainted(true);
         hpBarWBC.setString(""+wbcCharacter.getHPcontrol().getHP());
-        hpBarWBC.setValue(wbcCharacter.getHPcontrol().getHP());
     }
     
     public void setEnemyHPBar(){
