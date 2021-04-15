@@ -26,6 +26,7 @@ public class Battle extends JPanel{
         NormalEnemy e1=new NormalEnemy(wbc);
         e1.setLocation(500,400);
         e1.setLayout(null);
+        e1.setOpaque(false);
         BossEnemy boss=new BossEnemy(wbc);
         boss.setLocation(900,125);
         boss.setLayout(null);

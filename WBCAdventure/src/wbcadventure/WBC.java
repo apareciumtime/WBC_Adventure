@@ -21,7 +21,7 @@ public class WBC extends Character{
     private ImageIcon iconNowWBC;
     private JLabel wbclabel=new JLabel();
     public WBC(){
-        super(new HPcontroller(100),1000);
+        super(new HPcontroller(100),5);
         
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCHappyForever.gif"));
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCAngryStep1.png"));
@@ -105,7 +105,7 @@ public class WBC extends Character{
     public void setImgCorner(int x,int y){
         imagecorner.translate(x,y);
     }
-    
+
     public Point getImgCorner(){
         return imagecorner;
     }

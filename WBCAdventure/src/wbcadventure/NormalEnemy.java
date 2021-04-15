@@ -13,7 +13,7 @@ public class NormalEnemy extends Enemy {
         this.addCharacIcon(new ImageIcon("src/source/character/Enemies/Enemy2.gif"));
         
         Random rand=new Random();
-        int randIcon=rand.nextInt(2);
+        int randIcon=rand.nextInt(50)%2;
         
         this.setBounds(0,0,150,200);
         //this.getEnemyLabel().setBounds(0,0,150,200);
@@ -39,7 +39,7 @@ public class NormalEnemy extends Enemy {
     
     public int randomHP(WBC wbc){
         Random rand=new Random();
-        int casenum=rand.nextInt(4);
+        int casenum=rand.nextInt(50)%4;
         int wbcHP=wbc.getHPcontrol().getMaxHP();
         int enemyRandHP;
         switch(casenum){
@@ -54,7 +54,7 @@ public class NormalEnemy extends Enemy {
     
     public int randomPower(WBC wbc){
         Random rand=new Random();
-        int casenum=rand.nextInt(2);
+        int casenum=rand.nextInt(50)%2;
         int enemyHP=this.getHPcontrol().getHP();
         int wbcHP=wbc.getHPcontrol().getMaxHP();
         int wbcPower=wbc.getPowerDefault();
@@ -66,5 +66,4 @@ public class NormalEnemy extends Enemy {
         }
         return enemyRandPower;
     }
-    
 }
