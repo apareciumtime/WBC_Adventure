@@ -8,10 +8,10 @@ public class AttackController {
     private Character winner=null;
     private Character loser=null;
     private String winnerSide;
-    private int damage=0;
-    private ProgressBar hpbar;
-    public AttackController(Character at,Character re,ProgressBar hpbar){
-        this.hpbar=hpbar;
+    private ProgressBar hpBar;
+    
+    public AttackController(Character at,Character re,ProgressBar hpBar){
+        this.hpBar=hpBar;
         attacker=at;
         receiver=re;
     }
@@ -52,6 +52,13 @@ public class AttackController {
             receiver.getHPcontrol().decreaseHP(attacker.getPowerDefault());
             System.out.println("attack!");
         }
+        
+        if(receiver instanceof WBC){
+            hpBar.getHPBarWBC().setValue(receiver.getHPcontrol().getHP()-attacker.getPowerDefault());
+        }
+        else if(receiver instanceof Enemy){
+            hpBar.getHPBarEnemy().setValue(receiver.getHPcontrol().getHP()+attacker.getPowerDefault());
+        }        
     } 
 
     private void swapRole(){
