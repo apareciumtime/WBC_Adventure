@@ -37,43 +37,29 @@ public class ProgressBar extends JPanel{
         this.add(layer);
         this.setLayout(null);
         this.setBounds(0, 0, 1920, 100);
-//        this.setBorder(border);
-    }
-    
-    public void setWBCHPBar(){
+        
         wbcHPBarIcon.setIcon(new ImageIcon("src/source/uplayer/HPBar/HPBarWBC.png"));
         wbcHPBarIcon.setOpaque(false);
         wbcHPBarIcon.setBounds(0, 0, 790, 75);
-//        wbcHPBarIcon.setBorder(border);
-        
-        hpBarWBC.setMaximum(wbcCharacter.getHPcontrol().getMaxHP());
-        hpBarWBC.setStringPainted(true);
-        hpBarWBC.setString(""+wbcCharacter.getHPcontrol().getHP());
         
         hpBarWBC.setBounds(0,0,565, 42);
         hpBarWBC.setForeground(new Color(0x6fc998));
         hpBarWBC.setBackground(new Color(0xde9898));
-        hpBarWBC.setValue(wbcCharacter.getHPcontrol().getHP());
+
         
         wbcProgressBarLabel.add(hpBarWBC);
         wbcProgressBarLabel.setBounds(210,15,565,42);
         
         layer.add(wbcProgressBarLabel, Integer.valueOf(0));
         layer.add(wbcHPBarIcon,Integer.valueOf(1));
-        
 //        layer.setBorder(border);
-    }
-    
-    public void setEnemyHPBar(){
+//        wbcHPBarIcon.setBorder(border);
+//        this.setBorder(border);
+
         enemyHPBarIcon.setIcon(new ImageIcon("src/source/uplayer/HPBar/HPBarEnemy.png"));
         enemyHPBarIcon.setOpaque(false);
         enemyHPBarIcon.setBounds(1110, 0, 790, 75);
 //        enemyHPBarIcon.setBorder(border);
-        
-        hpBarEnemy.setMaximum(enemyCharacter.getHPcontrol().getMaxHP());
-        hpBarEnemy.setStringPainted(true);
-        hpBarEnemy.setString(""+(enemyCharacter.getHPcontrol().getMaxHP()-enemyCharacter.getHPcontrol().getHP()));
-        hpBarEnemy.setValue(0);
         
         hpBarEnemy.setBounds(0,0,565, 42);
         hpBarEnemy.setForeground(new Color(0xde9898));
@@ -84,21 +70,11 @@ public class ProgressBar extends JPanel{
         
         layer.add(enemyProgressBarLabel, Integer.valueOf(0));
         layer.add(enemyHPBarIcon,Integer.valueOf(1));
-
-//        layer.setBorder(border);        
         
-    }
-    
-    public void setBossHPBar(){
         bossHPBarIcon.setIcon(new ImageIcon("src/source/uplayer/HPBar/HPBarEnemy.png"));
         bossHPBarIcon.setOpaque(false);
         bossHPBarIcon.setBounds(1110, 0, 790, 75);
 //        bossHPBarIcon.setBorder(border);
-        
-        hpBarBoss.setMaximum(bossCharacter.getHPcontrol().getMaxHP());
-        hpBarBoss.setStringPainted(true);
-        hpBarBoss.setString(""+(bossCharacter.getHPcontrol().getMaxHP()-bossCharacter.getHPcontrol().getHP()));
-        hpBarBoss.setValue(0);
         
         hpBarBoss.setBounds(0,0,565, 42);
         hpBarBoss.setForeground(new Color(0xde9898));
@@ -109,6 +85,29 @@ public class ProgressBar extends JPanel{
         
         layer.add(bossProgressBarLabel, Integer.valueOf(0));
         layer.add(bossHPBarIcon,Integer.valueOf(1));
+    }
+    
+    public void setWBCHPBar(){
+        hpBarWBC.setMaximum(wbcCharacter.getHPcontrol().getMaxHP());
+        hpBarWBC.setStringPainted(true);
+        hpBarWBC.setString(""+wbcCharacter.getHPcontrol().getHP());
+        hpBarWBC.setValue(wbcCharacter.getHPcontrol().getHP());
+    }
+    
+    public void setEnemyHPBar(){
+        hpBarEnemy.setMaximum(enemyCharacter.getHPcontrol().getMaxHP());
+        hpBarEnemy.setStringPainted(true);
+        hpBarEnemy.setString(""+(enemyCharacter.getHPcontrol().getMaxHP()-enemyCharacter.getHPcontrol().getHP()));
+        hpBarEnemy.setValue(0);    
+        
+    }
+    
+    public void setBossHPBar(){
+        hpBarBoss.setMaximum(bossCharacter.getHPcontrol().getMaxHP());
+        hpBarBoss.setStringPainted(true);
+        hpBarBoss.setString(""+(bossCharacter.getHPcontrol().getMaxHP()-bossCharacter.getHPcontrol().getHP()));
+        hpBarBoss.setValue(0);
+        
 
 //        layer.setBorder(border);        
     }
