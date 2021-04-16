@@ -61,6 +61,7 @@ public class WBC extends Character{
         this.add(numberHP);
         this.add(wbclabel);
     }
+    
     public WBC(SkillBar skillBar){
         super(new HPcontroller(15000),(int)(15000*.39));
         this.skillBar = skillBar;
