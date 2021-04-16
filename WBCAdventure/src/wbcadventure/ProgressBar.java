@@ -20,7 +20,7 @@ public class ProgressBar extends JPanel{
     private JLabel wbcHPBarIcon         = new JLabel();
     private JProgressBar hpBarWBC = new JProgressBar();
     
-    private NormalEnemy enemyCharacter = new NormalEnemy(wbcCharacter);
+    private NormalEnemy enemyCharacter;
     private JLabel enemyHPBarLabel          = new JLabel();
     private JLabel enemyProgressBarLabel    = new JLabel();
     private JLabel enemyHPBarIcon           = new JLabel();
@@ -100,20 +100,35 @@ public class ProgressBar extends JPanel{
     }
     
     public void setWBCHPBar(){
+        wbcProgressBarLabel.setVisible(true);
+        wbcHPBarIcon.setVisible(true);
+        hpBarWBC.setVisible(true);
+        
         hpBarWBC.setMaximum(wbcCharacter.getHPcontrol().getMaxHP());
+        hpBarWBC.setValue(wbcCharacter.getHPcontrol().getMaxHP());
         hpBarWBC.setStringPainted(true);
         hpBarWBC.setString(""+wbcCharacter.getHPcontrol().getHP());
     }
     
-    public void setEnemyHPBar(){
+    public void setEnemyHPBar(NormalEnemy enemyCharacter){
+        this.enemyCharacter = enemyCharacter;
+        enemyProgressBarLabel.setVisible(true);
+        enemyHPBarIcon.setVisible(true);
+        hpBarEnemy.setVisible(true);
+        
         hpBarEnemy.setMaximum(enemyCharacter.getHPcontrol().getMaxHP());
         hpBarEnemy.setStringPainted(true);
-        hpBarEnemy.setString(""+(enemyCharacter.getHPcontrol().getMaxHP()-enemyCharacter.getHPcontrol().getHP()));
-        hpBarEnemy.setValue(0);    
+        hpBarEnemy.setString(""+(enemyCharacter.getHPcontrol().getMaxHP()));
+        hpBarEnemy.setValue(0); 
+           
         
     }
     
     public void setBossHPBar(){
+        bossProgressBarLabel.setVisible(true);
+        bossHPBarIcon.setVisible(true);
+        hpBarBoss.setVisible(true);
+        
         hpBarBoss.setMaximum(bossCharacter.getHPcontrol().getMaxHP());
         hpBarBoss.setStringPainted(true);
         hpBarBoss.setString(""+(bossCharacter.getHPcontrol().getMaxHP()-bossCharacter.getHPcontrol().getHP()));
@@ -173,6 +188,7 @@ public class ProgressBar extends JPanel{
     public JProgressBar getHPBarBoss(){
         return hpBarBoss;
     }
+    
     
     
     

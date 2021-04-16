@@ -1,6 +1,7 @@
 package wbcadventure;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
@@ -8,7 +9,8 @@ import javax.swing.border.Border;
 public abstract class Enemy extends Character {
     private int randHP;
     private int randPower;
-    private JLabel enemyLabel=new JLabel();
+    private JLabel enemyLabel = new JLabel();
+    private JLabel numberHP;
     private int x;
     private int y;
     private int speedx=1;
@@ -16,15 +18,21 @@ public abstract class Enemy extends Character {
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     public Enemy(WBC wbc){
         randHP=randomHP(wbc);
-        randPower=randomPower(wbc);
-
         this.getHPcontrol().increaseMaxHP(randHP);
         this.getHPcontrol().heal();
+        
+        randPower=randomPower(wbc);
         this.plusPowerDefault(randPower);
         
+        numberHP = new JLabel(""+randHP,JLabel.CENTER);
+        numberHP.setFont(new Font("Courier New", Font.BOLD, 50));
+        numberHP.setLayout(null);
+        numberHP.setVisible(true);
+//        numberHP.setBorder(border);
+
         this.setOpaque(false);
         this.setVisible(true);
-        this.setBorder(border);
+//        this.setBorder(border);
         
     }
     public abstract int randomHP(WBC wbc);
@@ -44,5 +52,9 @@ public abstract class Enemy extends Character {
         this.x-=x;
         this.y-=y;
         this.setLocation(this.x, this.y);
+    }
+    
+    public JLabel getNumberHP(){
+        return numberHP;
     }
 }

@@ -17,10 +17,11 @@ public class SkillBar extends JPanel{
     
     private WBC wbc = new WBC();
     
-    private Skill skill1 = new Skill(0,100,1000,7000);
-    private Skill skill2 = new Skill(1,500,500,10000);
-    private Skill skill3 = new Skill(2,1000,500,15000);
-    private Skill skill4 = new Skill(3,5000,700,19000);
+    private Skill skill1 = new Skill(0,100,1000,2000);
+    private Skill skill2 = new Skill(1,3500,1000,5000);
+    private Skill skill3 = new Skill(2,5000,1000,15000);
+    private Skill skill4 = new Skill(3,10000,1000,50000);
+    
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
 
     /**

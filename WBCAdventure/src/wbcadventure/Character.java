@@ -56,4 +56,8 @@ public abstract class Character extends JPanel {
     public void setImgCorner(int x,int y){
         
     }
+    
+    public void setPowerDefault(int power){
+        this.powerDefault = power;
+    }
 }
