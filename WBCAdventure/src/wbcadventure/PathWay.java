@@ -1,7 +1,11 @@
 package wbcadventure;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.*;
+import javax.swing.border.Border;
 public class PathWay {
+    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private int pathType;
     private ArrayList<ImageIcon> platePlain = new ArrayList<>();
     private ArrayList<ImageIcon> square = new ArrayList<>();
@@ -19,7 +23,15 @@ public class PathWay {
         platePlain.add(new ImageIcon("src/source/background/platePlainB.png")); //9
         platePlain.add(new ImageIcon("src/source/background/plateMergeB.png")); //10
         platePlain.add(new ImageIcon("src/source/background/plateMergeT.png")); //11
-        platePlain.add(new ImageIcon("src/source/background/semiPermible.png"));//12
+        
+        platePlain.add(new ImageIcon("src/source/background/platePlainTFlip.png"));//12
+        platePlain.add(new ImageIcon("src/source/background/plateSecTFlip.png")); //13
+        platePlain.add(new ImageIcon("src/source/background/plateCrossFlip.png")); //14
+        platePlain.add(new ImageIcon("src/source/background/plateSecBFlip.png")); //15
+        platePlain.add(new ImageIcon("src/source/background/platePlainBFlip.png")); //16
+        
+        platePlain.add(new ImageIcon("src/source/background/semiPermible.png"));//17
+        
         
         square.add(new ImageIcon("src/source/background/squareCenter.png"));    //0
         square.add(new ImageIcon("src/source/background/squareCornerLT.png"));  //1
@@ -35,6 +47,7 @@ public class PathWay {
         
     }
     
+    
     public ImageIcon getIcon(int index){
         if(pathType == 0){
             return platePlain.get(index);
@@ -44,8 +57,5 @@ public class PathWay {
         }
         return null;
     }
-    
-    public int getPathType(){
-        return pathType;
-    }
+      
 }

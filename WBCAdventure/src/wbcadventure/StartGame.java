@@ -367,95 +367,95 @@ public class StartGame extends JFrame{
         /**
          * Set starting path with Square
          */
-        PathWay square = new PathWay(1, battle.getWBC());
+//       PathWay square = new PathWay(1, battle.getWBC());
         
         /**
          * start point Label Setting
          */
-        JLabel squareCornerLT = new JLabel();
-        squareCornerLT.setIcon(square.getIcon(1));
-        squareCornerLT.setBounds(0,0,150,150);
-//        squareCornerLT.setBorder(border);
-        
-        JLabel squareBorderT1 = new JLabel();
-        squareBorderT1.setIcon(square.getIcon(2));
-        squareBorderT1.setBounds(150,0,150,150);
-//        squareBorderT1.setBorder(border);
-        
-        JLabel squareBorderT2 = new JLabel();
-        squareBorderT2.setIcon(square.getIcon(2));
-        squareBorderT2.setBounds(300,0,150,150);
-//        squareBorderT2.setBorder(border);
-        
-        JLabel squareCornerRT = new JLabel();
-        squareCornerRT.setIcon(square.getIcon(3));
-        squareCornerRT.setBounds(450,0,150,150);
-//        squareCornerRT.setBorder(border);
-        
-        JLabel squareBorderL = new JLabel();
-        squareBorderL.setIcon(square.getIcon(7));
-        squareBorderL.setBounds(0,150,150,150);
-//        squareBorderL.setBorder(border);
-        
-        JLabel squareCenterLabel1 = new JLabel();
-        squareCenterLabel1.setIcon(square.getIcon(0));
-        squareCenterLabel1.setBounds(150,150,150,150);
-//        squareCenterLabel1.setBorder(border);
-        
-        JLabel squareCenterLabel2 = new JLabel();
-        squareCenterLabel2.setIcon(square.getIcon(0));
-        squareCenterLabel2.setBounds(300,150,150,150);
-//        squareCenterLabel2.setBorder(border);
-        
-        JLabel squareGateR = new JLabel();
-        squareGateR.setIcon(square.getIcon(10));
-        squareGateR.setBounds(450,150,150,150);
-//        squareGateR.setBorder(border);
-        
-        
-        JLabel squareCornerLB = new JLabel();
-        squareCornerLB.setIcon(square.getIcon(4));
-        squareCornerLB.setBounds(0,300,150,150);
-//        squareCornerLB.setBorder(border);
-        
-        JLabel squareBorderB1 = new JLabel();
-        squareBorderB1.setIcon(square.getIcon(5));
-        squareBorderB1.setBounds(150,300,150,150);
-//        squareBorderB1.setBorder(border);
-        
-        JLabel squareBorderB2 = new JLabel();
-        squareBorderB2.setIcon(square.getIcon(5));
-        squareBorderB2.setBounds(300,300,150,150);
-//        squareBorderB2.setBorder(border);
-        
-        JLabel squareCornerRB = new JLabel();
-        squareCornerRB.setIcon(square.getIcon(6));
-        squareCornerRB.setBounds(450,300,150,150);
-//        squareCornerRB.setBorder(border);
-        
+//        JLabel squareCornerLT = new JLabel();
+//        squareCornerLT.setIcon(square.getIcon(1));
+//        squareCornerLT.setBounds(0,0,150,150);
+////        squareCornerLT.setBorder(border);
+//        
+//        JLabel squareBorderT1 = new JLabel();
+//        squareBorderT1.setIcon(square.getIcon(2));
+//        squareBorderT1.setBounds(150,0,150,150);
+////        squareBorderT1.setBorder(border);
+//        
+//        JLabel squareBorderT2 = new JLabel();
+//        squareBorderT2.setIcon(square.getIcon(2));
+//        squareBorderT2.setBounds(300,0,150,150);
+////        squareBorderT2.setBorder(border);
+//        
+//        JLabel squareCornerRT = new JLabel();
+//        squareCornerRT.setIcon(square.getIcon(3));
+//        squareCornerRT.setBounds(450,0,150,150);
+////        squareCornerRT.setBorder(border);
+//        
+//        JLabel squareBorderL = new JLabel();
+//        squareBorderL.setIcon(square.getIcon(7));
+//        squareBorderL.setBounds(0,150,150,150);
+////        squareBorderL.setBorder(border);
+//        
+//        JLabel squareCenterLabel1 = new JLabel();
+//        squareCenterLabel1.setIcon(square.getIcon(0));
+//        squareCenterLabel1.setBounds(150,150,150,150);
+////        squareCenterLabel1.setBorder(border);
+//        
+//        JLabel squareCenterLabel2 = new JLabel();
+//        squareCenterLabel2.setIcon(square.getIcon(0));
+//        squareCenterLabel2.setBounds(300,150,150,150);
+////        squareCenterLabel2.setBorder(border);
+//        
+//        JLabel squareGateR = new JLabel();
+//        squareGateR.setIcon(square.getIcon(10));
+//        squareGateR.setBounds(450,150,150,150);
+////        squareGateR.setBorder(border);
+//        
+//        
+//        JLabel squareCornerLB = new JLabel();
+//        squareCornerLB.setIcon(square.getIcon(4));
+//        squareCornerLB.setBounds(0,300,150,150);
+////        squareCornerLB.setBorder(border);
+//        
+//        JLabel squareBorderB1 = new JLabel();
+//        squareBorderB1.setIcon(square.getIcon(5));
+//        squareBorderB1.setBounds(150,300,150,150);
+////        squareBorderB1.setBorder(border);
+//        
+//        JLabel squareBorderB2 = new JLabel();
+//        squareBorderB2.setIcon(square.getIcon(5));
+//        squareBorderB2.setBounds(300,300,150,150);
+////        squareBorderB2.setBorder(border);
+//        
+//        JLabel squareCornerRB = new JLabel();
+//        squareCornerRB.setIcon(square.getIcon(6));
+//        squareCornerRB.setBounds(450,300,150,150);
+////        squareCornerRB.setBorder(border);
+//        
         
         
         /**
          * start point Panel Setting
          */
-        pathPanel.setBounds(0, 300, 600, 450);
-        pathPanel.setOpaque(false);
-//        startPointPanel.setBorder(border);
-        pathPanel.setLayout(null);
-        
-        pathPanel.add(squareCornerLT);
-        pathPanel.add(squareBorderT1);
-        pathPanel.add(squareBorderT2);
-        pathPanel.add(squareCornerRT);
-        pathPanel.add(squareBorderL);
-        pathPanel.add(squareCenterLabel1);
-        pathPanel.add(squareCenterLabel2);
-        pathPanel.add(squareGateR);
-        pathPanel.add(squareCornerLB);
-        pathPanel.add(squareBorderB1);
-        pathPanel.add(squareBorderB2);
-        pathPanel.add(squareCornerRB);
-        
+//        pathPanel.setBounds(0, 300, 600, 450);
+//        pathPanel.setOpaque(false);
+////        startPointPanel.setBorder(border);
+//        pathPanel.setLayout(null);
+//        
+//        pathPanel.add(squareCornerLT);
+//        pathPanel.add(squareBorderT1);
+//        pathPanel.add(squareBorderT2);
+//        pathPanel.add(squareCornerRT);
+//        pathPanel.add(squareBorderL);
+//        pathPanel.add(squareCenterLabel1);
+//        pathPanel.add(squareCenterLabel2);
+//        pathPanel.add(squareGateR);
+//        pathPanel.add(squareCornerLB);
+//        pathPanel.add(squareBorderB1);
+//        pathPanel.add(squareBorderB2);
+//        pathPanel.add(squareCornerRB);
+//        
         
         layerPane.add(pathPanel, Integer.valueOf(1));
         layerPane.setBorder(border);

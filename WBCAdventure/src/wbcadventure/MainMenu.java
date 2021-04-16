@@ -86,7 +86,7 @@ public class MainMenu extends JFrame {
               if(name.equals("Start")){
                   StartGame start=new StartGame();
                     start.setBackground();
-                    start.setPath();
+                   // start.setPath();
                     start.setUplayer();
                     start.setBattle();
                   setVisibleToFalse();

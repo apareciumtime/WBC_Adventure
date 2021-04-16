@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.border.Border;
+import wbcadventure.PathSetGenerator.PathType;
 public class Battle extends JPanel{
     
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
@@ -27,23 +28,29 @@ public class Battle extends JPanel{
         e1.setLocation(500,400);
         e1.setLayout(null);
         e1.setOpaque(false);
-        BossEnemy boss=new BossEnemy(wbc);
-        boss.setLocation(900,125);
-        boss.setLayout(null);
+//        BossEnemy boss=new BossEnemy(wbc);
+//        boss.setLocation(900,125);
+//        boss.setLayout(null);
         
         enemyArrayList.add(e1);
-        enemyArrayList.add(boss);
+//        enemyArrayList.add(boss);
 
         layerPane.add(wbc,Integer.valueOf(0));
         layerPane.add(e1,Integer.valueOf(1));
-        layerPane.add(boss,Integer.valueOf(2));
+//        layerPane.add(boss,Integer.valueOf(3));
         
         layerPane.setBounds(0,0,1920,1080);
         layerPane.setOpaque(false);
         layerPane.setVisible(true);
         layerPane.setLayout(null);
         this.add(layerPane);
-
+        
+//        PathSetGenerator set=new PathSetGenerator(PathType.WIDE_FORK);
+//        layerPane.add(set.generateWideFork(2,600,300),Integer.valueOf(3));
+        PathGenerator pGen=new PathGenerator(this);
+        pGen.startGeneratePath();
+        pGen.translatePath();
+        
         WBCMovement move=new WBCMovement(wbc,this,stgame);
 
     }
@@ -54,5 +61,8 @@ public class Battle extends JPanel{
     public void removeEnemy(int i){
         this.remove(enemyArrayList.get(i));
         enemyArrayList.remove(i);
+    }
+    public WBC getWBC(){
+        return wbc;
     }
 }
