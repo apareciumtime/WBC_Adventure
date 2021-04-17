@@ -29,7 +29,7 @@ public class Battle extends JPanel{
         e1.setLayout(null);
         e1.setOpaque(false);
 //        BossEnemy boss=new BossEnemy(wbc);
-//        boss.setLocation(900,125);
+//        boss.setLocation(900,100);
 //        boss.setLayout(null);
         
         enemyArrayList.add(e1);
@@ -45,8 +45,8 @@ public class Battle extends JPanel{
         layerPane.setLayout(null);
         this.add(layerPane);
         
-//        PathSetGenerator set=new PathSetGenerator(PathType.WIDE_FORK);
-//        layerPane.add(set.generateWideFork(2,600,300),Integer.valueOf(3));
+//        PathSetGenerator set=new PathSetGenerator(PathType.WIDE_FORK,this);
+//        layerPane.add(set.generateSquare(7, 3, 750, 450, 1, 2));
         PathGenerator pGen=new PathGenerator(this);
         pGen.startGeneratePath();
         pGen.translatePath();

@@ -9,24 +9,40 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 public class PathSetGenerator {
+    //ArrayList เก็บว่าตัวที่จะสร้างได้ต่อไปเป็นทางแบบไหนได้บ้าง และต้องต่อที่พิกัดอะไร
     private ArrayList<PathType> canBeNext=new ArrayList<>();
     private ArrayList<Point> canBeNextLocate=new ArrayList<>();
-    Point locate;
-    Point rightUpCorner;
-    PathType type;
     
+    //เก็บจุดที่อยู่ กับมุมขวาบนของpanelทาง
+    private Point locate;
+    private Point rightUpCorner;
+    
+    //เก็บชนิดของทาง
+    private PathType type;
+    
+    //เอาตัวจาก class Battle มาใช้ด้วย
+    private Battle battleObj;
+    
+    //เอาตัวจาก class PathGenerator มาใช้ด้วย
+    private PathGenerator pathGenObj;
+    
+    //กรอบ
+    private Border border = BorderFactory.createLineBorder(Color.gray,1);
+    
+    //Enum ชนิดของทาง
     public enum PathType{
         SQUARE,WIDE_FORK,STRAIGHT,NARROW_FORK,DOWNRIGHT,UPRIGHT;
     }
 
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
-    public PathSetGenerator(PathType type){
+    //constructor
+    public PathSetGenerator(PathType type,Battle bt,PathGenerator pg){
+        pathGenObj=pg;
+        battleObj=bt;
         this.type=type;
     }
     
-    //ลานบอส ขอประตูอยู่ช่อง2
     /**
-     * generate square size x*y at (xlocate,ylocate)
+     * Generate Square size x*y , locate at (xlocate,ylocate)
      * @param x : number of blocks for x-Axis
      * @param y : number of blocks for y-Axis
      * @param xlocate : location x
@@ -41,6 +57,15 @@ public class PathSetGenerator {
         if(type==0){
             canBeNext.add(PathType.STRAIGHT);
             canBeNextLocate.add(new Point(xlocate+150*x,ylocate+(door-1)*150));
+        }
+        if(x==7 && y==3){
+            JPanel boss=new JPanel();
+            this.setUp(boss);
+            boss.setBounds(xlocate+150,ylocate-350,900,750);
+            BossEnemy bossObj=new BossEnemy(battleObj.getWBC());
+            boss.add(bossObj);
+            pathGenObj.addEnemyCoordinate(boss);
+            battleObj.getEnemyArr().add(bossObj);
         }
         JPanel square=new JPanel();
         setUp(square);
@@ -96,6 +121,13 @@ public class PathSetGenerator {
         return square;
     }
     
+    /**
+     * Generate Wide Fork long i blocks , locate at(xlocate,ylocate)
+     * @param i
+     * @param xlocate
+     * @param ylocate
+     * @return 
+     */
     public JPanel generateWideFork(int i,int xlocate,int ylocate){
         System.out.println("gen Fork at "+xlocate+","+ylocate+" long "+i);
         locate=new Point(xlocate,ylocate);
@@ -126,12 +158,34 @@ public class PathSetGenerator {
         this.addPathIconPlain(stfork,stDownL,9,150,300);
         
         for(int j=1;j<=i;j++){
+            if(j%2==1){
+                JPanel enemyUpPanel=new JPanel();
+                this.setUp(enemyUpPanel);
+                enemyUpPanel.setBounds(xlocate+150+150*j,ylocate-50,150,200);
+                pathGenObj.addEnemyCoordinate(enemyUpPanel);
+                
+                JPanel enemyDownPanel=new JPanel();
+                this.setUp(enemyDownPanel);
+                enemyDownPanel.setBounds(xlocate+150+150*j,ylocate+250,150,200);
+                pathGenObj.addEnemyCoordinate(enemyDownPanel);
+            }
             JLabel stUp=new JLabel();
             this.addPathIconPlain(stfork,stUp,0,150*(j+1),0);
             
             JLabel stDown=new JLabel();
             this.addPathIconPlain(stfork,stDown,0,150*(j+1),300);
         }
+        if(i%2==0){
+            JPanel enemyUpLastPanel=new JPanel();
+            this.setUp(enemyUpLastPanel);
+            enemyUpLastPanel.setBounds(xlocate+300+150*i,ylocate-50,150,200);
+            pathGenObj.addEnemyCoordinate(enemyUpLastPanel);
+            
+            JPanel enemyDownLastPanel=new JPanel();
+            this.setUp(enemyDownLastPanel);
+            enemyDownLastPanel.setBounds(xlocate+300+150*i,ylocate+250,150,200);
+            pathGenObj.addEnemyCoordinate(enemyDownLastPanel);
+            }
         
         JLabel crossR=new JLabel();
         this.addPathIconPlain(stfork,crossR,14,450+150*i,150);
@@ -154,7 +208,13 @@ public class PathSetGenerator {
         return stfork;
     }
     
-    
+    /**
+     * Generate Narrow Fork long i blocks , locate at (xlocate,ylocate)
+     * @param i
+     * @param xlocate
+     * @param ylocate
+     * @return 
+     */
     public JPanel generateNarrowFork(int i,int xlocate,int ylocate){
         System.out.println("gen Narrow Fork at "+xlocate+","+ylocate+" long "+i);
         locate=new Point(xlocate,ylocate);
@@ -179,6 +239,19 @@ public class PathSetGenerator {
             JLabel paraUp=new JLabel();
             this.addPathIconPlain(narFork,paraUp,0,150*j,0);
             
+            if((j-1)%4==0){
+                JPanel enemyUpPanel=new JPanel();
+                this.setUp(enemyUpPanel);
+                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50,150,200);
+                pathGenObj.addEnemyCoordinate(enemyUpPanel);
+            }
+            else if((j-3)%4==0){
+                JPanel enemyDownPanel=new JPanel();
+                this.setUp(enemyDownPanel);
+                enemyDownPanel.setBounds(xlocate+150*j,ylocate+100,150,200);
+                pathGenObj.addEnemyCoordinate(enemyDownPanel);
+            }
+
             JLabel paraDow=new JLabel();
             this.addPathIconPlain(narFork,paraDow,0,150*j,150);
         }
@@ -194,6 +267,13 @@ public class PathSetGenerator {
         return narFork;
     }
     
+    /**
+     * Generate Straight Path long i blocks , locate at (xlocate,ylocate)
+     * @param i
+     * @param xlocate
+     * @param ylocate
+     * @return 
+     */
     public JPanel generateStraight(int i,int xlocate,int ylocate){
         System.out.println("gen Straight at "+xlocate+","+ylocate+" long "+i);
         locate=new Point(xlocate,ylocate);
@@ -219,6 +299,12 @@ public class PathSetGenerator {
         for(int j=0;j<i;j++){
             JLabel st=new JLabel();
             this.addPathIconPlain(Straight,st,0,150*j,0);
+            if(j%2==1){
+                JPanel enemyUpPanel=new JPanel();
+                this.setUp(enemyUpPanel);
+                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50,150,200);
+                pathGenObj.addEnemyCoordinate(enemyUpPanel);
+            }
         }
         
         
@@ -226,6 +312,12 @@ public class PathSetGenerator {
         return Straight;
     }
     
+    /**
+     * Generate Path that go down to the right , locate at (xlocate,ylocate)
+     * @param xlocate
+     * @param ylocate
+     * @return 
+     */
     public JPanel generateDownRight(int xlocate,int ylocate){
         System.out.println("gen Down Right at "+xlocate+","+ylocate);
         locate=new Point(xlocate,ylocate);
@@ -240,7 +332,7 @@ public class PathSetGenerator {
         canBeNextLocate.add(new Point(xlocate+150,ylocate+150));
         
         JPanel dr=new JPanel();
-        dr.setBounds(600, 300, 150, 300);
+        dr.setBounds(xlocate,ylocate,150, 300);
         setUp(dr);
         
         JLabel enter=new JLabel();
@@ -254,6 +346,12 @@ public class PathSetGenerator {
         return dr;
     }
     
+    /** Generate Path that go up to the right , locate at (xlocate,ylocate)
+     * 
+     * @param xlocate
+     * @param ylocate
+     * @return 
+     */
     public JPanel generateUpRight(int xlocate,int ylocate){
         System.out.println("gen Up Right at"+xlocate+","+ylocate);
         locate=new Point(xlocate,ylocate);
@@ -267,7 +365,7 @@ public class PathSetGenerator {
         canBeNextLocate.add(new Point(xlocate+150,ylocate));
         
         JPanel ur=new JPanel();
-        ur.setBounds(600, 300, 150, 300);
+        ur.setBounds(xlocate,ylocate,150,300);
         setUp(ur);
         
         JLabel enter=new JLabel();
@@ -276,25 +374,41 @@ public class PathSetGenerator {
         JLabel exit=new JLabel();
         this.addPathIconPlain(ur,exit,2,0,0);
         
-        
-        
         return ur;
         }
+    
+    /**
+     * set everything for JLabel (setOpaque false , setLayout null , setVisible true)
+     * @param lab 
+     */
     public void setUp(JLabel lab){
         lab.setOpaque(false);
         lab.setLayout(null);
         lab.setVisible(true);
-        //lab.setBorder(border);
+//        lab.setBorder(border);
         lab.setBounds(0,0,150,150);
     }
     
+    /**
+     * set everything foe JPanel (setOpaque false , setLayout null , setVisible true)
+     * @param pa 
+     */
     public void setUp(JPanel pa){
         pa.setOpaque(false);
         pa.setLayout(null);
         pa.setVisible(true);
-        pa.setBorder(border);
+//        pa.setBorder(border);
     }
     
+    /**
+     * Add label {$la} with Icon of path number {$iconnum} to the Panel {$pa} , locate at (lox,loy)
+     * **For Plain Path
+     * @param pa
+     * @param la
+     * @param iconnum
+     * @param lox
+     * @param loy 
+     */
     public void addPathIconPlain(JPanel pa,JLabel la,int iconnum,int lox,int loy){
         la.setIcon((new PathWay(0)).getIcon(iconnum));
         setUp(la);
@@ -302,6 +416,15 @@ public class PathSetGenerator {
         la.setLocation(lox,loy);
     }
     
+    /**
+     * Add label {$la} with Icon of path number {$iconnum} to the Panel {$pa} , locate at (lox,loy)
+     * **For Square
+     * @param pa
+     * @param la
+     * @param iconnum
+     * @param lox
+     * @param loy 
+     */
     public void addPathIconSQ(JPanel pa,JLabel la,int iconnum,int lox,int loy){
         la.setIcon((new PathWay(1)).getIcon(iconnum));
         setUp(la);
@@ -309,14 +432,26 @@ public class PathSetGenerator {
         la.setLocation(lox,loy);
     }
     
+    /**
+     * get ArrayList canBeNextLocate
+     * @return
+     */
     public ArrayList<Point> getCanBeNextLocate(){
         return canBeNextLocate;
     }
     
+    /**
+     * get ArrayList canBenext
+     * @return 
+     */
     public ArrayList<PathType> getCanBeNext(){
         return canBeNext;
     }
     
+    /**
+     * get type of path
+     * @return 
+     */
     public PathType getType(){
         return type;
     }

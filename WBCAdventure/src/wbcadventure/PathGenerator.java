@@ -24,27 +24,34 @@ public class PathGenerator {
     private JPanel nextPathSet;
     private JPanel bigPanel;
     private JLayeredPane path;
-    //JPanel path;
+    private JPanel allEnemyCoordinatePanel=new JPanel();
+    private Battle battleObj;
+    private ArrayList<JPanel> enemyCoordinatePanelSet=new ArrayList<>();
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     
     public PathGenerator(JPanel big){
+        path=new JLayeredPane();
+        path.setBounds(x, y,10000,1080);
+        allEnemyCoordinatePanel.setBounds(x, y, 10000, 1080);
+        this.setUp(allEnemyCoordinatePanel);
         bigPanel=big;
+        battleObj=(Battle)big;
     }
     
+    /**
+     * Generate path from start to the end (All random)
+     */
     public void startGeneratePath(){
-        path=new JLayeredPane();
-        path.setBounds(x, y,10000,10000);
         setUp(path);
 
         Random rand=new Random();
-        prevPathGen=new PathSetGenerator(PathType.SQUARE);
+        prevPathGen=new PathSetGenerator(PathType.SQUARE,battleObj,this);
         prevPathSet=prevPathGen.generateSquare(4,3,0,300,0,2); 
         path.add(prevPathSet,Integer.valueOf(0));
         
         for(int i=1;i<=11;i++){
-            
             int randomnum=rand.nextInt(prevPathGen.getCanBeNext().size());
-            // *square ออกมาอีกทีตอนเจอbossเท่านั้น
+            
             System.out.println(randomnum);
             PathType whatCanBeNext=prevPathGen.getCanBeNext().get(randomnum);
             int whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(randomnum).getX();
@@ -54,61 +61,61 @@ public class PathGenerator {
             switch(whatCanBeNext){
                 case WIDE_FORK: 
                     if(whereCanBeNextY>=150 && whereCanBeNextY<=450){
-                        nextPathGen=new PathSetGenerator(PathType.WIDE_FORK);
+                        nextPathGen=new PathSetGenerator(PathType.WIDE_FORK,battleObj,this);
                         nextPathSet=nextPathGen.generateWideFork(rand.nextInt(3)+2,whereCanBeNextX,whereCanBeNextY);
                     }
                     else if(whereCanBeNextY<150){
-                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT);
-                        nextPathSet=nextPathGen.generateDownRight(whereCanBeNextX,whereCanBeNextY);
+                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT,battleObj,this);
+                        nextPathSet=nextPathGen.generateDownRight(whereCanBeNextX,whereCanBeNextY+150);
                     }
                     else{
-                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT);
+                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT,battleObj,this);
                         nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY); 
                     }
                     break;
                 case STRAIGHT:
-                    nextPathGen=new PathSetGenerator(PathType.STRAIGHT);
+                    nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
                     nextPathSet=nextPathGen.generateStraight(rand.nextInt(2)+2,whereCanBeNextX,whereCanBeNextY); 
                     break;
                 case NARROW_FORK: 
                     if(whereCanBeNextY>=150 && whereCanBeNextY<=600){
-                        nextPathGen=new PathSetGenerator(PathType.NARROW_FORK);
+                        nextPathGen=new PathSetGenerator(PathType.NARROW_FORK,battleObj,this);
                         nextPathSet=nextPathGen.generateNarrowFork(rand.nextInt(3)+3,whereCanBeNextX,whereCanBeNextY); 
                     }
                     else if(whereCanBeNextY<150){
-                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT);
+                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT,battleObj,this);
                         nextPathSet=nextPathGen.generateDownRight(whereCanBeNextX,whereCanBeNextY); 
                     }
                     else{
-                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT);
-                        nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY); 
+                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT,battleObj,this);
+                        nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY-150); 
                     }
                     break;
                 case DOWNRIGHT: 
                     if(whereCanBeNextY<=600){
-                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT);
+                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT,battleObj,this);
                         nextPathSet=nextPathGen.generateDownRight(whereCanBeNextX,whereCanBeNextY);
                     }
                     else{
-                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT);
-                        nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY);
+                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT,battleObj,this);
+                        nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY-150);
                     } 
                     break;
                 case UPRIGHT:
                     if(whereCanBeNextY>=150){
-                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT);
+                        nextPathGen=new PathSetGenerator(PathType.UPRIGHT,battleObj,this);
                         nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY);
                     }
                     else{
-                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT);
-                        nextPathSet=nextPathGen.generateDownRight(whereCanBeNextX,whereCanBeNextY);
+                        nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT,battleObj,this);
+                        nextPathSet=nextPathGen.generateDownRight(whereCanBeNextX,whereCanBeNextY+150);
                     } 
-                    nextPathGen=new PathSetGenerator(PathType.UPRIGHT);
+                    nextPathGen=new PathSetGenerator(PathType.UPRIGHT,battleObj,this);
                     nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY);  
                     break;
                 case SQUARE: 
-                    nextPathGen=new PathSetGenerator(PathType.SQUARE);
-                    nextPathSet=nextPathGen.generateSquare(6,4,whereCanBeNextX,whereCanBeNextY,1,2);  
+                    nextPathGen=new PathSetGenerator(PathType.SQUARE,battleObj,this);
+                    nextPathSet=nextPathGen.generateSquare(7,3,whereCanBeNextX,whereCanBeNextY,1,2);  
                     break;
                 default: break;
             }
@@ -116,9 +123,16 @@ public class PathGenerator {
             prevPathGen=nextPathGen;
             prevPathSet=nextPathSet;
         }
+        path.add(allEnemyCoordinatePanel,Integer.valueOf(15));
         bigPanel.add(path);
+        for(JPanel pa:enemyCoordinatePanelSet){
+            pa.setBorder(border);
+        }
     }
     
+    /**
+     * Make the path move to the left
+     */
     public void translatePath(){
         Timer time=new Timer();
         TimerTask move=new TimerTask() {
@@ -127,6 +141,7 @@ public class PathGenerator {
                 for(int i=0;i<=200;i++){
                     x-=10;
                     path.setLocation(x,y);
+//                    allEnemyCoordinatePanel.setLocation(x, y);
                     try {
                         sleep(50);
                     } catch (InterruptedException ex) {
@@ -134,9 +149,13 @@ public class PathGenerator {
                     }    
                 }
             }
-        };time.schedule(move,5000,10100);
+        };time.schedule(move,0,10100);
     }
     
+    /**
+     * set everything for JLabel (setOpaque false , setLayout null , setVisible true , setBorder)
+     * @param pa 
+     */
     public void setUp(JPanel pa){
         pa.setOpaque(false);
         pa.setLayout(null);
@@ -144,10 +163,31 @@ public class PathGenerator {
         pa.setBorder(border);
     }
     
+    /**
+     * set everything for JLayeredPane (setOpaque false , setLayout null , setVisible true , setBorder)
+     * @param pa 
+     */
     public void setUp(JLayeredPane pa){
         pa.setOpaque(false);
         pa.setLayout(null);
         pa.setVisible(true);
         pa.setBorder(border);
+    }
+    
+    /**
+     * get JPanel which have all empty Panel to fill enemy
+     * @return 
+     */
+    public JPanel getAllEnemyCooPanel(){
+        return allEnemyCoordinatePanel;
+    }
+    
+    /**
+     * add panel to fill enemy to ArrayList and allEnemyCoordinatePanel 
+     * @param emptyPanel 
+     */
+    public void addEnemyCoordinate(JPanel emptyPanel){
+        enemyCoordinatePanelSet.add(emptyPanel);
+        allEnemyCoordinatePanel.add(emptyPanel);
     }
 }
