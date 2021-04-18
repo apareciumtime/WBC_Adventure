@@ -39,6 +39,7 @@ public class AttackController {
                     
                     TimerTask attackWBC = new TimerTask(){
                         public void run(){
+                            System.out.println("backward");
                             uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
                             maxHPReceiver -= receiver.getHPcontrol().getHP();
                             uplayer.getHPBarPanel().getHPBarEnemy().setString(""+receiver.getHPcontrol().getHP());
@@ -59,6 +60,7 @@ public class AttackController {
                     
                     TimerTask attackEnemy = new TimerTask(){
                         public void run(){
+                            System.out.println("backward");
                             uplayer.getHPBarPanel().getHPBarWBC().setValue(receiver.getHPcontrol().getHP());
                             uplayer.getHPBarPanel().getHPBarWBC().setString(""+receiver.getHPcontrol().getHP());
                             ((WBC)receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
@@ -87,7 +89,72 @@ public class AttackController {
     
     public Character gerWinner(){
         return winner;
-    }
-   
-    
+    }   
 }
+
+/*
+if(wbc.getHPcontrol().getHP()>0){
+    TimerTask attackEnemy = new TimerTask(){
+        public void run(){
+            attackController.attacking();
+            attackController = new AttackController(wbc,bt.getEnemyArr().get(0),stgame.getUplayer());
+            attackController.setValue();
+        }
+    };  timer.schedule(attackEnemy, 1000);
+}
+else{
+    TimerTask diedEnemy = new TimerTask(){
+        public void run(){
+            attackController.attacking();
+            TimerTask wait = new TimerTask(){
+                public void run(){
+                    stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
+                    if(bt.getEnemyArr().get(0) instanceof NormalEnemy){
+                    stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
+                    }
+                    else if(bt.getEnemyArr().get(0) instanceof BossEnemy){
+                        stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
+                    }
+                    wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
+                    System.out.println("You loss");
+                    attackController.setWinner();
+                }
+            };  timer.schedule(wait, 1050);
+        }
+    }; timer.schedule(diedEnemy, 1000);
+}
+*/
+
+/*
+if(bt.getEnemyArr().get(0).getHPcontrol().getHP()>0){
+    TimerTask attackWBC = new TimerTask(){
+        public void run(){
+            attackController.attacking();
+            attackController = new AttackController(bt.getEnemyArr().get(0),wbc,stgame.getUplayer());
+            attackController.setValue();
+        }
+    };  timer.schedule(attackWBC, 1000);
+}
+else{
+    TimerTask diedWBC = new TimerTask(){
+        public void run(){
+            attackController.attacking();
+            TimerTask wait = new TimerTask(){
+                public void run(){
+                    stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
+                    if(bt.getEnemyArr().get(0) instanceof NormalEnemy){
+                    stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
+                    }
+                    else if(bt.getEnemyArr().get(0) instanceof BossEnemy){
+                        stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
+                    }                                                                     //remove Enemy
+                    bt.getEnemyArr().get(0).setBounds(0, 0, 0, 0);
+                    attackController.BufferHP();
+                    System.out.println("You win");
+                    attackController.setWinner();
+                }
+            };  timer.schedule(wait, 1050);
+        }
+    };timer.schedule(diedWBC, 1000);
+}
+*/
