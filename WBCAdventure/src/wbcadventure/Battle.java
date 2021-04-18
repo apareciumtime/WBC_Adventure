@@ -24,19 +24,19 @@ public class Battle extends JPanel{
     public Battle(StartGame stgame){
         
         this.stgame=stgame;
-        NormalEnemy e1=new NormalEnemy(wbc);
-        e1.setLocation(500,400);
-        e1.setLayout(null);
-        e1.setOpaque(false);
+//        NormalEnemy e1=new NormalEnemy(wbc);
+//        e1.setLocation(500,400);
+//        e1.setLayout(null);
+//        e1.setOpaque(false);
 //        BossEnemy boss=new BossEnemy(wbc);
 //        boss.setLocation(900,100);
 //        boss.setLayout(null);
         
-        enemyArrayList.add(e1);
+//        enemyArrayList.add(e1);
 //        enemyArrayList.add(boss);
 
-        layerPane.add(wbc,Integer.valueOf(0));
-        layerPane.add(e1,Integer.valueOf(1));
+//        layerPane.add(wbc,Integer.valueOf(0));
+//        layerPane.add(e1,Integer.valueOf(1));
 //        layerPane.add(boss,Integer.valueOf(3));
         
         layerPane.setBounds(0,0,1920,1080);
@@ -55,6 +55,9 @@ public class Battle extends JPanel{
 
     }
     
+    public StartGame getStGame(){
+        return stgame;
+    }
     public ArrayList<Enemy> getEnemyArr(){
         return enemyArrayList;
     }

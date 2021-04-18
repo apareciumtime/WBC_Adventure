@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/Character.java</file>
             <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/PathGenerator.java</file>
             <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/PathWay.java</file>
-            <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/WBC.java</file>
-            <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/AttackController.java</file>
+            <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/PathSetGenerator.java</file>
+            <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/BossEnemy.java</file>
             <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/Battle.java</file>
             <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/WBCMovement.java</file>
-            <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/Enemy.java</file>
             <file>file:/C:/Users/Nunan/Documents/WBC_Adventure/WBCAdventure/src/wbcadventure/NormalEnemy.java</file>
         </group>
     </open-files>

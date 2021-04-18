@@ -50,7 +50,7 @@ public class PathSetGenerator {
      * @param type : 0 is start square,1 is boss square
      * @return 
      */
-    public JPanel generateSquare(int x,int y,int xlocate,int ylocate,int type,int door){
+    public JPanel generateSquare(int x,int y,int xlocate,int ylocate,int type,int door,BossEnemy bos){
         System.out.println("gen Square at "+xlocate+","+ylocate);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(xlocate+150*x,ylocate+150*y);
@@ -62,10 +62,9 @@ public class PathSetGenerator {
             JPanel boss=new JPanel();
             this.setUp(boss);
             boss.setBounds(xlocate+150,ylocate-350,900,750);
-            BossEnemy bossObj=new BossEnemy(battleObj.getWBC());
-            boss.add(bossObj);
-            pathGenObj.addEnemyCoordinate(boss);
-            battleObj.getEnemyArr().add(bossObj);
+            boss.add(bos);
+            pathGenObj.getPathLayerPane().add(boss,Integer.valueOf(90));
+            battleObj.getEnemyArr().add(bos);
         }
         JPanel square=new JPanel();
         setUp(square);
@@ -161,12 +160,12 @@ public class PathSetGenerator {
             if(j%2==1){
                 JPanel enemyUpPanel=new JPanel();
                 this.setUp(enemyUpPanel);
-                enemyUpPanel.setBounds(xlocate+150+150*j,ylocate-50,150,200);
+                enemyUpPanel.setBounds(xlocate+150+150*j,ylocate-50-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyUpPanel);
                 
                 JPanel enemyDownPanel=new JPanel();
                 this.setUp(enemyDownPanel);
-                enemyDownPanel.setBounds(xlocate+150+150*j,ylocate+250,150,200);
+                enemyDownPanel.setBounds(xlocate+150+150*j,ylocate+250-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyDownPanel);
             }
             JLabel stUp=new JLabel();
@@ -178,12 +177,12 @@ public class PathSetGenerator {
         if(i%2==0){
             JPanel enemyUpLastPanel=new JPanel();
             this.setUp(enemyUpLastPanel);
-            enemyUpLastPanel.setBounds(xlocate+300+150*i,ylocate-50,150,200);
+            enemyUpLastPanel.setBounds(xlocate+300+150*i,ylocate-50-55,150,200);
             pathGenObj.addEnemyCoordinate(enemyUpLastPanel);
             
             JPanel enemyDownLastPanel=new JPanel();
             this.setUp(enemyDownLastPanel);
-            enemyDownLastPanel.setBounds(xlocate+300+150*i,ylocate+250,150,200);
+            enemyDownLastPanel.setBounds(xlocate+300+150*i,ylocate+250-55,150,200);
             pathGenObj.addEnemyCoordinate(enemyDownLastPanel);
             }
         
@@ -242,13 +241,13 @@ public class PathSetGenerator {
             if((j-1)%4==0){
                 JPanel enemyUpPanel=new JPanel();
                 this.setUp(enemyUpPanel);
-                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50,150,200);
+                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyUpPanel);
             }
             else if((j-3)%4==0){
                 JPanel enemyDownPanel=new JPanel();
                 this.setUp(enemyDownPanel);
-                enemyDownPanel.setBounds(xlocate+150*j,ylocate+100,150,200);
+                enemyDownPanel.setBounds(xlocate+150*j,ylocate+100-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyDownPanel);
             }
 
@@ -302,7 +301,7 @@ public class PathSetGenerator {
             if(j%2==1){
                 JPanel enemyUpPanel=new JPanel();
                 this.setUp(enemyUpPanel);
-                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50,150,200);
+                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyUpPanel);
             }
         }
