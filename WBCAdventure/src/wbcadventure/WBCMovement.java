@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
+
 public class WBCMovement implements MouseListener,MouseMotionListener{
     private int x,y;
     private WBC wbc;

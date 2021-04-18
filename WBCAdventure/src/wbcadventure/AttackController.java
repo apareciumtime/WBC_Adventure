@@ -21,7 +21,6 @@ public class AttackController {
     
     
     
-    
     public AttackController(Character attacker, Character receiver,Uplayer uplayer){
         this.attacker = attacker;
         this.receiver = receiver;
