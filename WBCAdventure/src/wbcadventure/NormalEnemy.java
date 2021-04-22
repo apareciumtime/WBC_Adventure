@@ -5,9 +5,13 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 public class NormalEnemy extends Enemy {
+    private static int nextCnt=0;
+    private int cnt;
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     public NormalEnemy(WBC wbc){
         super(wbc);
+        
+        cnt=nextCnt++;
         
         this.addCharacIcon(new ImageIcon("src/source/character/Enemies/Enemy.gif"));
         this.addCharacIcon(new ImageIcon("src/source/character/Enemies/Enemy2.gif"));
@@ -169,5 +173,9 @@ public class NormalEnemy extends Enemy {
             default : enemyRandPower=(int)(enemyHP*.24); break;
         }
         return enemyRandPower;
+    }
+    
+    public String toString(){
+        return "NormalEnemy num : "+cnt+" hp : "+this.getHPcontrol().getHP()+"\n";
     }
 }

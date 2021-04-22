@@ -478,7 +478,7 @@ public class PathGenerator {
             @Override
             public void run() {
                 while(true){
-                    x-=40;
+                    x-=2;
                     if(xDes+x<=750){
                         break;
                     }
@@ -489,8 +489,10 @@ public class PathGenerator {
                                 NormalEnemy enemy=new NormalEnemy(battleObj.getWBC());
                                 enemyCoordinatePanelSet.get(j).add(enemy);
                                 battleObj.getEnemyArr().add(enemy);
+                                //วิธีเรียกenemyจาก coordinatePanelSet
+                                //System.out.println(enemyCoordinatePanelSet.get(j).getComponentAt(0,0).toString());
                                 enemyCoordinatePanelSet.set(j,null);
-                                System.out.println(battleObj.getEnemyArr());
+                                //System.out.println(battleObj.getEnemyArr());
                             }
                         }
                     }
