@@ -51,7 +51,6 @@ public class Battle extends JPanel{
         pGen.startGeneratePath();
         pGen.translatePath();
         
-        WBCMovement move=new WBCMovement(wbc,this,stgame);
 
     }
     
