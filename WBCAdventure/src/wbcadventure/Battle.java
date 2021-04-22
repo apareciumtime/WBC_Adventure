@@ -21,6 +21,7 @@ public class Battle extends JPanel{
     private JLayeredPane layerPane = new JLayeredPane();
     ArrayList<Enemy> enemyArrayList=new ArrayList<>();
     private StartGame stgame;
+    PathGenerator pGen=new PathGenerator(this);
     public Battle(StartGame stgame){
         
         this.stgame=stgame;
@@ -47,13 +48,15 @@ public class Battle extends JPanel{
         
 //        PathSetGenerator set=new PathSetGenerator(PathType.WIDE_FORK,this);
 //        layerPane.add(set.generateSquare(7, 3, 750, 450, 1, 2));
-        PathGenerator pGen=new PathGenerator(this);
         pGen.startGeneratePath();
         pGen.translatePath();
         
 
     }
-    
+    //at Movement : bt.getPathGen().getAllEnemyCoordinatePanelSet().get(0).getComponentAt(0,0)
+    public PathGenerator getPathGen(){
+        return pGen;
+    }
     public StartGame getStGame(){
         return stgame;
     }

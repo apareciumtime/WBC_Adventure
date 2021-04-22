@@ -547,7 +547,7 @@ public class PathGenerator {
         allEnemyCoordinatePanel.add(emptyPanel);
     }
     
-    public ArrayList<JPanel> getAllEnemyCoordinatePanel(){
+    public ArrayList<JPanel> getAllEnemyCoordinatePanelSet(){
         return enemyCoordinatePanelSet;
     }
     
