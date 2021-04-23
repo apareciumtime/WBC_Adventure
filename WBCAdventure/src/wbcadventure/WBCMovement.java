@@ -10,7 +10,7 @@ import javax.swing.*;
 
 
 public class WBCMovement implements MouseListener,MouseMotionListener{
-    private int x,y;
+    private int x=300,y=300;
     private WBC wbc;
     private JPanel WBCPanel;
     private Battle bt;
@@ -28,7 +28,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
         wbc.getWBCPanel().addMouseMotionListener(this);
         WBCPanel=wbc.getWBCPanel();
         enemyarr=bt.getPathGen().getEnemyPanelArrayList();
-        
+        wbc.setXforBoostSpeed(300);
+        wbc.setYforBoostSpeed(300);
         
     }
     @Override
@@ -39,25 +40,30 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
     @Override
     public void mousePressed(MouseEvent e) {
         wbc.getWBCLabel().setIcon(wbc.getCharacIcon(1));
-        x=e.getX();
-        y=e.getY();
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        boolean goFight=false;
         wbc.getWBCLabel().setIcon(wbc.getCharacIcon(0));
         if(enemyarr.get(0).getBeChoice()==true){
             if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(0).getBounds())){
                 this.fight(enemyarr.get(0));
+                goFight=true;
             }
             else if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(1).getBounds())){
                 this.fight(enemyarr.get(1));
+                goFight=true;
             }
         }
         else{
             if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(0).getBounds())){
                 this.fight(enemyarr.get(0));
+                goFight=true;
             }
+        }
+        if(!goFight){
+            wbc.setLocation(x, y);
         }
 
         /*if (condition){
@@ -869,6 +875,10 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
     
     public void fight(EnemyBlankPanel enemyPanel){
             wbc.getWBCPanel().setLocation(enemyPanel.getX()-250,enemyPanel.getY());
+            x=enemyPanel.getX()-250;
+            y=enemyPanel.getY();
+            wbc.setXforBoostSpeed(x);
+            wbc.setYforBoostSpeed(y);
             wbc.getWBCLabel().setIcon(wbc.getCharacIcon(2));
             stgame.getUplayer().getHPBarPanel().setWBCHPBar();
             

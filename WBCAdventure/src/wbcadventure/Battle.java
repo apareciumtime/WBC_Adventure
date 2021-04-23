@@ -17,9 +17,7 @@ public class Battle extends JPanel{
     
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private WBC wbc = new WBC();
-    private JLabel wbcLabel = new JLabel();
     private JLayeredPane layerPane = new JLayeredPane();
-    ArrayList<Enemy> enemyArrayList=new ArrayList<>();
     private StartGame stgame;
     PathGenerator pGen=new PathGenerator(this);
     public Battle(StartGame stgame){
@@ -54,16 +52,11 @@ public class Battle extends JPanel{
     public PathGenerator getPathGen(){
         return pGen;
     }
+    
     public StartGame getStGame(){
         return stgame;
     }
-    public ArrayList<Enemy> getEnemyArr(){
-        return enemyArrayList;
-    }
-    public void removeEnemy(int i){
-        this.remove(enemyArrayList.get(i));
-        enemyArrayList.remove(i);
-    }
+    
     public WBC getWBC(){
         return wbc;
     }

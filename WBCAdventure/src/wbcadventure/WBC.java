@@ -16,7 +16,7 @@ public class WBC extends Character{
     private ArrayList<Skill> skillArr=new ArrayList<>();
     private final int wbc_width;
     private final int wbc_height;
-    //private int x,y;
+    private int xForBoostSpeed=0,yForBoostSpeed=0;
     private Point imagecorner;
     private Point prevpt;
     private ImageIcon iconNowWBC;
@@ -176,5 +176,19 @@ public class WBC extends Character{
     
     public JLabel getSkillEffect(){
         return skillEffect;
+    }
+    
+    public int getXforBoostSpeed(){
+        return xForBoostSpeed;
+    }
+    public int getYforBoostSpeed(){
+        return yForBoostSpeed;
+    }
+    
+    public void setXforBoostSpeed(int xf){
+        xForBoostSpeed=xf;
+    }
+    public void setYforBoostSpeed(int yf){
+        yForBoostSpeed=yf;
     }
 }

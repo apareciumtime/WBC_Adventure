@@ -30,8 +30,7 @@ public class PathGenerator {
     private ArrayList<EnemyBlankPanel> enemyPanelArrayList=new ArrayList<>();
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private int xDes;
-    private int check=0;
-    
+    private WBC wbc;
     public PathGenerator(JPanel big){
         path=new JLayeredPane();
         path.setBounds(x, y,1000000000,1080);
@@ -39,13 +38,13 @@ public class PathGenerator {
         this.setUp(allEnemyCoordinatePanel);
         bigPanel=big;
         battleObj=(Battle)big;
+        wbc=battleObj.getWBC();
     }
     
     /**
      * Generate path from start to the end (All random)
      */
     public void startGeneratePath(){
-        WBC wbc=new WBC();
         path.add(wbc,Integer.valueOf(99));
         wbc.setLocation(300, 300);
         
@@ -479,11 +478,18 @@ public class PathGenerator {
             @Override
             public void run() {
                 while(true){
-                    x-=2;
+                    if(wbc.getXforBoostSpeed()+x>700){
+                        x-=5;
+                        path.setLocation(x,y);
+                    }
+                    else if(wbc.getXforBoostSpeed()+x<=700){
+                        x-=2;
+                        path.setLocation(x,y);
+                    }
                     if(xDes+x<=750){
                         break;
                     }
-                    path.setLocation(x,y);
+//                    path.setLocation(x,y);
                     for(int j=0;j<enemyCoordinatePanelSet.size();j++){
                         if(enemyCoordinatePanelSet.get(j)!=null){
                             if(enemyCoordinatePanelSet.get(j).getX()+x<=1920){
