@@ -1,5 +1,6 @@
 package wbcadventure;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -50,6 +51,11 @@ public class NormalEnemy extends Enemy {
         
     }
     
+    /**
+     * Random HP for NormalEnemy by WBC's HP
+     * @param wbc
+     * @return 
+     */
     public int randomHP(WBC wbc){
         Random rand=new Random();
         int casenum=rand.nextInt(1000)%100;
@@ -160,6 +166,11 @@ public class NormalEnemy extends Enemy {
         return enemyRandHP;
     }
     
+    /**
+     * Random power for NormalEnemy by it's HP
+     * @param wbc
+     * @return 
+     */
     public int randomPower(WBC wbc){
         Random rand=new Random();
         int casenum=rand.nextInt(50)%5;
@@ -175,6 +186,11 @@ public class NormalEnemy extends Enemy {
         return enemyRandPower;
     }
     
+    
+    /**
+     * return String that tell number of NormalEnemy and it's HP
+     * @return 
+     */
     public String toString(){
         return "NormalEnemy num : "+cnt+" hp : "+this.getHPcontrol().getHP()+"\n";
     }

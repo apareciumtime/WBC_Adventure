@@ -50,7 +50,7 @@ public class Battle extends JPanel{
 //        layerPane.add(set.generateSquare(7, 3, 750, 450, 1, 2));
         pGen.startGeneratePath();
         pGen.translatePath();
-        
+        System.out.println(pGen.getAllEnemyCoordinatePanelSet());
 
     }
     //at Movement : bt.getPathGen().getAllEnemyCoordinatePanelSet().get(0).getComponentAt(0,0)

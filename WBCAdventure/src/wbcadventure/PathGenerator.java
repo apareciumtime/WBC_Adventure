@@ -26,7 +26,8 @@ public class PathGenerator {
     private JLayeredPane path;
     private JPanel allEnemyCoordinatePanel=new JPanel();
     private Battle battleObj;
-    private ArrayList<JPanel> enemyCoordinatePanelSet=new ArrayList<>();
+    private ArrayList<EnemyBlankPanel> enemyCoordinatePanelSet=new ArrayList<>();
+    private ArrayList<EnemyBlankPanel> enemyPanelArrayList=new ArrayList<>();
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private int xDes;
     private int check=0;
@@ -51,7 +52,7 @@ public class PathGenerator {
         BossEnemy boss=new BossEnemy(wbc);
         
         WBCMovement move=new WBCMovement(wbc,battleObj,battleObj.getStGame());
-        
+        wbc.addMouseListener(move);
         setUp(path);
 
         Random rand=new Random();
@@ -487,12 +488,11 @@ public class PathGenerator {
                         if(enemyCoordinatePanelSet.get(j)!=null){
                             if(enemyCoordinatePanelSet.get(j).getX()+x<=1920){
                                 NormalEnemy enemy=new NormalEnemy(battleObj.getWBC());
-                                enemyCoordinatePanelSet.get(j).add(enemy);
-                                battleObj.getEnemyArr().add(enemy);
-                                //วิธีเรียกenemyจาก coordinatePanelSet
-                                //System.out.println(enemyCoordinatePanelSet.get(j).getComponentAt(0,0).toString());
+                                setUp(enemy);
+                                enemyCoordinatePanelSet.get(j).addEnemy(enemy);
+                                enemyPanelArrayList.add(enemyCoordinatePanelSet.get(j));
+                                //System.out.println(enemyCoordinatePanelSet.get(j).getMustBeDeleteArr());
                                 enemyCoordinatePanelSet.set(j,null);
-                                //System.out.println(battleObj.getEnemyArr());
                             }
                         }
                     }
@@ -542,15 +542,23 @@ public class PathGenerator {
      * add panel to fill enemy to ArrayList and allEnemyCoordinatePanel 
      * @param emptyPanel 
      */
-    public void addEnemyCoordinate(JPanel emptyPanel){
+    public void addEnemyCoordinate(EnemyBlankPanel emptyPanel){
         enemyCoordinatePanelSet.add(emptyPanel);
         allEnemyCoordinatePanel.add(emptyPanel);
     }
     
-    public ArrayList<JPanel> getAllEnemyCoordinatePanelSet(){
-        return enemyCoordinatePanelSet;
+    /**
+     * get ArrayList of all enemy's Panel
+     * @return 
+     */
+    public ArrayList<EnemyBlankPanel> getEnemyPanelArrayList(){
+        return enemyPanelArrayList;
     }
     
+    /**
+     * get layer pane that contain path with wbc and enemy
+     * @return 
+     */
     public JLayeredPane getPathLayerPane(){
         return path;
     }

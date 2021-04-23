@@ -19,6 +19,9 @@ public class MainMenu extends JFrame {
         this.add(layerPane);
         
     }
+    
+    
+    // JFrame   JPanel    JLabel     JLayeredPane
     public void setButtons(){
         JPanel pa=new JPanel();
         pa.setBounds(0,0,1920,1080);
@@ -65,7 +68,7 @@ public class MainMenu extends JFrame {
         this.setVisible(false);
     }
     
-    public class Buttons extends JLabel{
+public class Buttons extends JLabel{
     private String name;
     private ImageIcon normal;
     private ImageIcon pass;
@@ -89,7 +92,7 @@ public class MainMenu extends JFrame {
                    // start.setPath();
                     start.setUplayer();
                     start.setBattle();
-                  setVisibleToFalse();
+                    setVisibleToFalse();
               }
               else if(name.equals("Load")){
                   

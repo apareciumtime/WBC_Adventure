@@ -59,12 +59,12 @@ public class PathSetGenerator {
             canBeNextLocate.add(new Point(xlocate+150*x,ylocate+(door-1)*150));
         }
         if(x==7 && y==3){
-            JPanel boss=new JPanel();
+            EnemyBlankPanel boss=new EnemyBlankPanel(PathType.SQUARE,true,new ArrayList<>());
             this.setUp(boss);
             boss.setBounds(xlocate+150,ylocate-350,900,750);
-            boss.add(bos);
+            boss.addEnemy(bos);
             pathGenObj.getPathLayerPane().add(boss,Integer.valueOf(90));
-            battleObj.getEnemyArr().add(bos);
+            //battleObj.getEnemyArr().add(bos);
         }
         JPanel square=new JPanel();
         setUp(square);
@@ -155,15 +155,28 @@ public class PathSetGenerator {
         
         JLabel stDownL=new JLabel();
         this.addPathIconPlain(stfork,stDownL,9,150,300);
-        
+
+        PathType p=PathType.WIDE_FORK;
+        boolean beChoice=false;
         for(int j=1;j<=i;j++){
+            beChoice=(j==1)?true:false;
             if(j%2==1){
-                JPanel enemyUpPanel=new JPanel();
+                ArrayList<Integer> arrNum=new ArrayList<>();
+                arrNum.add(0);
+                if(beChoice==true){arrNum.add(1); arrNum.add(3);
+                    if(i==4){arrNum.add(5);}
+                }
+                EnemyBlankPanel enemyUpPanel=new EnemyBlankPanel(p,beChoice,arrNum);
                 this.setUp(enemyUpPanel);
                 enemyUpPanel.setBounds(xlocate+150+150*j,ylocate-50-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyUpPanel);
                 
-                JPanel enemyDownPanel=new JPanel();
+                ArrayList<Integer> arrNum2=new ArrayList<>();
+                arrNum2.add(0);
+                if(beChoice==true){arrNum2.add(1); arrNum2.add(2);
+                    if(i==4){arrNum2.add(4);}
+                }
+                EnemyBlankPanel enemyDownPanel=new EnemyBlankPanel(p,beChoice,arrNum2);
                 this.setUp(enemyDownPanel);
                 enemyDownPanel.setBounds(xlocate+150+150*j,ylocate+250-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyDownPanel);
@@ -175,16 +188,18 @@ public class PathSetGenerator {
             this.addPathIconPlain(stfork,stDown,0,150*(j+1),300);
         }
         if(i%2==0){
-            JPanel enemyUpLastPanel=new JPanel();
+            ArrayList<Integer> arrNum=new ArrayList<>();
+            arrNum.add(0);
+            EnemyBlankPanel enemyUpLastPanel=new EnemyBlankPanel(p,beChoice,arrNum);
             this.setUp(enemyUpLastPanel);
             enemyUpLastPanel.setBounds(xlocate+300+150*i,ylocate-50-55,150,200);
             pathGenObj.addEnemyCoordinate(enemyUpLastPanel);
             
-            JPanel enemyDownLastPanel=new JPanel();
+            EnemyBlankPanel enemyDownLastPanel=new EnemyBlankPanel(p,beChoice,arrNum);
             this.setUp(enemyDownLastPanel);
             enemyDownLastPanel.setBounds(xlocate+300+150*i,ylocate+250-55,150,200);
             pathGenObj.addEnemyCoordinate(enemyDownLastPanel);
-            }
+        }
         
         JLabel crossR=new JLabel();
         this.addPathIconPlain(stfork,crossR,14,450+150*i,150);
@@ -200,10 +215,7 @@ public class PathSetGenerator {
         
         JLabel stDownR=new JLabel();
         this.addPathIconPlain(stfork,stDownR,16,300+150*i,300);
-        
-        
-        
-        
+    
         return stfork;
     }
     
@@ -234,18 +246,29 @@ public class PathSetGenerator {
         JLabel enterdown=new JLabel();
         this.addPathIconPlain(narFork,enterdown,4,0,150);
         
+        PathType p=PathType.WIDE_FORK;
+        boolean beChoice=false;
+
         for(int j=1;j<=i;j++){
             JLabel paraUp=new JLabel();
             this.addPathIconPlain(narFork,paraUp,0,150*j,0);
-            
+            beChoice=(j==1)?true:false;
+            ArrayList<Integer> arrNum=new ArrayList<>();
+            arrNum.add(0);
+            if(j!=5){
+                arrNum.add(1);
+                if(i==5 && j==3){
+                    arrNum.add(2);
+                }
+            }
             if((j-1)%4==0){
-                JPanel enemyUpPanel=new JPanel();
+                EnemyBlankPanel enemyUpPanel=new EnemyBlankPanel(p,beChoice,arrNum);
                 this.setUp(enemyUpPanel);
                 enemyUpPanel.setBounds(xlocate+150*j,ylocate-50-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyUpPanel);
             }
             else if((j-3)%4==0){
-                JPanel enemyDownPanel=new JPanel();
+                EnemyBlankPanel enemyDownPanel=new EnemyBlankPanel(p,beChoice,arrNum);
                 this.setUp(enemyDownPanel);
                 enemyDownPanel.setBounds(xlocate+150*j,ylocate+100-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyDownPanel);
@@ -298,8 +321,10 @@ public class PathSetGenerator {
         for(int j=0;j<i;j++){
             JLabel st=new JLabel();
             this.addPathIconPlain(Straight,st,0,150*j,0);
+            ArrayList<Integer> arrNum=new ArrayList<>();
+            arrNum.add(0);
             if(j%2==1){
-                JPanel enemyUpPanel=new JPanel();
+                EnemyBlankPanel enemyUpPanel=new EnemyBlankPanel(PathType.STRAIGHT,false,arrNum);
                 this.setUp(enemyUpPanel);
                 enemyUpPanel.setBounds(xlocate+150*j,ylocate-50-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyUpPanel);
