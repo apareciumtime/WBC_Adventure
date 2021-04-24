@@ -1268,7 +1268,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                     }
                 };timer.schedule(diedWBC, 1000);
             }
-            System.out.println("arr to del "+enemyPanel.getMustBeDeleteArr());
+        System.out.println("arr to del "+enemyPanel.getMustBeDeleteArr());
         if(enemyPanel.getMustBeDeleteArr().size()==1){
             enemyarr.remove(0);
         }
@@ -1281,8 +1281,24 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
         }
     }
     
+//    public void delEnemy(EnemyBlankPanel enemyBlankP){
+//        System.out.println("arr to del "+enemyBlankP.getMustBeDeleteArr());
+//        if(enemyBlankP.getMustBeDeleteArr().size()==1){
+//            enemyarr.remove(0);
+//        }
+//        else{
+//            for(int in=enemyBlankP.getMustBeDeleteArr().size()-1;in>=0;in--){
+//                int del=enemyBlankP.getMustBeDeleteArr().get(in);
+//                System.out.println("delete "+del);
+//                enemyarr.remove(del);
+//            }
+//        }
+//    }
+    
+    
 }
 
+    
 
 
 /**

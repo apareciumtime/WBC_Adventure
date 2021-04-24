@@ -92,6 +92,7 @@ public class Buttons extends JLabel{
                    // start.setPath();
                     start.setUplayer();
                     start.setBattle();
+                    start.setInformation();
                     setVisibleToFalse();
               }
               else if(name.equals("Load")){

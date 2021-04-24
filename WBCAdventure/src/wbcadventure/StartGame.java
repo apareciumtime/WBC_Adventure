@@ -56,7 +56,7 @@ public class StartGame extends JFrame{
     /**
      * Call Up-layer for KeyListener
      */
-    private Uplayer uplayer = new Uplayer();
+    private Uplayer uplayer;
     
     /**
      * Battle layer Set
@@ -66,11 +66,13 @@ public class StartGame extends JFrame{
     /**
      * Call battle for KeyListener , MouseListenter();
      */
-    private Battle battle = new Battle(this);    
+    private Battle battle;    
     
     private Timer timer = new Timer();
     
     public StartGame(){
+        battle = new Battle(this);
+        uplayer = new Uplayer(battle.getWBC());
         /**
          * Frame Setting
          */
@@ -481,5 +483,116 @@ public class StartGame extends JFrame{
         
         layerPane.add(battle,Integer.valueOf(2));
     }
+    public void setInformation(){
+        BeforePlaying inform=new BeforePlaying();
+        layerPane.add(inform,Integer.valueOf(4));
+    }
+    
+    public class BeforePlaying extends JPanel{
+        public BeforePlaying(){
+            this.setBounds(0,0,1920,1080);
+            this.setVisible(true);
+            this.setOpaque(false);
+            this.setLayout(null);
+            
+            JLayeredPane layer=new JLayeredPane();
+            layer.setBounds(0,-30,1920,1080);
+            layer.setVisible(true);
+            layer.setLayout(null);
+            this.add(layer);
+            
+            JLabel information=new JLabel();
+            information.setIcon(new ImageIcon("src/source/background/ShowBossHP.png"));
+            information.setBounds(0,0,1920,1080);
+            information.setVisible(true);
+            information.setOpaque(false);
+            information.setLayout(null);
+            
+            JPanel informationPa=new JPanel();
+            informationPa.setBounds(0,0,1920,1080);
+            informationPa.setVisible(true);
+            informationPa.setOpaque(false);
+            informationPa.add(information);
+            informationPa.setLayout(null);
+            layer.add(informationPa,Integer.valueOf(0));
+            
+            JPanel fontPanel=new JPanel();
+            fontPanel.setBounds(0,0,1920,1080);
+            fontPanel.setVisible(true);
+            fontPanel.setOpaque(false);
+            fontPanel.setLayout(null);
+            layer.add(fontPanel,Integer.valueOf(3));
+            
+            JLabel BossHPLa=new JLabel(""+battle.getBoss().getHPcontrol().getHP(),JLabel.LEFT);
+            BossHPLa.setBounds(891,385,281,57);
+            BossHPLa.setVisible(true);
+            BossHPLa.setOpaque(false);
+            BossHPLa.setLayout(null);
+            fontPanel.add(BossHPLa);
+//            BossHPLa.setBorder(border);
+            BossHPLa.setFont(new Font("Courier New", Font.BOLD, 50));
+             
+            JLabel WBCHPLa=new JLabel(""+battle.getWBC().getHPcontrol().getHP(),JLabel.LEFT);
+            WBCHPLa.setBounds(835,660,281,57);
+            WBCHPLa.setVisible(true);
+            WBCHPLa.setOpaque(false);
+            WBCHPLa.setLayout(null);
+            fontPanel.add(WBCHPLa);
+//            WBCHPLa.setBorder(border);
+            WBCHPLa.setFont(new Font("Courier New", Font.BOLD, 50));
 
+            JLabel go=new JLabel();
+            go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_normal.png"));
+            go.setBounds(0,0,467,179);
+            go.setVisible(true);
+            go.setOpaque(false);
+            go.setLayout(null);
+            
+            JPanel goPa=new JPanel();
+            goPa.setBounds(0,0,467,179);
+            goPa.setVisible(true);
+            goPa.setOpaque(false);
+            goPa.setLayout(null);
+            goPa.add(go);
+            
+            JPanel goPaOfPa=new JPanel();
+            goPaOfPa.setBounds(751,806,1920,1080);
+            goPaOfPa.setVisible(true);
+            goPaOfPa.setOpaque(false);
+            goPaOfPa.setLayout(null);
+            goPaOfPa.add(goPa);
+            
+            layer.add(goPaOfPa,Integer.valueOf(1));
+            
+            goPa.addMouseListener(new MouseAdapter(){
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                   go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_click.png"));
+                   setVisible(false);
+                   battle.getPathGen().translatePath();
+                }
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+                     go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_click.png"));
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                    go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_normal.png"));
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_pass.png"));
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_normal.png"));
+                }
+            });
+            
+        }
+    }
 }

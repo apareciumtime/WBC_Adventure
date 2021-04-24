@@ -13,15 +13,18 @@ import javax.swing.border.Border;
  */
 public class Uplayer extends JPanel{
     
-    private SkillBar skillBarPanel = new SkillBar();
-    private ProgressBar hpBarPanel = new ProgressBar();
+    private SkillBar skillBarPanel;
+    private ProgressBar hpBarPanel;
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     
     /**
      * Constructor create The Up-layer Panel
      * Contain 1.Skill Bar Panel 2.HP Bar Panel 3.Progression Bar Panel
      */
-    public Uplayer(){
+    public Uplayer(WBC wbc){
+        skillBarPanel = new SkillBar(wbc);
+        hpBarPanel = new ProgressBar(wbc);
+        
         skillBarPanel.setBounds(50,800, 616, 154);
         skillBarPanel.setOpaque(false);
         

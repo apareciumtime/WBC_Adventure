@@ -262,16 +262,16 @@ public class PathSetGenerator {
                 }
             }
             if((j-1)%4==0){
-                EnemyBlankPanel enemyUpPanel=new EnemyBlankPanel(p,beChoice,arrNum);
-                this.setUp(enemyUpPanel);
-                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50-55,150,200);
-                pathGenObj.addEnemyCoordinate(enemyUpPanel);
-            }
-            else if((j-3)%4==0){
                 EnemyBlankPanel enemyDownPanel=new EnemyBlankPanel(p,beChoice,arrNum);
                 this.setUp(enemyDownPanel);
                 enemyDownPanel.setBounds(xlocate+150*j,ylocate+100-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyDownPanel);
+            }
+            else if((j-3)%4==0){
+                EnemyBlankPanel enemyUpPanel=new EnemyBlankPanel(p,beChoice,arrNum);
+                this.setUp(enemyUpPanel);
+                enemyUpPanel.setBounds(xlocate+150*j,ylocate-50-55,150,200);
+                pathGenObj.addEnemyCoordinate(enemyUpPanel);
             }
 
             JLabel paraDow=new JLabel();

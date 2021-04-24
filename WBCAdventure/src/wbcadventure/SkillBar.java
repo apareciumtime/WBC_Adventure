@@ -15,7 +15,7 @@ public class SkillBar extends JPanel{
     
     private Timer timer = new Timer();
     
-    private WBC wbc = new WBC();
+    private WBC wbc;
     
     private Skill skill1 = new Skill(0,100,1000,2000);
     private Skill skill2 = new Skill(1,3500,1000,5000);
@@ -27,7 +27,8 @@ public class SkillBar extends JPanel{
     /**
      * Constructor create Skill Bar
      */
-    public SkillBar(){
+    public SkillBar(WBC wbc){
+        this.wbc=wbc;
 //        this.setBorder(border);
         this.setLayout(null);
         

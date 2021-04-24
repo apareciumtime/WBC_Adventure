@@ -14,7 +14,7 @@ public class ProgressBar extends JPanel{
     
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     
-    private WBC wbcCharacter = new WBC();
+    private WBC wbcCharacter;
     private JLabel wbcHPBarLabel        = new JLabel();
     private JLabel wbcProgressBarLabel  = new JLabel();
     private JLabel wbcHPBarIcon         = new JLabel();
@@ -26,13 +26,16 @@ public class ProgressBar extends JPanel{
     private JLabel enemyHPBarIcon           = new JLabel();
     private JProgressBar hpBarEnemy = new JProgressBar();
     
-    private BossEnemy bossCharacter = new BossEnemy(wbcCharacter);
+    private BossEnemy bossCharacter;
     private JLabel bossHPBarLabel       = new JLabel();
     private JLabel bossProgressBarLabel  = new JLabel();
     private JLabel bossHPBarIcon        = new JLabel();
     private JProgressBar hpBarBoss = new JProgressBar();
     
-    public ProgressBar(){
+    public ProgressBar(WBC wbc){
+        wbcCharacter=wbc;
+        bossCharacter = new BossEnemy(wbcCharacter);
+        
         layer.setBounds(0, 0, 1920 , 75);
         this.add(layer);
         this.setLayout(null);
