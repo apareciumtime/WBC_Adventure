@@ -41,10 +41,13 @@ public class AttackController {
                         public void run(){
                             System.out.println("backward");
                             uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
+                            uplayer.getHPBarPanel().getHPBarBoss().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
                             maxHPReceiver -= receiver.getHPcontrol().getHP();
                             uplayer.getHPBarPanel().getHPBarEnemy().setString(""+receiver.getHPcontrol().getHP());
+                            uplayer.getHPBarPanel().getHPBarBoss().setString(""+receiver.getHPcontrol().getHP());
                             ((Enemy) receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
                             attacker.setLocation(attacker.getX()-120, attacker.getY());
+                            uplayer.getSkillBarPanel().setSkillEnable(attacker.getHPcontrol().getMaxHP());
                             
                         }
                     };timer.schedule(attackWBC, 500);
@@ -73,6 +76,7 @@ public class AttackController {
     }
     
     public void setValue(){
+        System.out.println(attacker.getClass().getName()+ " " + attacker.getPowerDefault());
         receiver.getHPcontrol().decreaseHP(attacker.getPowerDefault());
     }
     
@@ -97,7 +101,7 @@ if(wbc.getHPcontrol().getHP()>0){
     TimerTask attackEnemy = new TimerTask(){
         public void run(){
             attackController.attacking();
-            attackController = new AttackController(wbc,bt.getEnemyArr().get(0),stgame.getUplayer());
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
             attackController.setValue();
         }
     };  timer.schedule(attackEnemy, 1000);
@@ -109,10 +113,10 @@ else{
             TimerTask wait = new TimerTask(){
                 public void run(){
                     stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
-                    if(bt.getEnemyArr().get(0) instanceof NormalEnemy){
+                    if(enemyPanel.getEnemy() instanceof NormalEnemy){
                     stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
                     }
-                    else if(bt.getEnemyArr().get(0) instanceof BossEnemy){
+                    else if(enemyPanel.getEnemy() instanceof BossEnemy){
                         stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
                     }
                     wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
@@ -126,11 +130,11 @@ else{
 */
 
 /*
-if(bt.getEnemyArr().get(0).getHPcontrol().getHP()>0){
+if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){
     TimerTask attackWBC = new TimerTask(){
         public void run(){
             attackController.attacking();
-            attackController = new AttackController(bt.getEnemyArr().get(0),wbc,stgame.getUplayer());
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
             attackController.setValue();
         }
     };  timer.schedule(attackWBC, 1000);
@@ -142,13 +146,13 @@ else{
             TimerTask wait = new TimerTask(){
                 public void run(){
                     stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
-                    if(bt.getEnemyArr().get(0) instanceof NormalEnemy){
+                    if(enemyPanel.getEnemy() instanceof NormalEnemy){
                     stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
                     }
-                    else if(bt.getEnemyArr().get(0) instanceof BossEnemy){
+                    else if(enemyPanel.getEnemy() instanceof BossEnemy){
                         stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
                     }                                                                     //remove Enemy
-                    bt.getEnemyArr().get(0).setBounds(0, 0, 0, 0);
+                    enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
                     attackController.BufferHP();
                     System.out.println("You win");
                     attackController.setWinner();

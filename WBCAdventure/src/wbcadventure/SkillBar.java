@@ -37,8 +37,6 @@ public class SkillBar extends JPanel{
         setSkillUnable(2);
         setSkillUnable(3);
         
-        setSkillEnable(wbc.getHPcontrol().getMaxHP());
-        
         skill1Label.setBounds(  0, 0, 154, 154);
         skill2Label.setBounds(154, 0, 154, 154);
         skill3Label.setBounds(308, 0, 154, 154);
