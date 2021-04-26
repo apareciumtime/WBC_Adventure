@@ -93,7 +93,7 @@ public class PathGenerator {
                 case NARROW_FORK: 
                     if(whereCanBeNextY>=150 && whereCanBeNextY<=600){
                         nextPathGen=new PathSetGenerator(PathType.NARROW_FORK,battleObj,this);
-                        nextPathSet=nextPathGen.generateNarrowFork(rand.nextInt(3)+3,whereCanBeNextX,whereCanBeNextY); 
+                        nextPathSet=nextPathGen.generateNarrowFork(rand.nextInt(2)+4,whereCanBeNextX,whereCanBeNextY); 
                     }
                     else if(whereCanBeNextY<150){
                         nextPathGen=new PathSetGenerator(PathType.DOWNRIGHT,battleObj,this);
@@ -136,7 +136,7 @@ public class PathGenerator {
             prevPathGen=nextPathGen;
             prevPathSet=nextPathSet;
 
-            if(bossHP/(cntLayer+1)<10000){
+            if(bossHP/(cntLayer+1)<bossHP/15){
                 System.out.println("Stoppppp------------------------------");
                 switch(prevPathGen.getType()){
                     case WIDE_FORK :
@@ -507,8 +507,6 @@ public class PathGenerator {
                             }
                         }
                     }
-                    battleObj.getWBC().getHPcontrol().increaseMaxHP(10);
-                    battleObj.getWBC().getHPcontrol().heal();
                     try {
                         sleep(50);
                     } catch (InterruptedException ex) {

@@ -25,7 +25,7 @@ public class Uplayer extends JPanel{
         skillBarPanel = new SkillBar(wbc);
         hpBarPanel = new ProgressBar(wbc);
         
-        skillBarPanel.setBounds(50,800, 616, 154);
+        skillBarPanel.setBounds(80,850, 616, 154);
         skillBarPanel.setOpaque(false);
         
         hpBarPanel.setBounds(10,10,1900,100);

@@ -64,7 +64,7 @@ public class WBC extends Character{
     }
     
     public WBC(SkillBar skillBar){
-        super(new HPcontroller(15000),(int)(15000*.39));
+        super(new HPcontroller(50),(int)(50*.39));
         this.skillBar = skillBar;
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCHappyForever.gif"));
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCAngryStep1.png"));
@@ -137,6 +137,9 @@ public class WBC extends Character{
     public JLabel getNumberHP(){
         return numberHP;
     }
+    
+    
+    
     
     public void useSkill(int skillNumber){
         switch(skillNumber){
