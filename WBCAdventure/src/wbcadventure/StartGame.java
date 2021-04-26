@@ -30,12 +30,13 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.ImageIcon;
+import static javax.swing.SwingConstants.SOUTH;
 import javax.swing.border.Border;
 public class StartGame extends JFrame{
     /**
      * Border Set
      */
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
+    private Border border = BorderFactory.createLineBorder(Color.gray,4);
     
     /**
      * JLayeredPane Set
@@ -71,6 +72,7 @@ public class StartGame extends JFrame{
     private Timer timer = new Timer();
     
     public StartGame(){
+        System.out.println("new startgame");
         battle = new Battle(this);
         uplayer = new Uplayer(battle.getWBC());
         /**
@@ -79,7 +81,7 @@ public class StartGame extends JFrame{
         this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        this.setUndecorated(true);            //FullScreen
+        this.setUndecorated(true);            //FullScreen
         this.setLayout(null);  
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
@@ -488,6 +490,11 @@ public class StartGame extends JFrame{
         layerPane.add(inform,Integer.valueOf(4));
     }
     
+    public void setEndGame(String type,StartGame old){
+        EndGame end=new EndGame(type,old);
+        layerPane.add(end,Integer.valueOf(5));
+    }
+    
     public class BeforePlaying extends JPanel{
         public BeforePlaying(){
             this.setBounds(0,0,1920,1080);
@@ -592,7 +599,116 @@ public class StartGame extends JFrame{
                     go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_normal.png"));
                 }
             });
-            
         }
     }
+    
+    
+public class EndGame extends JPanel{
+    String type;
+    StartGame oldSt;
+    public EndGame(String type,StartGame old){
+        oldSt=old;
+        System.out.println("End");
+        this.type=type;
+        this.setBounds(0, 0,1920, 1080);
+        this.setVisible(true);
+        this.setOpaque(false);
+        this.setLayout(null);
+        
+        JLayeredPane layerpane=new JLayeredPane();
+        layerpane.setBounds(0, 0,1920, 1080);
+        layerpane.setVisible(true);
+        layerpane.setOpaque(false);
+        layerpane.setLayout(null);
+        this.add(layerpane);
+        
+        JLabel background=new JLabel();
+        if(type.equals("win")){
+            background.setIcon(new ImageIcon("src/source/background/winWindow.png"));
+        }
+        else if(type.equals("lose")){
+            background.setIcon(new ImageIcon("src/source/background/loseWindow.png"));
+        }
+        background.setBounds(0, 0,1920, 1080);
+        background.setVisible(true);
+        background.setOpaque(false);
+        layerpane.add(background,Integer.valueOf(0));
+        
+        JPanel pa=new JPanel();
+        pa.setBounds(0,0,1920,1080);
+        pa.setVisible(true);
+        pa.setOpaque(false);
+        pa.setLayout(null);
+        Buttons re=new Buttons("Restart",264,724);
+        Buttons menu=new Buttons("Menu",757,724);
+        Buttons exit=new Buttons("Exit",1250,724);
+        pa.add(re);
+        pa.add(menu);
+        pa.add(exit);
+        layerpane.add(pa,Integer.valueOf(1));
+        
+    }
+    
+    public class Buttons extends JLabel{
+    private String name;
+    private ImageIcon normal;
+    private ImageIcon pass;
+    private ImageIcon click;
+    public Buttons(String name,int x,int y){
+        this.name=name;
+        normal=new ImageIcon("src/source/buttons/Button"+name+"_normal.png");
+        pass=new ImageIcon("src/source/buttons/Button"+name+"_pass.png");
+        click=new ImageIcon("src/source/buttons/Button"+name+"_click.png");
+        this.setIcon(normal);
+        this.setOpaque(false);
+        this.setBounds(x,y,467,179);
+        this.setLayout(null);
+        this.addMouseListener(new MouseAdapter(){
+           @Override
+           public void mouseClicked(MouseEvent e) {
+              setIcon(click);
+              if(name.equals("Restart")){
+                  oldSt.setVisible(false);
+                  StartGame start=new StartGame();
+                  start.setBackground();
+                  start.setUplayer();
+                  start.setBattle();
+                  start.setInformation();
+              }
+              else if(name.equals("Menu")){
+                  oldSt.setVisible(false);
+                  MainMenu menu=new MainMenu();
+                  menu.setBackground();
+                  menu.setButtons();
+              }
+              else if(name.equals("Exit")){
+                  System.exit(SOUTH);
+              }
+           }
+
+           @Override
+           public void mousePressed(MouseEvent e) {
+                setIcon(click);
+           }
+
+           @Override
+           public void mouseReleased(MouseEvent e) {
+               setIcon(normal);
+           }
+
+           @Override
+           public void mouseEntered(MouseEvent e) {
+               setIcon(pass);
+           }
+
+           @Override
+           public void mouseExited(MouseEvent e) {
+               setIcon(normal);
+           }
+        });
+    }
+}
+}
+
+    
 }

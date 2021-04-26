@@ -479,6 +479,10 @@ public class PathGenerator {
             @Override
             public void run() {
                 while(true){
+                    if(wbc.getLocation().getX()+x<=-150){
+                        battleObj.getStGame().setEndGame("lose",battleObj.getStGame());
+                        break;
+                    }
                     if(wbc.getXforBoostSpeed()+x>700){
                         x-=8;
                         path.setLocation(x,y);
@@ -490,7 +494,7 @@ public class PathGenerator {
                     if(xDes+x<=750){
                         break;
                     }
-//                    path.setLocation(x,y);
+                    path.setLocation(x,y);
                     for(int j=0;j<enemyCoordinatePanelSet.size();j++){
                         if(enemyCoordinatePanelSet.get(j)!=null){
                             if(enemyCoordinatePanelSet.get(j).getX()+x<=1920){
