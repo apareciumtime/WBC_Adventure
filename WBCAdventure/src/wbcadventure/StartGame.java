@@ -116,12 +116,8 @@ public class StartGame extends JFrame{
                                                             uplayer.getSkillBarPanel().setSkillPending(0);
                                                             uplayer.getSkillBarPanel().getSkill(0).setCanUse(true);
                                                         }
-                                                        TimerTask skill = new TimerTask(){
-                                                            public void run(){
-                                                            }
-                                                        };timer.schedule(skill, 1000);  
                                                     }
-                                                };  timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(0).getDuration()+uplayer.getSkillBarPanel().getSkill(0).getCooldown());
+                                                };  timer.schedule(pendingSkill1,uplayer.getSkillBarPanel().getSkill(0).getDuration() + uplayer.getSkillBarPanel().getSkill(0).getCooldown());
                                             }
                                         }
                                     };  timer.schedule(cooldownSkill1, uplayer.getSkillBarPanel().getSkill(0).getDuration());
@@ -130,7 +126,7 @@ public class StartGame extends JFrame{
                         };  timer.schedule(durationSkill1, 0);
                         break;
                     /**
-                     * Type W key to use Skill 1
+                     * Type W key to use Skill 2
                      */
                     case 'w' :
                         TimerTask durationSkill2 = new TimerTask(){
@@ -139,7 +135,6 @@ public class StartGame extends JFrame{
                                     battle.getWBC().useSkill(1);
                                     uplayer.getSkillBarPanel().setSkillDuration(1);
                                     uplayer.getSkillBarPanel().getSkill(1).setCanUse(false);
-                                    
                                     TimerTask cooldownSkill2 = new TimerTask(){
                                         public void run() {
                                             battle.getWBC().setVisibleFalse();
@@ -162,7 +157,7 @@ public class StartGame extends JFrame{
                         };  timer.schedule(durationSkill2, 0);
                         break;
                     /**
-                     * Type E key to use Skill 1
+                     * Type E key to use Skill 3
                      */    
                     case 'e' :
                         TimerTask durationSkill3 = new TimerTask(){
@@ -171,13 +166,11 @@ public class StartGame extends JFrame{
                                     battle.getWBC().useSkill(2);
                                     uplayer.getSkillBarPanel().setSkillDuration(2);
                                     uplayer.getSkillBarPanel().getSkill(2).setCanUse(false);
-                                    
                                     TimerTask cooldownSkill3 = new TimerTask(){
                                         public void run() {
                                             battle.getWBC().setVisibleFalse();
                                             if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && !uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
                                                 uplayer.getSkillBarPanel().setSkillCooldown(2);
-                                                
                                                 TimerTask pendingSkill3 = new TimerTask(){
                                                     public void run(){
                                                         if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && !uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
@@ -194,7 +187,7 @@ public class StartGame extends JFrame{
                         };  timer.schedule(durationSkill3, 0);
                         break;
                     /**
-                     * Type R key to use Skill 1
+                     * Type R key to use Skill 4
                      */    
                     case 'r' :
                         TimerTask durationSkill4 = new TimerTask(){
@@ -203,13 +196,11 @@ public class StartGame extends JFrame{
                                     battle.getWBC().useSkill(3);
                                     uplayer.getSkillBarPanel().setSkillDuration(3);
                                     uplayer.getSkillBarPanel().getSkill(3).setCanUse(false);
-                                    
                                     TimerTask cooldownSkill4 = new TimerTask(){
                                         public void run() {
                                             battle.getWBC().setVisibleFalse();
                                             if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && !uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
                                                 uplayer.getSkillBarPanel().setSkillCooldown(3);
-
                                                 TimerTask pendingSkill4 = new TimerTask(){
                                                     public void run(){
                                                         if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && !uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
@@ -225,8 +216,8 @@ public class StartGame extends JFrame{
                             }
                         };  timer.schedule(durationSkill4, 0);
                         break;
+                    }
                 }
-            }
 
             @Override
             public void keyPressed(KeyEvent e) {
@@ -237,7 +228,7 @@ public class StartGame extends JFrame{
             public void keyReleased(KeyEvent e) {
                 //System.out.println(e.getKeyChar());
             }
-                });
+        });
         /*End KeyListener Zone*/
         
     }

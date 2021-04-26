@@ -106,390 +106,449 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
             
             attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
             attackController.setValue();
+            attackController.attacking(); //WBC 1
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 1
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 2
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 2
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 3
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 3
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 4
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 4
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 5
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 5
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 6
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 6
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 7
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 7
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 8
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 8
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 9
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 9
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 10
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 10
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 11
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 11
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 12
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 12
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 13
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 13
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 14
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 14
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 15
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 15
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 16
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 16
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 17
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 17
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 18
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy 18
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 19
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //Enemy19
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); //WBC 20
+            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+            attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+            attackController.setValue();
+            attackController.attacking(); // Enemy 20
+            if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+            attackController.setValue();
+
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}   
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+            wbc.setBounds(0, 0, 0, 0);
+            stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
+            }};  timer.schedule(attackEnemy, 1000);}
+            else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+             if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+             else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+             wbc.setBounds(0, 0, 0, 0);
+             stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 50);}}; timer.schedule(diedEnemy, 1000);}
+            }};  timer.schedule(attackWBC, 1000);}
+            else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+            if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+            else if(enemyPanel.getEnemy() instanceof BossEnemy){
+                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+                stgame.setEndGame("win",stgame);}
+            enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+            attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             
-            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){
-                TimerTask attackWBC = new TimerTask(){
-                    public void run(){
-                        attackController.attacking();
-                        attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
-                        attackController.setValue();
-                        
-                        if(wbc.getHPcontrol().getHP()>0){
-                            TimerTask attackEnemy = new TimerTask(){
-                                public void run(){
-                                    attackController.attacking();
-                                    attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
-                                    attackController.setValue();
-                        
-                                    if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){
-                                        TimerTask attackWBC = new TimerTask(){
-                                            public void run(){
-                                                attackController.attacking();
-                                                attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
-                                                attackController.setValue();
-                                                if(wbc.getHPcontrol().getHP()>0){
-                                                    TimerTask attackEnemy = new TimerTask(){
-                                                        public void run(){
-                                                            attackController.attacking();
-                                                            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
-                                                            attackController.setValue();
-                                                            
-                                                            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){
-                                                                TimerTask attackWBC = new TimerTask(){
-                                                                    public void run(){
-                                                                        attackController.attacking();
-                                                                        attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
-                                                                        attackController.setValue();
-                                                                        
-                                                                        if(wbc.getHPcontrol().getHP()>0){
-                                                                            TimerTask attackEnemy = new TimerTask(){
-                                                                                public void run(){
-                                                                                    attackController.attacking();
-                                                                                    attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
-                                                                                    attackController.setValue();
-                                                                                    
-                                                                                    if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){
-                                                                                        TimerTask attackWBC = new TimerTask(){
-                                                                                            public void run(){
-                                                                                                attackController.attacking();
-                                                                                                attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
-                                                                                                attackController.setValue();
-                                                                                                
-                                                                                                if(wbc.getHPcontrol().getHP()>0){
-                                                                                                    TimerTask attackEnemy = new TimerTask(){
-                                                                                                        public void run(){
-                                                                                                            attackController.attacking();
-                                                                                                            attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
-                                                                                                            attackController.setValue();
-                                                                                                            
-                                                                                                            if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){
-                                                                                                                TimerTask attackWBC = new TimerTask(){
-                                                                                                                    public void run(){
-                                                                                                                        attackController.attacking();
-                                                                                                                        attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
-                                                                                                                        attackController.setValue();
-                                                                                                                        
-                                                                                                                        if(wbc.getHPcontrol().getHP()>0){
-                                                                                                                            TimerTask attackEnemy = new TimerTask(){
-                                                                                                                                public void run(){
-                                                                                                                                    attackController.attacking();
-                                                                                                                                    attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
-                                                                                                                                    attackController.setValue();
-                                                                                                                                    
-                                                                                                                                    if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){
-                                                                                                                                        TimerTask attackWBC = new TimerTask(){
-                                                                                                                                            public void run(){
-                                                                                                                                                attackController.attacking();
-                                                                                                                                                attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
-                                                                                                                                                attackController.setValue();
-                                                                                                                                                
-                                                                                                                                                if(wbc.getHPcontrol().getHP()>0){
-                                                                                                                                                        TimerTask attackEnemy = new TimerTask(){
-                                                                                                                                                            public void run(){
-                                                                                                                                                                attackController.attacking();
-                                                                                                                                                                attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
-                                                                                                                                                                attackController.setValue();
-                                                                                                                                                            }
-                                                                                                                                                        };  timer.schedule(attackEnemy, 1000);
-                                                                                                                                                    }
-                                                                                                                                                    else{
-                                                                                                                                                        TimerTask diedEnemy = new TimerTask(){
-                                                                                                                                                            public void run(){
-                                                                                                                                                                attackController.attacking();
-                                                                                                                                                                TimerTask wait = new TimerTask(){
-                                                                                                                                                                    public void run(){
-                                                                                                                                                                        stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
-                                                                                                                                                                        if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                                                                                                        stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                                                                                                        }
-                                                                                                                                                                        else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                                                                                                            stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                                                                                                        }
-                                                                                                                                                                        wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
-                                                                                                                                                                        System.out.println("You loss");
-                                                                                                                                                                        stgame.setEndGame("loss",stgame);
-                                                                                                                                                                        attackController.setWinner();
-                                                                                                                                                                    }
-                                                                                                                                                                };  timer.schedule(wait, 1050);
-                                                                                                                                                            }
-                                                                                                                                                        }; timer.schedule(diedEnemy, 1000);
-                                                                                                                                                    }
-                                                                                                                                            }
-                                                                                                                                        };  timer.schedule(attackWBC, 1000);
-                                                                                                                                    }
-                                                                                                                                    else{
-                                                                                                                                        TimerTask diedWBC = new TimerTask(){
-                                                                                                                                            public void run(){
-                                                                                                                                                attackController.attacking();
-                                                                                                                                                TimerTask wait = new TimerTask(){
-                                                                                                                                                    public void run(){
-                                                                                                                                                        stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
-                                                                                                                                                        if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                                                                                        stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                                                                                        }
-                                                                                                                                                        else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                                                                                            stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                                                                                        }                                                                     //remove Enemy
-                                                                                                                                                        enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-                                                                                                                                                        attackController.BufferHP();
-                                                                                                                                                        System.out.println("You win");
-                                                                                                                                                        attackController.setWinner();
-                                                                                                                                                    }
-                                                                                                                                                };  timer.schedule(wait, 1050);
-                                                                                                                                            }
-                                                                                                                                        };timer.schedule(diedWBC, 1000);
-                                                                                                                                    }
-                                                                                                                                }
-                                                                                                                            };  timer.schedule(attackEnemy, 1000);
-                                                                                                                        }
-                                                                                                                        else{
-                                                                                                                            TimerTask diedEnemy = new TimerTask(){
-                                                                                                                                public void run(){
-                                                                                                                                    attackController.attacking();
-                                                                                                                                    TimerTask wait = new TimerTask(){
-                                                                                                                                        public void run(){
-                                                                                                                                            stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
-                                                                                                                                            if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                                                                            stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                                                                            }
-                                                                                                                                            else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                                                                                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                                                                            }
-                                                                                                                                            wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
-                                                                                                                                            System.out.println("You loss");
-                                                                                                                                            stgame.setEndGame("loss",stgame);
-                                                                                                                                            attackController.setWinner();
-                                                                                                                                        }
-                                                                                                                                    };  timer.schedule(wait, 1050);
-                                                                                                                                }
-                                                                                                                            }; timer.schedule(diedEnemy, 1000);
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                };  timer.schedule(attackWBC, 1000);
-                                                                                                            }
-                                                                                                            else{
-                                                                                                                TimerTask diedWBC = new TimerTask(){
-                                                                                                                    public void run(){
-                                                                                                                        attackController.attacking();
-                                                                                                                        TimerTask wait = new TimerTask(){
-                                                                                                                            public void run(){
-                                                                                                                                stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
-                                                                                                                                if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                                                                stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                                                                }
-                                                                                                                                else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                                                                    stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                                                                }                                                                     //remove Enemy
-                                                                                                                                enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-                                                                                                                                attackController.BufferHP();
-                                                                                                                                System.out.println("You win");
-                                                                                                                                attackController.setWinner();
-                                                                                                                            }
-                                                                                                                        };  timer.schedule(wait, 1050);
-                                                                                                                    }
-                                                                                                                };timer.schedule(diedWBC, 1000);
-                                                                                                            }
-                                                                                                        }
-                                                                                                    };  timer.schedule(attackEnemy, 1000);
-                                                                                                }
-                                                                                                else{
-                                                                                                    TimerTask diedEnemy = new TimerTask(){
-                                                                                                        public void run(){
-                                                                                                            attackController.attacking();
-                                                                                                            TimerTask wait = new TimerTask(){
-                                                                                                                public void run(){
-                                                                                                                    stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
-                                                                                                                    if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                                                    stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                                                    }
-                                                                                                                    else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                                                        stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                                                    }
-                                                                                                                    wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
-                                                                                                                    System.out.println("You loss");
-                                                                                                                    stgame.setEndGame("loss",stgame);
-                                                                                                                    attackController.setWinner();
-                                                                                                                }
-                                                                                                            };  timer.schedule(wait, 1050);
-                                                                                                        }
-                                                                                                    }; timer.schedule(diedEnemy, 1000);
-                                                                                                }
-                                                                                            }
-                                                                                        };  timer.schedule(attackWBC, 1000);
-                                                                                    }
-                                                                                    else{
-                                                                                        TimerTask diedWBC = new TimerTask(){
-                                                                                            public void run(){
-                                                                                                attackController.attacking();
-                                                                                                TimerTask wait = new TimerTask(){
-                                                                                                    public void run(){
-                                                                                                        stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
-                                                                                                        if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                                        stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                                        }
-                                                                                                        else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                                            stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                                        }                                                                     //remove Enemy
-                                                                                                        enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-                                                                                                        attackController.BufferHP();
-                                                                                                        System.out.println("You win");
-                                                                                                        attackController.setWinner();
-                                                                                                    }
-                                                                                                };  timer.schedule(wait, 1050);
-                                                                                            }
-                                                                                        };timer.schedule(diedWBC, 1000);
-                                                                                    }
-                                                                                }
-                                                                            };  timer.schedule(attackEnemy, 1000);
-                                                                        }
-                                                                        else{
-                                                                            TimerTask diedEnemy = new TimerTask(){
-                                                                                public void run(){
-                                                                                    attackController.attacking();
-                                                                                    TimerTask wait = new TimerTask(){
-                                                                                        public void run(){
-                                                                                            stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
-                                                                                            if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                            stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                            }
-                                                                                            else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                            }
-                                                                                            wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
-                                                                                            System.out.println("You loss");
-                                                                                            stgame.setEndGame("loss",stgame);
-                                                                                            attackController.setWinner();
-                                                                                        }
-                                                                                    };  timer.schedule(wait, 1050);
-                                                                                }
-                                                                            }; timer.schedule(diedEnemy, 1000);
-                                                                        }
-                                                                    }
-                                                                };  timer.schedule(attackWBC, 1000);
-                                                            }
-                                                            else{
-                                                                TimerTask diedWBC = new TimerTask(){
-                                                                    public void run(){
-                                                                        attackController.attacking();
-                                                                        TimerTask wait = new TimerTask(){
-                                                                            public void run(){
-                                                                                stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
-                                                                                if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                                stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                                }
-                                                                                else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                                    stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                                }                                                                     //remove Enemy
-                                                                                enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-                                                                                attackController.BufferHP();
-                                                                                System.out.println("You win");
-                                                                                attackController.setWinner();
-                                                                            }
-                                                                        };  timer.schedule(wait, 1050);
-                                                                    }
-                                                                };timer.schedule(diedWBC, 1000);
-                                                            }
-                                                        }
-                                                    };  timer.schedule(attackEnemy, 1000);
-                                                }
-                                                else{
-                                                    TimerTask diedEnemy = new TimerTask(){
-                                                        public void run(){
-                                                            attackController.attacking();
-                                                            TimerTask wait = new TimerTask(){
-                                                                public void run(){
-                                                                    stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
-                                                                    if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                                    stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                                    }
-                                                                    else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                                        stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                                    }
-                                                                    wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
-                                                                    System.out.println("You loss");
-                                                                    stgame.setEndGame("loss",stgame);
-                                                                    attackController.setWinner();
-                                                                }
-                                                            };  timer.schedule(wait, 1050);
-                                                        }
-                                                    }; timer.schedule(diedEnemy, 1000);
-                                                }
-                                            }
-                                        };  timer.schedule(attackWBC, 1000);
-                                    }
-                                    else{
-                                        TimerTask diedWBC = new TimerTask(){
-                                            public void run(){
-                                                attackController.attacking();
-                                                TimerTask wait = new TimerTask(){
-                                                    public void run(){
-                                                        stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
-                                                        if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                                        stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                                        }
-                                                        else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                            stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                                        }                                                                     //remove Enemy
-                                                        enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-                                                        attackController.BufferHP();
-                                                        System.out.println("You win");
-                                                        attackController.setWinner();
-                                                    }
-                                                };  timer.schedule(wait, 1050);
-                                            }
-                                        };timer.schedule(diedWBC, 1000);
-                                    }
-                                }
-                            };  timer.schedule(attackEnemy, 1000);
-                        }
-                        else{
-                            TimerTask diedEnemy = new TimerTask(){
-                                public void run(){
-                                    attackController.attacking();
-                                    TimerTask wait = new TimerTask(){
-                                        public void run(){
-                                            stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();                  //Turn off WBC HP bar
-                                            if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                            stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                            }
-                                            else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                                stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                            }
-                                            wbc.setBounds(0, 0, 0, 0);                                          //remove WBC
-                                            System.out.println("You loss");
-                                            stgame.setEndGame("loss",stgame);
-                                            attackController.setWinner();
-                                        }
-                                    };  timer.schedule(wait, 1050);
-                                }
-                            }; timer.schedule(diedEnemy, 1000);
-                        }
-                    }
-                };  timer.schedule(attackWBC, 1000);
-            }
-            else{
-                TimerTask diedWBC = new TimerTask(){
-                    public void run(){
-                        attackController.attacking();
-                        TimerTask wait = new TimerTask(){
-                            public void run(){
-                                stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();              //Turn off WBC HP bar
-                                if(enemyPanel.getEnemy() instanceof NormalEnemy){
-                                stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();            //Turn off Enemy HP Bar
-                                }
-                                else if(enemyPanel.getEnemy() instanceof BossEnemy){
-                                    stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();         //Turn off Boss HP Bar
-                                }                                                                     //remove Enemy
-                                enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-                                attackController.BufferHP();
-                                System.out.println("You win");
-                                attackController.setWinner();
-                            }
-                        };  timer.schedule(wait, 1050);
-                    }
-                };timer.schedule(diedWBC, 1000);
-            }
-        System.out.println("arr to del "+enemyPanel.getMustBeDeleteArr());
+//        System.out.println("arr to del "+enemyPanel.getMustBeDeleteArr());
         if(enemyPanel.getMustBeDeleteArr().size()==1){
             enemyarr.remove(0);
         }
@@ -500,53 +559,5 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 enemyarr.remove(del);
             }
         }
-    }
-    
-//    public void delEnemy(EnemyBlankPanel enemyBlankP){
-//        System.out.println("arr to del "+enemyBlankP.getMustBeDeleteArr());
-//        if(enemyBlankP.getMustBeDeleteArr().size()==1){
-//            enemyarr.remove(0);
-//        }
-//        else{
-//            for(int in=enemyBlankP.getMustBeDeleteArr().size()-1;in>=0;in--){
-//                int del=enemyBlankP.getMustBeDeleteArr().get(in);
-//                System.out.println("delete "+del);
-//                enemyarr.remove(del);
-//            }
-//        }
-//    }
-    
-    
+    }  
 }
-
-    
-
-
-/**
- * Comment Mouse Release
- */
-//WBClabel.setIcon(wbc.getCharacIcon(0));
-//        if (wbc.getWBCLabel().getBounds().intersects(bt.getEnemyArr().get(0).getBounds())){
-//              wbc.getWBCLabel().setLocation(bt.getEnemyArr().get(0).getX()-200,bt.getEnemyArr().get(0).getY());
-//              
-//            if(bt.getEnemyArr().get(0) instanceof NormalEnemy){
-//                stgame.getUplayer().getHPBarPanel().setEnemyHPBar();
-//                stgame.getUplayer().getHPBarPanel().setWBCHPBar();
-//            }
-//            else if(bt.getEnemyArr().get(0) instanceof BossEnemy){
-//                stgame.getUplayer().getHPBarPanel();
-//                stgame.getUplayer().getHPBarPanel().setWBCHPBar();
-//            }
-//            
-//            if(win instanceof WBC){
-//                System.out.println("winnnn");
-//                bt.getEnemyArr().get(0).setVisible(false);
-//                bt.removeEnemy(0);
-//                System.out.println(bt.getEnemyArr());
-//            }
-//            else{
-//                System.out.print("lose");
-//            }
-//                wbc.setImgCorner(bt.getEnemyArr().get(0).getX()-200,bt.getEnemyArr().get(0).getY());
-//                
-//        }
