@@ -89,9 +89,16 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
     }
     
     public void fight(EnemyBlankPanel enemyPanel){
+        if(enemyPanel.getEnemy() instanceof BossEnemy){
+            wbc.getWBCPanel().setLocation(enemyPanel.getX()-250,enemyPanel.getY()-450);
+            x=enemyPanel.getX()-250;
+            y=enemyPanel.getY()-450;
+        }
+        else{
             wbc.getWBCPanel().setLocation(enemyPanel.getX()-250,enemyPanel.getY());
             x=enemyPanel.getX()-250;
             y=enemyPanel.getY();
+        }
             wbc.setXforBoostSpeed(x);
             wbc.setYforBoostSpeed(y);
             wbc.getWBCLabel().setIcon(wbc.getCharacIcon(2));

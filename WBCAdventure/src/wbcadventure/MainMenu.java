@@ -9,7 +9,8 @@ public class MainMenu extends JFrame {
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private JLayeredPane layerPane = new JLayeredPane();
     public MainMenu(){
-        this.setSize(new Dimension(1920,1080));
+        this.setSize(1920,1080);
+//        this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);

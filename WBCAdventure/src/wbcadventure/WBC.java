@@ -27,7 +27,7 @@ public class WBC extends Character{
     private JLabel skillEffect = new JLabel();
     
     public WBC(){
-        super(new HPcontroller(1500),(int)(1500*.39));
+        super(new HPcontroller(150),(int)(150*.39));
         this.setBorder(border);
         this.skillBar = skillBar;
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCHappyForever.gif"));

@@ -55,4 +55,11 @@ public class EnemyBlankPanel extends JPanel{
     public Enemy getEnemy(){
         return enemyOnPanel;
     }
+    
+    public String toString(){
+        if(enemyOnPanel!=null)
+            return "HP : "+enemyOnPanel.getHPcontrol().getMaxHP();
+        else
+            return null;
+    }
 }

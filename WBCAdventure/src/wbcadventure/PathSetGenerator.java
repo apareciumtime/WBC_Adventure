@@ -50,7 +50,7 @@ public class PathSetGenerator {
      * @param type : 0 is start square,1 is boss square
      * @return 
      */
-    public JPanel generateSquare(int x,int y,int xlocate,int ylocate,int type,int door,BossEnemy bos){
+    public JPanel generateSquare(int x,int y,int xlocate,int ylocate,int type,int door,EnemyBlankPanel bos){
         System.out.println("gen Square at "+xlocate+","+ylocate);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(xlocate+150*x,ylocate+150*y);
@@ -60,11 +60,9 @@ public class PathSetGenerator {
         }
         if(x==7 && y==3){
             EnemyBlankPanel boss=new EnemyBlankPanel(PathType.SQUARE,true,new ArrayList<>());
-            this.setUp(boss);
-            boss.setBounds(xlocate+150,ylocate-350,900,750);
-            boss.addEnemy(bos);
-            pathGenObj.getPathLayerPane().add(boss,Integer.valueOf(90));
-            //battleObj.getEnemyArr().add(bos);
+            this.setUp(bos);
+            bos.setBounds(xlocate+150,ylocate-350,900,750);
+            pathGenObj.getPathLayerPane().add(bos,Integer.valueOf(90));
         }
         JPanel square=new JPanel();
         setUp(square);
@@ -252,22 +250,18 @@ public class PathSetGenerator {
         for(int j=1;j<=i;j++){
             JLabel paraUp=new JLabel();
             this.addPathIconPlain(narFork,paraUp,0,150*j,0);
-            beChoice=(j==1)?true:false;
+            beChoice=true;
             ArrayList<Integer> arrNum=new ArrayList<>();
             arrNum.add(0);
-            if(j!=5){
-                arrNum.add(1);
-                if(i==5 && j==3){
-                    arrNum.add(2);
-                }
-            }
-            if((j-1)%4==0){
+            arrNum.add(1);
+            
+            if(j==2){
                 EnemyBlankPanel enemyDownPanel=new EnemyBlankPanel(p,beChoice,arrNum);
                 this.setUp(enemyDownPanel);
                 enemyDownPanel.setBounds(xlocate+150*j,ylocate+100-55,150,200);
                 pathGenObj.addEnemyCoordinate(enemyDownPanel);
             }
-            else if((j-3)%4==0){
+            else if(j==4){
                 EnemyBlankPanel enemyUpPanel=new EnemyBlankPanel(p,beChoice,arrNum);
                 this.setUp(enemyUpPanel);
                 enemyUpPanel.setBounds(xlocate+150*j,ylocate-50-55,150,200);

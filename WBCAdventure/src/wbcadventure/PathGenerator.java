@@ -32,6 +32,7 @@ public class PathGenerator {
     private int xDes;
     private WBC wbc;
     private BossEnemy boss;
+    private EnemyBlankPanel bossArea=new EnemyBlankPanel(PathType.SQUARE,false,new ArrayList<>());
     public PathGenerator(JPanel big){
         path=new JLayeredPane();
         path.setBounds(x, y,1000000000,1080);
@@ -41,6 +42,7 @@ public class PathGenerator {
         battleObj=(Battle)big;
         wbc=battleObj.getWBC();
         boss=battleObj.getBoss();
+       
     }
     
     /**
@@ -136,7 +138,7 @@ public class PathGenerator {
             prevPathGen=nextPathGen;
             prevPathSet=nextPathSet;
 
-            if(bossHP/(cntLayer+1)<bossHP/15){
+            if(bossHP/(cntLayer+1)<1000){
                 System.out.println("Stoppppp------------------------------");
                 switch(prevPathGen.getType()){
                     case WIDE_FORK :
@@ -174,6 +176,7 @@ public class PathGenerator {
                                     path.add(nextPathSet,Integer.valueOf(cntLayer));  cntLayer++;
                                     prevPathGen=nextPathGen;
                                     prevPathSet=nextPathSet;
+                                    
                                     whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(2).getX();
                                     whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(2).getY();
                                 }
@@ -235,6 +238,7 @@ public class PathGenerator {
                                     path.add(nextPathSet,Integer.valueOf(cntLayer));  cntLayer++;
                                     prevPathGen=nextPathGen;
                                     prevPathSet=nextPathSet;
+                                    
                                     whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(2).getX();
                                     whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(2).getY();
                                 }
@@ -369,6 +373,7 @@ public class PathGenerator {
                                     path.add(nextPathSet,Integer.valueOf(cntLayer));  cntLayer++;
                                     prevPathGen=nextPathGen;
                                     prevPathSet=nextPathSet;
+                                    
                                     whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(2).getX();
                                     whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(2).getY();
                                 }
@@ -456,7 +461,8 @@ public class PathGenerator {
                 whereCanBeNextX=(int)prevPathSet.getX()+150;
                 whereCanBeNextY=(int)prevPathSet.getY()-150;
                 nextPathGen=new PathSetGenerator(PathType.SQUARE,battleObj,this);
-                nextPathSet=nextPathGen.generateSquare(7,3,whereCanBeNextX,whereCanBeNextY,1,2,boss); 
+                bossArea.addEnemy(boss);
+                nextPathSet=nextPathGen.generateSquare(7,3,whereCanBeNextX,whereCanBeNextY,1,2,bossArea); 
                 path.add(nextPathSet,Integer.valueOf(cntLayer+15));
                 xDes=nextPathSet.getX();
                 break;
@@ -465,6 +471,7 @@ public class PathGenerator {
         }
         path.add(allEnemyCoordinatePanel,Integer.valueOf(cntLayer+1));
         battleObj.getLayerPane().add(path,Integer.valueOf(0));
+        
         for(JPanel pa:enemyCoordinatePanelSet){
             pa.setBorder(border);
         }
@@ -483,11 +490,11 @@ public class PathGenerator {
                         battleObj.getStGame().setEndGame("lose",battleObj.getStGame());
                         break;
                     }
-                    if(wbc.getXforBoostSpeed()+x>700){
+                    if(wbc.getXforBoostSpeed()+x>500){
                         x-=8;
                         path.setLocation(x,y);
                     }
-                    else if(wbc.getXforBoostSpeed()+x<=700){
+                    else if(wbc.getXforBoostSpeed()+x<=500){
                         x-=2;
                         path.setLocation(x,y);
                     }
@@ -498,14 +505,21 @@ public class PathGenerator {
                     for(int j=0;j<enemyCoordinatePanelSet.size();j++){
                         if(enemyCoordinatePanelSet.get(j)!=null){
                             if(enemyCoordinatePanelSet.get(j).getX()+x<=1920){
-                                NormalEnemy enemy=new NormalEnemy(battleObj.getWBC());
-                                setUp(enemy);
-                                enemyCoordinatePanelSet.get(j).addEnemy(enemy);
-                                enemyPanelArrayList.add(enemyCoordinatePanelSet.get(j));
-                                //System.out.println(enemyCoordinatePanelSet.get(j).getMustBeDeleteArr());
-                                enemyCoordinatePanelSet.set(j,null);
+                            NormalEnemy enemy=new NormalEnemy(battleObj.getWBC());
+                            setUp(enemy);
+                            enemyCoordinatePanelSet.get(j).addEnemy(enemy);
+                            enemyPanelArrayList.add(enemyCoordinatePanelSet.get(j));
+                            System.out.println(enemyCoordinatePanelSet);
+                            enemyCoordinatePanelSet.set(j,null);
                             }
                         }
+                    }
+                    boolean nearBoss=true;
+                    for(int j=0;j<enemyCoordinatePanelSet.size();j++){
+                        if(enemyCoordinatePanelSet.get(j)!=null) nearBoss=false;
+                    }
+                    if(nearBoss){
+                        enemyPanelArrayList.add(bossArea);
                     }
                     try {
                         sleep(50);
@@ -571,4 +585,8 @@ public class PathGenerator {
     public JLayeredPane getPathLayerPane(){
         return path;
     }
+    
+   
+    
+    
 }
