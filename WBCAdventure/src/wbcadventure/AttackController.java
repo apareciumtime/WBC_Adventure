@@ -35,11 +35,11 @@ public class AttackController {
     public void attacking(){
         
         if(attacker instanceof WBC){
-//            System.out.println("I am WBC");
-//            System.out.println("forward");
+            System.out.print("PowerDefault = " + attacker.getPowerDefault() + " + " + attacker.getPowerDefault()*.1);
+            attacker.setPowerDefault((int)(attacker.getPowerDefault() + attacker.getPowerDefault()*.1));
+            System.out.println(" = " + attacker.getPowerDefault());
             TimerTask forwardWBC = new TimerTask(){
                 public void run(){
-//                    System.out.println("attack");
                     attacker.setLocation(attacker.getX()+120, attacker.getY());
                     uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
                     uplayer.getHPBarPanel().getHPBarBoss().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
@@ -50,7 +50,6 @@ public class AttackController {
                     
                     TimerTask attackWBC = new TimerTask(){
                         public void run(){
-//                            System.out.println("backward");
                             attacker.setLocation(attacker.getX()-120, attacker.getY());                            
                         }
                     };timer.schedule(attackWBC, 500);
@@ -58,11 +57,8 @@ public class AttackController {
             }; timer.schedule(forwardWBC, 500);
         }
         else if(attacker instanceof Enemy){
-//            System.out.println("I am Enemy");
-//            System.out.println("forward");
             TimerTask forwardEnemy = new TimerTask(){
                 public void run(){
-//                    System.out.println("attack");
                     attacker.setLocation(attacker.getX()-120, attacker.getY());
                     uplayer.getHPBarPanel().getHPBarWBC().setValue(receiver.getHPcontrol().getHP());
                     uplayer.getHPBarPanel().getHPBarWBC().setString(""+receiver.getHPcontrol().getHP());
@@ -70,7 +66,6 @@ public class AttackController {
                     
                     TimerTask attackEnemy = new TimerTask(){
                         public void run(){
-//                            System.out.println("backward");
                             attacker.setLocation(attacker.getX()+120, attacker.getY());
                         }
                     };timer.schedule(attackEnemy, 500);
