@@ -33,11 +33,7 @@ public class AttackController {
     }
     
     public void attacking(){
-        
         if(attacker instanceof WBC){
-            System.out.print("PowerDefault = " + attacker.getPowerDefault() + " + " + attacker.getPowerDefault()*.1);
-            attacker.setPowerDefault((int)(attacker.getPowerDefault() + attacker.getPowerDefault()*.1));
-            System.out.println(" = " + attacker.getPowerDefault());
             TimerTask forwardWBC = new TimerTask(){
                 public void run(){
                     attacker.setLocation(attacker.getX()+120, attacker.getY());

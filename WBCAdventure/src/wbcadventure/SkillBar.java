@@ -17,10 +17,10 @@ public class SkillBar extends JPanel{
     
     private WBC wbc;
     
-    private Skill skill1 = new Skill(0,100,1000,2000);
-    private Skill skill2 = new Skill(1,3500,1000,5000);
-    private Skill skill3 = new Skill(2,5000,1000,15000);
-    private Skill skill4 = new Skill(3,10000,1000,50000);
+    private Skill skill1 = new Skill(0,100,2000,2000);
+    private Skill skill2 = new Skill(1,2000,2000,5000);
+    private Skill skill3 = new Skill(2,5000,2000,15000);
+    private Skill skill4 = new Skill(3,10000,2000,50000);
     
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
 
@@ -66,43 +66,63 @@ public class SkillBar extends JPanel{
      * @param healthPointMax : The currently maximum of Health Point of White Blood Cell character 
      */
     public void setSkillEnable(int healthPointMax){
-        if(healthPointMax >= 5000){
-            setSkillPending(3);
-            setSkillPending(2);
-            setSkillPending(1);
-            setSkillPending(0);
-            skill1.setEnable(true);
-            skill1.setCanUse(true);
-            skill2.setEnable(true);
-            skill2.setCanUse(true);
-            skill3.setEnable(true);
-            skill3.setCanUse(true);
-            skill4.setEnable(true);
-            skill4.setCanUse(true);
+        if(healthPointMax >= 50000){
+            if(skill1.getEnable() == false){
+                setSkillPending(0);
+                skill1.setEnable(true);
+                skill1.setCanUse(true);
+            }
+            if(skill2.getEnable() == false){
+                setSkillPending(1);
+                skill2.setEnable(true);
+                skill2.setCanUse(true);
+            }
+            if(skill3.getEnable() == false){
+                setSkillPending(2);
+                skill3.setEnable(true);
+                skill3.setCanUse(true);
+            }
+            if(skill4.getEnable() == false){
+                setSkillPending(3);
+                skill4.setEnable(true);
+                skill4.setCanUse(true);
+            }
         }
-        else if(healthPointMax >= 3000){
-            setSkillPending(2);
-            setSkillPending(1);
-            setSkillPending(0);
-            skill1.setEnable(true);
-            skill1.setCanUse(true);
-            skill2.setEnable(true);
-            skill2.setCanUse(true);
-            skill3.setEnable(true);
-            skill3.setCanUse(true);
+        else if(healthPointMax >= 10000){
+            if(skill1.getEnable() == false){
+                setSkillPending(0);
+                skill1.setEnable(true);
+                skill1.setCanUse(true);
+            }
+            if(skill2.getEnable() == false){
+                setSkillPending(1);
+                skill2.setEnable(true);
+                skill2.setCanUse(true);
+            }
+            if(skill3.getEnable() == false){
+                setSkillPending(2);
+                skill3.setEnable(true);
+                skill3.setCanUse(true);
+            }
         }
-        else if(healthPointMax >=  1400){
-            setSkillPending(1);
-            setSkillPending(0);
-            skill1.setEnable(true);
-            skill1.setCanUse(true);
-            skill2.setEnable(true);
-            skill2.setCanUse(true);
+        else if(healthPointMax >=  2000){
+            if(skill1.getEnable() == false){
+                setSkillPending(0);
+                skill1.setEnable(true);
+                skill1.setCanUse(true);
+            }
+            if(skill2.getEnable() == false){
+                setSkillPending(1);
+                skill2.setEnable(true);
+                skill2.setCanUse(true);
+            }
         }
-        else if(healthPointMax >=  600){
-            setSkillPending(0);
-            skill1.setEnable(true);
-            skill1.setCanUse(true);
+        else if(healthPointMax >=  500){
+            if(skill1.getEnable() == false){
+                setSkillPending(0);
+                skill1.setEnable(true);
+                skill1.setCanUse(true);
+            }
         }
     }
     

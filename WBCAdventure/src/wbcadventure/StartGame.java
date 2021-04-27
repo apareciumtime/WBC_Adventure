@@ -80,7 +80,7 @@ public class StartGame extends JFrame{
         this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setUndecorated(true);            //FullScreen
+//        this.setUndecorated(true);            //FullScreen
         this.setLayout(null);  
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
@@ -93,132 +93,95 @@ public class StartGame extends JFrame{
         this.addKeyListener(new KeyAdapter(){
             @Override
             public void keyTyped(KeyEvent e) {
-                switch(e.getKeyChar()){
-                    /**
-                     *  Type Q key to use Skill 1
-                     */
-                    case'q' :
-                        TimerTask durationSkill1 = new TimerTask(){
+                /*Type 'q' key to use Skill 1*/
+                if(e.getKeyChar() == 'q' || e.getKeyChar() == 'Q' || e.getKeyChar() == 'ๆ' || e.getKeyChar() == '๐'){
+                    if(uplayer.getSkillBarPanel().getSkill(0).getEnable() && uplayer.getSkillBarPanel().getSkill(0).getCanUse()){
+                        uplayer.getSkillBarPanel().setSkillDuration(0);
+                        uplayer.getSkillBarPanel().getSkill(0).setCanUse(false);
+                        battle.getWBC().useSkill(0);
+                        TimerTask cooldownSkill1 = new TimerTask(){
                             public void run() {
-                                if(uplayer.getSkillBarPanel().getSkill(0).getEnable() && uplayer.getSkillBarPanel().getSkill(0).getCanUse()){
-                                    battle.getWBC().useSkill(0);
-                                    uplayer.getSkillBarPanel().setSkillDuration(0);
-                                    uplayer.getSkillBarPanel().getSkill(0).setCanUse(false);
-                                    TimerTask cooldownSkill1 = new TimerTask(){
-                                        public void run() {
-                                            battle.getWBC().setVisibleFalse();
-                                            if(uplayer.getSkillBarPanel().getSkill(0).getEnable() && !uplayer.getSkillBarPanel().getSkill(0).getCanUse()){
-                                                uplayer.getSkillBarPanel().setSkillCooldown(0);
-                                                
-                                                TimerTask pendingSkill1 = new TimerTask(){
-                                                    public void run(){
-                                                        if(uplayer.getSkillBarPanel().getSkill(0).getEnable() && !uplayer.getSkillBarPanel().getSkill(0).getCanUse()){
-                                                            uplayer.getSkillBarPanel().setSkillPending(0);
-                                                            uplayer.getSkillBarPanel().getSkill(0).setCanUse(true);
-                                                        }
-                                                    }
-                                                };  timer.schedule(pendingSkill1,uplayer.getSkillBarPanel().getSkill(0).getDuration() + uplayer.getSkillBarPanel().getSkill(0).getCooldown());
-                                            }
+                                if(uplayer.getSkillBarPanel().getSkill(0).getEnable() && !uplayer.getSkillBarPanel().getSkill(0).getCanUse()){
+                                    uplayer.getSkillBarPanel().setSkillCooldown(0);
+                                    battle.getWBC().setVisibleFalse();
+                                    TimerTask pendingSkill1 = new TimerTask(){
+                                        public void run(){
+                                            uplayer.getSkillBarPanel().getSkill(0).setCanUse(true);
+                                            uplayer.getSkillBarPanel().setSkillPending(0);
                                         }
-                                    };  timer.schedule(cooldownSkill1, uplayer.getSkillBarPanel().getSkill(0).getDuration());
+                                    }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(0).getCooldown()); 
                                 }
                             }
-                        };  timer.schedule(durationSkill1, 0);
-                        break;
-                    /**
-                     * Type W key to use Skill 2
-                     */
-                    case 'w' :
-                        TimerTask durationSkill2 = new TimerTask(){
-                            public void run() {
-                                if(uplayer.getSkillBarPanel().getSkill(1).getEnable() && uplayer.getSkillBarPanel().getSkill(1).getCanUse()){
-                                    battle.getWBC().useSkill(1);
-                                    uplayer.getSkillBarPanel().setSkillDuration(1);
-                                    uplayer.getSkillBarPanel().getSkill(1).setCanUse(false);
-                                    TimerTask cooldownSkill2 = new TimerTask(){
-                                        public void run() {
-                                            battle.getWBC().setVisibleFalse();
-                                            if(uplayer.getSkillBarPanel().getSkill(1).getEnable() && !uplayer.getSkillBarPanel().getSkill(1).getCanUse()){
-                                                uplayer.getSkillBarPanel().setSkillCooldown(1);
-                                                    
-                                                TimerTask pendingSkill2 = new TimerTask(){
-                                                    public void run(){
-                                                        if(uplayer.getSkillBarPanel().getSkill(1).getEnable() && !uplayer.getSkillBarPanel().getSkill(1).getCanUse()){
-                                                            uplayer.getSkillBarPanel().setSkillPending(1);
-                                                            uplayer.getSkillBarPanel().getSkill(1).setCanUse(true);
-                                                        }
-                                                    }
-                                                };  timer.schedule(pendingSkill2, uplayer.getSkillBarPanel().getSkill(1).getDuration()+uplayer.getSkillBarPanel().getSkill(1).getCooldown());
-                                            }
-                                        }
-                                    };  timer.schedule(cooldownSkill2, uplayer.getSkillBarPanel().getSkill(1).getDuration());
-                                }
-                            }
-                        };  timer.schedule(durationSkill2, 0);
-                        break;
-                    /**
-                     * Type E key to use Skill 3
-                     */    
-                    case 'e' :
-                        TimerTask durationSkill3 = new TimerTask(){
-                            public void run() {
-                                if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
-                                    battle.getWBC().useSkill(2);
-                                    uplayer.getSkillBarPanel().setSkillDuration(2);
-                                    uplayer.getSkillBarPanel().getSkill(2).setCanUse(false);
-                                    TimerTask cooldownSkill3 = new TimerTask(){
-                                        public void run() {
-                                            battle.getWBC().setVisibleFalse();
-                                            if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && !uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
-                                                uplayer.getSkillBarPanel().setSkillCooldown(2);
-                                                TimerTask pendingSkill3 = new TimerTask(){
-                                                    public void run(){
-                                                        if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && !uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
-                                                            uplayer.getSkillBarPanel().setSkillPending(2);
-                                                            uplayer.getSkillBarPanel().getSkill(2).setCanUse(true);
-                                                        }
-                                                    }
-                                                };  timer.schedule(pendingSkill3, uplayer.getSkillBarPanel().getSkill(2).getDuration()+uplayer.getSkillBarPanel().getSkill(2).getCooldown());
-                                            }
-                                        }
-                                    };  timer.schedule(cooldownSkill3, uplayer.getSkillBarPanel().getSkill(2).getDuration());
-                                }  
-                            }
-                        };  timer.schedule(durationSkill3, 0);
-                        break;
-                    /**
-                     * Type R key to use Skill 4
-                     */    
-                    case 'r' :
-                        TimerTask durationSkill4 = new TimerTask(){
-                            public void run() {
-                                if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
-                                    battle.getWBC().useSkill(3);
-                                    uplayer.getSkillBarPanel().setSkillDuration(3);
-                                    uplayer.getSkillBarPanel().getSkill(3).setCanUse(false);
-                                    TimerTask cooldownSkill4 = new TimerTask(){
-                                        public void run() {
-                                            battle.getWBC().setVisibleFalse();
-                                            if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && !uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
-                                                uplayer.getSkillBarPanel().setSkillCooldown(3);
-                                                TimerTask pendingSkill4 = new TimerTask(){
-                                                    public void run(){
-                                                        if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && !uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
-                                                            uplayer.getSkillBarPanel().setSkillPending(3);
-                                                            uplayer.getSkillBarPanel().getSkill(3).setCanUse(true);
-                                                        }
-                                                    }
-                                                };  timer.schedule(pendingSkill4, uplayer.getSkillBarPanel().getSkill(3).getDuration()+uplayer.getSkillBarPanel().getSkill(3).getCooldown());
-                                            }
-                                        }
-                                    };  timer.schedule(cooldownSkill4, uplayer.getSkillBarPanel().getSkill(3).getDuration());
-                                }   
-                            }
-                        };  timer.schedule(durationSkill4, 0);
-                        break;
+                        };  timer.schedule(cooldownSkill1, uplayer.getSkillBarPanel().getSkill(0).getDuration());
                     }
                 }
-
+                /*Type 'w' key to use Skill 2*/
+                else if(e.getKeyChar() == 'w' || e.getKeyChar() == 'W' || e.getKeyChar() == 'ไ' || e.getKeyChar() == '"'){
+                    if(uplayer.getSkillBarPanel().getSkill(1).getEnable() && uplayer.getSkillBarPanel().getSkill(1).getCanUse()){
+                        uplayer.getSkillBarPanel().setSkillDuration(1);
+                        uplayer.getSkillBarPanel().getSkill(1).setCanUse(false);
+                        battle.getWBC().useSkill(1);
+                        TimerTask cooldownSkill1 = new TimerTask(){
+                            public void run() {
+                                if(uplayer.getSkillBarPanel().getSkill(1).getEnable() && !uplayer.getSkillBarPanel().getSkill(1).getCanUse()){
+                                    uplayer.getSkillBarPanel().setSkillCooldown(1);
+                                    battle.getWBC().setVisibleFalse();
+                                    TimerTask pendingSkill1 = new TimerTask(){
+                                        public void run(){
+                                            uplayer.getSkillBarPanel().getSkill(1).setCanUse(true);
+                                            uplayer.getSkillBarPanel().setSkillPending(1);
+                                        }
+                                    }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(1).getCooldown()); 
+                                }
+                            }
+                        };  timer.schedule(cooldownSkill1, uplayer.getSkillBarPanel().getSkill(1).getDuration());
+                    }
+                }
+                /*Type 'e' key to use Skill 3*/
+                else if(e.getKeyChar() == 'e' || e.getKeyChar() == 'E' || e.getKeyChar() == 'ำ' || e.getKeyChar() == 'ฎ'){
+                    if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
+                        uplayer.getSkillBarPanel().setSkillDuration(2);
+                        uplayer.getSkillBarPanel().getSkill(2).setCanUse(false);
+                        battle.getWBC().useSkill(2);
+                        TimerTask cooldownSkill1 = new TimerTask(){
+                            public void run() {
+                                if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && !uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
+                                    uplayer.getSkillBarPanel().setSkillCooldown(2);
+                                    battle.getWBC().setVisibleFalse();
+                                    TimerTask pendingSkill1 = new TimerTask(){
+                                        public void run(){
+                                            uplayer.getSkillBarPanel().getSkill(2).setCanUse(true);
+                                            uplayer.getSkillBarPanel().setSkillPending(2);
+                                        }
+                                    }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(2).getCooldown()); 
+                                }
+                            }
+                        };  timer.schedule(cooldownSkill1, uplayer.getSkillBarPanel().getSkill(2).getDuration());
+                    }
+                }
+                else if(e.getKeyChar() == 'r' || e.getKeyChar() == 'R' || e.getKeyChar() == 'พ' || e.getKeyChar() == 'ฑ'){
+                    if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
+                        uplayer.getSkillBarPanel().setSkillDuration(3);
+                        uplayer.getSkillBarPanel().getSkill(3).setCanUse(false);
+                        battle.getWBC().useSkill(3);
+                        TimerTask cooldownSkill1 = new TimerTask(){
+                            public void run() {
+                                if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && !uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
+                                    uplayer.getSkillBarPanel().setSkillCooldown(3);
+                                    battle.getWBC().setVisibleFalse();
+                                    TimerTask pendingSkill1 = new TimerTask(){
+                                        public void run(){
+                                            uplayer.getSkillBarPanel().getSkill(3).setCanUse(true);
+                                            uplayer.getSkillBarPanel().setSkillPending(3);
+                                        }
+                                    }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(3).getCooldown()); 
+                                }
+                            }
+                        };  timer.schedule(cooldownSkill1, uplayer.getSkillBarPanel().getSkill(3).getDuration());
+                    }
+                }
+            }
+            
             @Override
             public void keyPressed(KeyEvent e) {
                 //System.out.println(e.getKeyChar());
