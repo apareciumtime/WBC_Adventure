@@ -9,7 +9,6 @@ public class NormalEnemy extends Enemy {
     private static int nextCnt=0;
     private int cnt;
     private int characIcon;
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     public NormalEnemy(WBC wbc){
         super(wbc);
         

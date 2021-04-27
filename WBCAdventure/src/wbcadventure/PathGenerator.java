@@ -28,7 +28,6 @@ public class PathGenerator {
     private Battle battleObj;
     private ArrayList<EnemyBlankPanel> enemyCoordinatePanelSet=new ArrayList<>();
     private ArrayList<EnemyBlankPanel> enemyPanelArrayList=new ArrayList<>();
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private int xDes;
     private WBC wbc;
     private BossEnemy boss;
@@ -471,9 +470,6 @@ public class PathGenerator {
         }
         path.add(allEnemyCoordinatePanel,Integer.valueOf(cntLayer+16));
         battleObj.getLayerPane().add(path,Integer.valueOf(0));
-        for(JPanel pa:enemyCoordinatePanelSet){
-            pa.setBorder(border);
-        }
     }
     
     /**
@@ -531,25 +527,23 @@ public class PathGenerator {
     }
     
     /**
-     * set everything for JLabel (setOpaque false , setLayout null , setVisible true , setBorder)
+     * set everything for JLabel (setOpaque false , setLayout null , setVisible true)
      * @param pa 
      */
     public void setUp(JPanel pa){
         pa.setOpaque(false);
         pa.setLayout(null);
         pa.setVisible(true);
-        pa.setBorder(border);
     }
     
     /**
-     * set everything for JLayeredPane (setOpaque false , setLayout null , setVisible true , setBorder)
+     * set everything for JLayeredPane (setOpaque false , setLayout null , setVisible true)
      * @param pa 
      */
     public void setUp(JLayeredPane pa){
         pa.setOpaque(false);
         pa.setLayout(null);
         pa.setVisible(true);
-        pa.setBorder(border);
     }
     
     /**

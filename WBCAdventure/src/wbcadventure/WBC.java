@@ -12,7 +12,6 @@ import javax.swing.JComponent;
 import javax.swing.*;
 import javax.swing.border.Border;
 public class WBC extends Character{
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private ArrayList<Skill> skillArr=new ArrayList<>();
     private final int wbc_width;
     private final int wbc_height;
@@ -28,7 +27,6 @@ public class WBC extends Character{
     
     public WBC(){
         super(new HPcontroller(150),(int)(150*.39));
-        this.setBorder(border);
         this.skillBar = skillBar;
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCHappyForever.gif"));
         super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCAngryStep1.png"));

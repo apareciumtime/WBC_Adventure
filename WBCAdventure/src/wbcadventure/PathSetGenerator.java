@@ -26,8 +26,6 @@ public class PathSetGenerator {
     //เอาตัวจาก class PathGenerator มาใช้ด้วย
     private PathGenerator pathGenObj;
     
-    //กรอบ
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     
     //Enum ชนิดของทาง
     public enum PathType{
@@ -403,7 +401,6 @@ public class PathSetGenerator {
         lab.setOpaque(false);
         lab.setLayout(null);
         lab.setVisible(true);
-//        lab.setBorder(border);
         lab.setBounds(0,0,150,150);
     }
     
@@ -415,7 +412,6 @@ public class PathSetGenerator {
         pa.setOpaque(false);
         pa.setLayout(null);
         pa.setVisible(true);
-//        pa.setBorder(border);
     }
     
     /**

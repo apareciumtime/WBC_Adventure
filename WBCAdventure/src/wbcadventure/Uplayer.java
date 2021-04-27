@@ -18,7 +18,6 @@ public class Uplayer extends JPanel{
     private JPanel powerBar;
     PowerBar wbcPowerBar;
     PowerBar anotherPowerBar;
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     
     /**
      * Constructor create The Up-layer Panel

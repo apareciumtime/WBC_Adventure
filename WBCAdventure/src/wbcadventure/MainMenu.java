@@ -6,7 +6,6 @@ import javax.swing.*;
 import static javax.swing.SwingConstants.SOUTH;
 import javax.swing.border.Border;
 public class MainMenu extends JFrame {
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private JLayeredPane layerPane = new JLayeredPane();
     public MainMenu(){
         this.setSize(1920,1080);
@@ -49,7 +48,6 @@ public class MainMenu extends JFrame {
     
     public void setBackground(){
         JPanel bgPanel=new JPanel();
-        bgPanel.setBorder(border);
         bgPanel.setBounds(0,0,1920,1080);
         bgPanel.setOpaque(true);
         bgPanel.setLayout(null);

@@ -12,8 +12,6 @@ public class ProgressBar extends JPanel{
     
     private JLayeredPane layer = new JLayeredPane();
     
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
-    
     private WBC wbcCharacter;
     private JLabel wbcHPBarLabel        = new JLabel();
     private JLabel wbcProgressBarLabel  = new JLabel();

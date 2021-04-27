@@ -33,10 +33,6 @@ import javax.swing.ImageIcon;
 import static javax.swing.SwingConstants.SOUTH;
 import javax.swing.border.Border;
 public class StartGame extends JFrame{
-    /**
-     * Border Set
-     */
-    private Border border = BorderFactory.createLineBorder(Color.gray,4);
     
     /**
      * JLayeredPane Set
@@ -254,7 +250,6 @@ public class StartGame extends JFrame{
          * LayeredPane Setting
          */
         layerPane.add(backgroundPanel, Integer.valueOf(0));
-        layerPane.setBorder(border);
     }
     
     

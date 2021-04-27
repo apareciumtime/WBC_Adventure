@@ -17,17 +17,12 @@ public class PowerBar extends JPanel{
     private JLabel powerlab;
     private JLabel powerNumLab;
     private JPanel powerNumPa;
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
+
     public PowerBar(String t,int p){
         type=t;
         power=p;
         layer=new JLayeredPane();
-//        if(type.equals("WBC")){
-//            this.setBounds(742,850,530,150);
-//        }
-//        else{
-//            this.setBounds(1300,850,530,150);
-//        }
+        
         this.setVisible(true);
         this.setOpaque(false);
         this.setLayout(null);
@@ -43,7 +38,6 @@ public class PowerBar extends JPanel{
         powerlab.setBounds(0,0,530,150);
         powerlab.setVisible(true);
         powerlab.setOpaque(false);
-        powerlab.setBorder(border);
         
         powerpa=new JPanel();
         powerpa.setBounds(0,0,530,150);

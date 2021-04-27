@@ -16,8 +16,7 @@ import javax.swing.border.Border;
 import wbcadventure.MainMenu.Buttons;
 import wbcadventure.PathSetGenerator.PathType;
 public class Battle extends JPanel{
-    
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
+
     private WBC wbc = new WBC();
     BossEnemy boss=new BossEnemy(wbc);
     private JLayeredPane layerPane = new JLayeredPane();

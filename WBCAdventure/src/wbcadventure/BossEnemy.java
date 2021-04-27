@@ -5,7 +5,6 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 public class BossEnemy extends Enemy {
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     public BossEnemy(WBC wbc){
         super(wbc);
         
