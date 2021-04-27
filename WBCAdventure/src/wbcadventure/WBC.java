@@ -133,7 +133,7 @@ public class WBC extends Character{
     public void setVisibleFalse(){
         skillEffect.setBounds(0, 0, 0, 0);
         skillEffect.setVisible(false);
-        this.setPowerDefault(powerSkill);
+        this.setPowerDefault(this.getPowerDefault() - powerSkill);
     }
     
     public JLabel getSkillEffect(){
