@@ -62,7 +62,7 @@ public class PathSetGenerator {
             EnemyBlankPanel boss=new EnemyBlankPanel(PathType.SQUARE,true,new ArrayList<>());
             this.setUp(bos);
             bos.setBounds(xlocate+150,ylocate-350,900,750);
-            pathGenObj.getPathLayerPane().add(bos,Integer.valueOf(90));
+            pathGenObj.getAllEnemyCooPanel().add(bos);
         }
         JPanel square=new JPanel();
         setUp(square);

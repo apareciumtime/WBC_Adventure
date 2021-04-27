@@ -469,9 +469,8 @@ public class PathGenerator {
             }
             cntLayer++;
         }
-        path.add(allEnemyCoordinatePanel,Integer.valueOf(cntLayer+1));
+        path.add(allEnemyCoordinatePanel,Integer.valueOf(cntLayer+16));
         battleObj.getLayerPane().add(path,Integer.valueOf(0));
-        
         for(JPanel pa:enemyCoordinatePanelSet){
             pa.setBorder(border);
         }

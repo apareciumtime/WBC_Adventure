@@ -25,6 +25,7 @@ public class WBC extends Character{
     private int powerSkill;
     private SkillBar skillBar;
     private JLabel skillEffect = new JLabel();
+    private PowerBar powBar;
     
     public WBC(){
         super(new HPcontroller(150),(int)(150*.39));
@@ -63,45 +64,6 @@ public class WBC extends Character{
         this.add(wbclabel);
     }
     
-    public WBC(SkillBar skillBar){
-        super(new HPcontroller(50),(int)(50*.39));
-        this.skillBar = skillBar;
-        super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCHappyForever.gif"));
-        super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCAngryStep1.png"));
-        super.addCharacIcon(new ImageIcon("src/source/character/WBC/WBCAngryStep2.png"));
-        iconNowWBC=this.getCharacIcon(0);
-        wbc_width=this.getCharacIcon(0).getIconWidth();
-        wbc_height=this.getCharacIcon(0).getIconHeight();
-        
-        imagecorner=new Point(0,10);
-        
-        wbclabel.setIcon(iconNowWBC);
-        wbclabel.setBounds((int)imagecorner.getX(),(int)imagecorner.getY(),wbc_width,wbc_height);
-        wbclabel.setOpaque(false);
-        wbclabel.setLayout(null);
-        wbclabel.setVisible(true);
-//        wbclabel.setBorder(border);
-        
-        numberHP = new JLabel(""+this.getHPcontrol().getHP(),JLabel.CENTER);
-        numberHP.setBounds((int)imagecorner.getX(),(int)imagecorner.getY(),160,55);
-        numberHP.setFont(new Font("Courier New", Font.BOLD, 50));
-        numberHP.setLayout(null);
-        numberHP.setVisible(true);
-//        numberHP.setBorder(border);
-        
-        this.setBounds(200,400,wbc_width+150,wbc_height+20);
-        this.setOpaque(false);
-        this.setVisible(true);
-        this.setLayout(null);
-//        this.setBorder(border);
-        
-        this.add(skillEffect);
-        this.add(numberHP);
-        this.add(wbclabel);
-    }
-    
-    
-    
     public void setPrevPt(Point p){
         prevpt=p;
     }
@@ -139,32 +101,34 @@ public class WBC extends Character{
     }
     
     
-    
-    
     public void useSkill(int skillNumber){
         switch(skillNumber){
             case 0: 
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill1loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(100);
+                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 100;
                     break;
             case 1:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill2loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(3500);
+                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 3500;
                     break;
             case 2:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill3loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(5000);
+                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 5000;
                     break;
             case 3:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill4loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(10000);
+                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 10000;
                     break;
         }
@@ -175,6 +139,7 @@ public class WBC extends Character{
         skillEffect.setBounds(0, 0, 0, 0);
         skillEffect.setVisible(false);
         this.setPowerDefault(powerSkill);
+        powBar.setPower(this.getPowerDefault());
     }
     
     public JLabel getSkillEffect(){
@@ -193,5 +158,9 @@ public class WBC extends Character{
     }
     public void setYforBoostSpeed(int yf){
         yForBoostSpeed=yf;
+    }
+    
+    public void setPowerBar(PowerBar pw){
+        this.powBar=pw;
     }
 }

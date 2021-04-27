@@ -8,6 +8,7 @@ import javax.swing.border.Border;
 public class NormalEnemy extends Enemy {
     private static int nextCnt=0;
     private int cnt;
+    private int characIcon;
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
     public NormalEnemy(WBC wbc){
         super(wbc);
@@ -31,6 +32,7 @@ public class NormalEnemy extends Enemy {
         switch(randIcon){
             case 0:
                 this.getEnemyLabel().setIcon(this.getCharacIcon(0));
+                characIcon=0;
                 this.getEnemyLabel().setOpaque(false);
                 this.getEnemyLabel().setVisible(true);
                 this.getEnemyLabel().setLayout(null);
@@ -40,6 +42,7 @@ public class NormalEnemy extends Enemy {
                 break;
             default:
                 this.getEnemyLabel().setIcon(this.getCharacIcon(1));
+                characIcon=1;
                 this.getEnemyLabel().setOpaque(false);
                 this.getEnemyLabel().setVisible(true);
                 this.getEnemyLabel().setLayout(null);
@@ -193,5 +196,9 @@ public class NormalEnemy extends Enemy {
      */
     public String toString(){
         return "NormalEnemy num : "+cnt+" hp : "+this.getHPcontrol().getHP()+"\n";
+    }
+    
+    public int getCharacIconNum(){
+        return characIcon;
     }
 }

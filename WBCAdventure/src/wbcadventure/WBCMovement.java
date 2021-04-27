@@ -86,6 +86,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
     }
     
     public void fight(EnemyBlankPanel enemyPanel){
+        stgame.getUplayer().setEnemyPowerBar(enemyPanel.getEnemy());
         if(enemyPanel.getEnemy() instanceof BossEnemy){
             wbc.getWBCPanel().setLocation(enemyPanel.getX()-250,enemyPanel.getY()+400);
             x=enemyPanel.getX()-250;
@@ -285,6 +286,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -300,6 +303,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -315,6 +320,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -330,6 +337,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -345,6 +354,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -360,6 +371,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -375,6 +388,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -390,6 +405,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -405,6 +422,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -420,6 +439,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -435,6 +456,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -450,6 +473,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}   
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -465,6 +490,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -480,6 +507,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -495,6 +524,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -510,6 +541,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -525,6 +558,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -540,6 +575,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -555,6 +592,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             }};  timer.schedule(attackEnemy, 1000);}
             else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
@@ -570,6 +609,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
             wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            stgame.getUplayer().getAnotherPowerBar().setVisible(false);
+            stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             
 //        System.out.println("arr to del "+enemyPanel.getMustBeDeleteArr());

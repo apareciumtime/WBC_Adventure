@@ -26,7 +26,6 @@ public class Battle extends JPanel{
     public Battle(StartGame stgame){
         
         this.stgame=stgame;
-        
         layerPane.setBounds(0,0,1920,1080);
         layerPane.setOpaque(false);
         layerPane.setVisible(true);
@@ -34,7 +33,7 @@ public class Battle extends JPanel{
         this.add(layerPane);
         pGen.startGeneratePath();
         System.out.println(pGen.getEnemyPanelArrayList());
-
+        wbc.setPowerBar(stgame.getUplayer().getWBCPowerBar());
     }
     
     public PathGenerator getPathGen(){

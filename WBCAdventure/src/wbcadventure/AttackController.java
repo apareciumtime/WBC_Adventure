@@ -43,7 +43,6 @@ public class AttackController {
                     uplayer.getHPBarPanel().getHPBarEnemy().setString(""+receiver.getHPcontrol().getHP());
                     uplayer.getHPBarPanel().getHPBarBoss().setString(""+receiver.getHPcontrol().getHP());
                     ((Enemy) receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
-                    
                     TimerTask attackWBC = new TimerTask(){
                         public void run(){
                             attacker.setLocation(attacker.getX()-120, attacker.getY());                            
