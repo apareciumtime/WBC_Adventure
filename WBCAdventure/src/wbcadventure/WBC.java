@@ -25,7 +25,6 @@ public class WBC extends Character{
     private int powerSkill;
     private SkillBar skillBar;
     private JLabel skillEffect = new JLabel();
-    private PowerBar powBar;
     
     public WBC(){
         super(new HPcontroller(150),(int)(150*.39));
@@ -107,28 +106,24 @@ public class WBC extends Character{
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill1loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(100);
-                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 100;
                     break;
             case 1:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill2loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(3500);
-                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 3500;
                     break;
             case 2:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill3loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(5000);
-                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 5000;
                     break;
             case 3:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill4loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
                     this.plusPowerDefault(10000);
-                    powBar.setPower(this.getPowerDefault());
                     this.powerSkill = 10000;
                     break;
         }
@@ -139,7 +134,6 @@ public class WBC extends Character{
         skillEffect.setBounds(0, 0, 0, 0);
         skillEffect.setVisible(false);
         this.setPowerDefault(powerSkill);
-        powBar.setPower(this.getPowerDefault());
     }
     
     public JLabel getSkillEffect(){
@@ -158,9 +152,5 @@ public class WBC extends Character{
     }
     public void setYforBoostSpeed(int yf){
         yForBoostSpeed=yf;
-    }
-    
-    public void setPowerBar(PowerBar pw){
-        this.powBar=pw;
     }
 }

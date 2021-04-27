@@ -102,6 +102,7 @@ public class StartGame extends JFrame{
                         uplayer.getSkillBarPanel().getSkill(2).setCanUse(false);
                         uplayer.getSkillBarPanel().getSkill(3).setCanUse(false);
                         battle.getWBC().useSkill(0);
+                        uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                         TimerTask cooldownSkill1 = new TimerTask(){
                             public void run() {
                                 if(uplayer.getSkillBarPanel().getSkill(0).getEnable() && !uplayer.getSkillBarPanel().getSkill(0).getCanUse()){
@@ -110,11 +111,14 @@ public class StartGame extends JFrame{
                                     uplayer.getSkillBarPanel().getSkill(1).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(2).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(3).setCanUse(true);
+                                    uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                     TimerTask pendingSkill1 = new TimerTask(){
                                         public void run(){
                                             uplayer.getSkillBarPanel().getSkill(0).setCanUse(true);
                                             
                                             uplayer.getSkillBarPanel().setSkillPending(0);
+                                            
+                                            uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                         }
                                     }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(0).getCooldown()); 
                                 }
@@ -131,6 +135,7 @@ public class StartGame extends JFrame{
                         uplayer.getSkillBarPanel().getSkill(2).setCanUse(false);
                         uplayer.getSkillBarPanel().getSkill(3).setCanUse(false);
                         battle.getWBC().useSkill(1);
+                        uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                         TimerTask cooldownSkill1 = new TimerTask(){
                             public void run() {
                                 if(uplayer.getSkillBarPanel().getSkill(1).getEnable() && !uplayer.getSkillBarPanel().getSkill(1).getCanUse()){
@@ -139,10 +144,12 @@ public class StartGame extends JFrame{
                                     uplayer.getSkillBarPanel().getSkill(0).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(2).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(3).setCanUse(true);
+                                    uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                     TimerTask pendingSkill1 = new TimerTask(){
                                         public void run(){
                                             uplayer.getSkillBarPanel().getSkill(1).setCanUse(true);
                                             uplayer.getSkillBarPanel().setSkillPending(1);
+                                            uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                         }
                                     }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(1).getCooldown()); 
                                 }
@@ -159,6 +166,7 @@ public class StartGame extends JFrame{
                         uplayer.getSkillBarPanel().getSkill(2).setCanUse(false);
                         uplayer.getSkillBarPanel().getSkill(3).setCanUse(false);
                         battle.getWBC().useSkill(2);
+                        uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                         TimerTask cooldownSkill1 = new TimerTask(){
                             public void run() {
                                 if(uplayer.getSkillBarPanel().getSkill(2).getEnable() && !uplayer.getSkillBarPanel().getSkill(2).getCanUse()){
@@ -167,10 +175,12 @@ public class StartGame extends JFrame{
                                     uplayer.getSkillBarPanel().getSkill(0).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(1).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(3).setCanUse(true);
+                                    uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                     TimerTask pendingSkill1 = new TimerTask(){
                                         public void run(){
                                             uplayer.getSkillBarPanel().getSkill(2).setCanUse(true);
                                             uplayer.getSkillBarPanel().setSkillPending(2);
+                                            uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                         }
                                     }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(2).getCooldown()); 
                                 }
@@ -186,6 +196,7 @@ public class StartGame extends JFrame{
                         uplayer.getSkillBarPanel().getSkill(2).setCanUse(false);
                         uplayer.getSkillBarPanel().getSkill(3).setCanUse(false);
                         battle.getWBC().useSkill(3);
+                        uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                         TimerTask cooldownSkill1 = new TimerTask(){
                             public void run() {
                                 if(uplayer.getSkillBarPanel().getSkill(3).getEnable() && !uplayer.getSkillBarPanel().getSkill(3).getCanUse()){
@@ -194,10 +205,12 @@ public class StartGame extends JFrame{
                                     uplayer.getSkillBarPanel().getSkill(0).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(1).setCanUse(true);
                                     uplayer.getSkillBarPanel().getSkill(2).setCanUse(true);
+                                    uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                     TimerTask pendingSkill1 = new TimerTask(){
                                         public void run(){
                                             uplayer.getSkillBarPanel().getSkill(3).setCanUse(true);
                                             uplayer.getSkillBarPanel().setSkillPending(3);
+                                            uplayer.getWBCPowerBar().setPower(battle.getWBC().getPowerDefault());
                                         }
                                     }; timer.schedule(pendingSkill1, uplayer.getSkillBarPanel().getSkill(3).getCooldown()); 
                                 }
