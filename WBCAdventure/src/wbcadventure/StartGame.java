@@ -82,6 +82,7 @@ public class StartGame extends JFrame{
         layerPane.setBounds(0,0,1920,1080);
         this.add(layerPane);
         this.setFocusable(true);
+        this.setTitle("White Blood Cell Adventure");
         ImageIcon iconGame = new ImageIcon("src/source/iconGame.png");
         this.setIconImage(iconGame.getImage());
         

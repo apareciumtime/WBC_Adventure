@@ -17,6 +17,9 @@ public class MainMenu extends JFrame {
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
         this.add(layerPane);
+        this.setTitle("White Blood Cell Adventure");
+        ImageIcon iconGame = new ImageIcon("src/source/iconGame.png");
+        this.setIconImage(iconGame.getImage());
         
     }
     
