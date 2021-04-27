@@ -36,7 +36,7 @@ public class AttackController {
         if(attacker instanceof WBC){
             TimerTask forwardWBC = new TimerTask(){
                 public void run(){
-                    attacker.setLocation(attacker.getX()+120, attacker.getY());
+                    attacker.setLocation(attacker.getX()+50, attacker.getY());
                     uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
                     uplayer.getHPBarPanel().getHPBarBoss().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
                     maxHPReceiver -= receiver.getHPcontrol().getHP();
@@ -45,7 +45,7 @@ public class AttackController {
                     ((Enemy) receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
                     TimerTask attackWBC = new TimerTask(){
                         public void run(){
-                            attacker.setLocation(attacker.getX()-120, attacker.getY());                            
+                            attacker.setLocation(attacker.getX()-50, attacker.getY());                            
                         }
                     };timer.schedule(attackWBC, 500);
                 }
@@ -54,14 +54,14 @@ public class AttackController {
         else if(attacker instanceof Enemy){
             TimerTask forwardEnemy = new TimerTask(){
                 public void run(){
-                    attacker.setLocation(attacker.getX()-120, attacker.getY());
+                    attacker.setLocation(attacker.getX()-20, attacker.getY());
                     uplayer.getHPBarPanel().getHPBarWBC().setValue(receiver.getHPcontrol().getHP());
                     uplayer.getHPBarPanel().getHPBarWBC().setString(""+receiver.getHPcontrol().getHP());
                     ((WBC)receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
                     
                     TimerTask attackEnemy = new TimerTask(){
                         public void run(){
-                            attacker.setLocation(attacker.getX()+120, attacker.getY());
+                            attacker.setLocation(attacker.getX()+20, attacker.getY());
                         }
                     };timer.schedule(attackEnemy, 500);
                 }

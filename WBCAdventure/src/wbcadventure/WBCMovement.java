@@ -93,8 +93,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
             y=enemyPanel.getY()+400;
         }
         else{
-            wbc.getWBCPanel().setLocation(enemyPanel.getX()-250,enemyPanel.getY());
-            x=enemyPanel.getX()-250;
+            wbc.getWBCPanel().setLocation(enemyPanel.getX()-150,enemyPanel.getY());
+            x=enemyPanel.getX()-150;
             y=enemyPanel.getY();
         }
             wbc.setXforBoostSpeed(x);
