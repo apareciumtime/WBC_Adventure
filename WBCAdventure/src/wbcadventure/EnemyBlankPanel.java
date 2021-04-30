@@ -14,7 +14,7 @@ public class EnemyBlankPanel extends JPanel{
         beChoice=ch;
         mustBeDelete=a;
     }
-    
+     
     /**
      * get type of the path that this enemy stay
      * @return 

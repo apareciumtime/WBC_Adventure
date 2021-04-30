@@ -46,7 +46,7 @@ public abstract class Character extends JPanel {
      * @return 
      */
     public void plusPowerDefault(int amt){
-        powerDefault+=amt;
+        this.powerDefault = this.powerDefault + amt;
     }
     
     public void minusPowerDefault(int amt){
@@ -59,5 +59,5 @@ public abstract class Character extends JPanel {
     
     public void setPowerDefault(int power){
         this.powerDefault = power;
-    }
+    } 
 }

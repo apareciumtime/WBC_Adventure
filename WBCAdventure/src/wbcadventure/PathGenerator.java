@@ -136,7 +136,6 @@ public class PathGenerator {
             path.add(nextPathSet,Integer.valueOf(cntLayer));
             prevPathGen=nextPathGen;
             prevPathSet=nextPathSet;
-
             if(bossHP/(cntLayer+1)<1000){
                 System.out.println("Stoppppp------------------------------");
                 switch(prevPathGen.getType()){
@@ -462,12 +461,13 @@ public class PathGenerator {
                 nextPathGen=new PathSetGenerator(PathType.SQUARE,battleObj,this);
                 bossArea.addEnemy(boss);
                 nextPathSet=nextPathGen.generateSquare(7,3,whereCanBeNextX,whereCanBeNextY,1,2,bossArea); 
-                path.add(nextPathSet,Integer.valueOf(cntLayer+15));
+                path.add(nextPathSet,Integer.valueOf(0));
                 xDes=nextPathSet.getX();
                 break;
             }
             cntLayer++;
         }
+        //----------------------------------------------------
         path.add(allEnemyCoordinatePanel,Integer.valueOf(cntLayer+16));
         battleObj.getLayerPane().add(path,Integer.valueOf(0));
     }

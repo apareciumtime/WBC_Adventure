@@ -179,11 +179,11 @@ public class NormalEnemy extends Enemy {
         int enemyHP=this.getHPcontrol().getHP();
         int enemyRandPower;
         switch(casenum){
-            case 0 : enemyRandPower=(int)(enemyHP*.2); break;
-            case 1 : enemyRandPower=(int)(enemyHP*.21); break;
-            case 2 : enemyRandPower=(int)(enemyHP*.22); break;
-            case 3 : enemyRandPower=(int)(enemyHP*.23); break;
-            default : enemyRandPower=(int)(enemyHP*.24); break;
+            case 0 : enemyRandPower=(int)(enemyHP*.1); break;
+            case 1 : enemyRandPower=(int)(enemyHP*.11); break;
+            case 2 : enemyRandPower=(int)(enemyHP*.12); break;
+            case 3 : enemyRandPower=(int)(enemyHP*.13); break;
+            default : enemyRandPower=(int)(enemyHP*.14); break;
         }
         return enemyRandPower;
     }

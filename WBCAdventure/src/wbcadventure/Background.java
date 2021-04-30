@@ -2,7 +2,7 @@ package wbcadventure;
 import javax.swing.ImageIcon;
 public class Background {
     private ImageIcon backgroundImage;
-    
+     
     /**
      * Constructor keep default background image
      */

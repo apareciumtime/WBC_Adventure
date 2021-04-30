@@ -7,7 +7,7 @@ import javax.swing.border.Border;
 public class BossEnemy extends Enemy {
     public BossEnemy(WBC wbc){
         super(wbc);
-        
+         
         this.addCharacIcon(new ImageIcon("src/source/character/Boss/Boss.gif"));
         
         this.setBounds(0,0,900,750);
@@ -23,10 +23,10 @@ public class BossEnemy extends Enemy {
         int wbcHP=wbc.getHPcontrol().getMaxHP();
         int enemyRandHP;
         switch(casenum){
-            case 0 : enemyRandHP=wbcHP*50+30; break;
+            case 0 : enemyRandHP=wbcHP*100+30; break;
             case 1 : enemyRandHP=wbcHP*128+10; break;
-            case 2 : enemyRandHP=wbcHP*50+10; break;
-            case 3 : enemyRandHP=wbcHP*55; break;
+            case 2 : enemyRandHP=wbcHP*200+10; break;
+            case 3 : enemyRandHP=wbcHP*550; break;
             default : enemyRandHP=wbcHP; break;
         }
         return enemyRandHP;

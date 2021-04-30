@@ -8,7 +8,7 @@ public class HPcontroller {
         healthPoint=0;
         maxHealthPoint=0;
     }
-    
+     
     public HPcontroller(int maxhp){
         healthPoint=maxhp;
         maxHealthPoint=maxhp;
@@ -32,7 +32,7 @@ public class HPcontroller {
      * @param amt 
      */
     public void decreaseHP(int amt){
-        healthPoint-=amt;
+        this.healthPoint-=amt;
     }
     /**
      * plus HP by amt
@@ -54,4 +54,5 @@ public class HPcontroller {
     public void heal(){
         healthPoint=maxHealthPoint;
     }
+    
 }
