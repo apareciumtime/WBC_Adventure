@@ -5,9 +5,10 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 public class BossEnemy extends Enemy {
+    private int enemyRandHP;
     public BossEnemy(WBC wbc){
         super(wbc);
-        
+         
         this.addCharacIcon(new ImageIcon("src/source/character/Boss/Boss.gif"));
         
         this.setBounds(0,0,900,750);
@@ -21,13 +22,12 @@ public class BossEnemy extends Enemy {
         Random rand=new Random();
         int casenum=rand.nextInt(4);
         int wbcHP=wbc.getHPcontrol().getMaxHP();
-        int enemyRandHP;
         switch(casenum){
-            case 0 : enemyRandHP=wbcHP*100+30; break;
-            case 1 : enemyRandHP=wbcHP*128+10; break;
-            case 2 : enemyRandHP=wbcHP*200+10; break;
-            case 3 : enemyRandHP=wbcHP*550; break;
-            default : enemyRandHP=wbcHP; break;
+            case 0 : enemyRandHP=wbcHP*10000+(int)(17409*.119); break;
+            case 1 : enemyRandHP=wbcHP*10000+(int)(10652*.104); break;
+            case 2 : enemyRandHP=wbcHP*10000+(int)(14106*.181); break;
+            case 3 : enemyRandHP=wbcHP*10000+(int)(18089*.156); break;
+            default : enemyRandHP=wbcHP*10000; break;
         }
         return enemyRandHP;
     }
@@ -40,9 +40,9 @@ public class BossEnemy extends Enemy {
         int wbcPower=wbc.getPowerDefault();
         int enemyRandPower;
         switch(casenum){
-            case 0 : enemyRandPower=wbcPower+(Math.abs(wbcHP-enemyHP))%wbcPower; break;
-            case 1 : enemyRandPower=wbcPower-(Math.abs(wbcHP-enemyHP))%wbcPower; break;
-            default : enemyRandPower=wbcPower; break;
+            case 0 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0089); break;
+            case 1 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0067); break;
+            default : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0092); break;
         }
         return enemyRandPower;
     }

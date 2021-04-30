@@ -1,5 +1,7 @@
 package wbcadventure;
-
+ 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static java.lang.Thread.sleep;
@@ -37,12 +39,25 @@ public class AttackController {
             TimerTask forwardWBC = new TimerTask(){
                 public void run(){
                     attacker.setLocation(attacker.getX()+50, attacker.getY());
-                    uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
-                    uplayer.getHPBarPanel().getHPBarBoss().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
-                    maxHPReceiver -= receiver.getHPcontrol().getHP();
-                    uplayer.getHPBarPanel().getHPBarEnemy().setString(""+receiver.getHPcontrol().getHP());
-                    uplayer.getHPBarPanel().getHPBarBoss().setString(""+receiver.getHPcontrol().getHP());
-                    ((Enemy) receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
+                    if(receiver.getHPcontrol().getHP() <= 0){
+                        uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver);
+                        uplayer.getHPBarPanel().getHPBarBoss().setValue(maxHPReceiver);
+                        maxHPReceiver -= receiver.getHPcontrol().getHP();
+                        uplayer.getHPBarPanel().getHPBarEnemy().setString("0");
+                        uplayer.getHPBarPanel().getHPBarBoss().setString("0");
+                        ((Enemy) receiver).getNumberHP().setForeground(Color.red);
+                        ((Enemy) receiver).getNumberHP().setFont(new Font("Courier New", Font.BOLD, 50));
+                        ((Enemy) receiver).getNumberHP().setText("DIE!!");
+                    }
+                    else{
+                        uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
+                        uplayer.getHPBarPanel().getHPBarBoss().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
+                        maxHPReceiver -= receiver.getHPcontrol().getHP();
+                        uplayer.getHPBarPanel().getHPBarEnemy().setString(""+receiver.getHPcontrol().getHP());
+                        uplayer.getHPBarPanel().getHPBarBoss().setString(""+receiver.getHPcontrol().getHP());
+                        ((Enemy) receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
+                    }
+                    
                     TimerTask attackWBC = new TimerTask(){
                         public void run(){
                             attacker.setLocation(attacker.getX()-50, attacker.getY());                            
@@ -54,10 +69,17 @@ public class AttackController {
         else if(attacker instanceof Enemy){
             TimerTask forwardEnemy = new TimerTask(){
                 public void run(){
-                    attacker.setLocation(attacker.getX()-20, attacker.getY());
-                    uplayer.getHPBarPanel().getHPBarWBC().setValue(receiver.getHPcontrol().getHP());
-                    uplayer.getHPBarPanel().getHPBarWBC().setString(""+receiver.getHPcontrol().getHP());
-                    ((WBC)receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
+                    if(receiver.getHPcontrol().getHP() <= 0){
+                        uplayer.getHPBarPanel().getHPBarWBC().setValue(0);
+                    uplayer.getHPBarPanel().getHPBarWBC().setString("0");
+                    ((WBC)receiver).getNumberHP().setText("DIE!!");
+                    }
+                    else{
+                        attacker.setLocation(attacker.getX()-20, attacker.getY());
+                        uplayer.getHPBarPanel().getHPBarWBC().setValue(receiver.getHPcontrol().getHP());
+                        uplayer.getHPBarPanel().getHPBarWBC().setString(""+receiver.getHPcontrol().getHP());
+                        ((WBC)receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
+                    }
                     
                     TimerTask attackEnemy = new TimerTask(){
                         public void run(){
