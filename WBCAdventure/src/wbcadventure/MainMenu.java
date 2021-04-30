@@ -7,6 +7,7 @@ import static javax.swing.SwingConstants.SOUTH;
 import javax.swing.border.Border;
 public class MainMenu extends JFrame {
     private JLayeredPane layerPane = new JLayeredPane();
+    Setting sett=new Setting();
     public MainMenu(){
         this.setSize(1920,1080);
 //        this.setSize(new Dimension(1920,1080));
@@ -20,7 +21,8 @@ public class MainMenu extends JFrame {
         this.setTitle("White Blood Cell Adventure");
         ImageIcon iconGame = new ImageIcon("src/source/iconGame.png");
         this.setIconImage(iconGame.getImage());
-        
+        layerPane.add(sett,Integer.valueOf(4));
+        sett.setVisible(false);
     }
     
     
@@ -69,11 +71,36 @@ public class MainMenu extends JFrame {
         this.setVisible(false);
     }
     
+public class Setting extends JPanel{
+    private JLayeredPane lay=new JLayeredPane();
+    private JLabel bg=new JLabel();
+    private Buttons soundButton=new Buttons("SoundOpen",340,292);
+    private Buttons menuButton=new Buttons("Menu",746,783);
+    public Setting(){
+        lay.setBounds(0,0,1920,1080);
+        lay.setVisible(true);
+        this.setBounds(0,0,1920,1080);
+        this.setVisible(true);
+        this.setOpaque(false);
+        this.setLayout(null);
+        this.add(lay);
+        bg.setIcon(new ImageIcon("src/source/background/SettingBackground.png"));
+        bg.setBounds(0,0,1920,1080);
+        bg.setVisible(true);
+        lay.add(bg,Integer.valueOf(0));
+        soundButton.setSize(500,500);
+        lay.add(soundButton,Integer.valueOf(1));
+        lay.add(menuButton,Integer.valueOf(2));
+    }
+}
+    
+    
 public class Buttons extends JLabel{
     private String name;
     private ImageIcon normal;
     private ImageIcon pass;
     private ImageIcon click;
+    private int forSound=1;
     public Buttons(String name,int x,int y){
         this.name=name;
         normal=new ImageIcon("src/source/buttons/Button"+name+"_normal.png");
@@ -81,7 +108,7 @@ public class Buttons extends JLabel{
         click=new ImageIcon("src/source/buttons/Button"+name+"_click.png");
         this.setIcon(normal);
         this.setOpaque(false);
-        this.setBounds(x,y,467,179);
+            this.setBounds(x,y,467,179);
         this.setLayout(null);
         this.addMouseListener(new MouseAdapter(){
            @Override
@@ -100,10 +127,27 @@ public class Buttons extends JLabel{
                   
               }
               else if(name.equals("Setting")){
-                      
+                  sett.setVisible(true);
               }
               else if(name.equals("Exit")){
                   System.exit(SOUTH);
+              }
+              else if(name.equals("Menu")){
+                  sett.setVisible(false);
+              }
+              else if(name.equals("SoundOpen")&&forSound==1){
+                  //mute sound
+                  normal=new ImageIcon("src/source/buttons/ButtonSoundMute_normal.png");
+                  pass=new ImageIcon("src/source/buttons/ButtonSoundMute_pass.png");
+                  click=new ImageIcon("src/source/buttons/ButtonSoundMute_click.png");
+                  forSound=0;
+              }
+              else if(name.equals("SoundOpen")&&forSound==0){
+                  //play sound
+                  normal=new ImageIcon("src/source/buttons/ButtonSoundOpen_normal.png");
+                  pass=new ImageIcon("src/source/buttons/ButtonSoundOpen_pass.png");
+                  click=new ImageIcon("src/source/buttons/ButtonSoundOpen_click.png");
+                  forSound=1;
               }
            }
 
