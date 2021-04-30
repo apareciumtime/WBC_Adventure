@@ -577,9 +577,5 @@ public class PathGenerator {
      */
     public JLayeredPane getPathLayerPane(){
         return path;
-    }
-    
-   
-    
-    
+    }   
 }
