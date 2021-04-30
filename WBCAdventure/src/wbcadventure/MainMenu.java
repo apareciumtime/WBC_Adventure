@@ -25,7 +25,6 @@ public class MainMenu extends JFrame {
         sett.setVisible(false);
     }
     
-    
     public void setButtons(){
         JPanel pa=new JPanel();
         pa.setBounds(0,0,1920,1080);
