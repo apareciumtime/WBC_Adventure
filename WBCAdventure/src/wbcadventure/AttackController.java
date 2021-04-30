@@ -1,73 +1,117 @@
 package wbcadventure;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static java.lang.Thread.sleep;
+import java.util.Timer;
+//import javax.swing.Timer;
+import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class AttackController {
     private Character attacker;
-    private Character reciever;
-    private boolean haveWinner;
-    private boolean isDuel=false;
-    private Character winner=null;
-    private Character loser=null;
-    private String winnerSide;
-    public AttackController(Character at,Character re){
-        attacker=at;
-        reciever=re;
+    private Character receiver;
+    private Character interfacer;
+    private Timer timer = new Timer();
+    private Uplayer uplayer;
+    private int maxHPReceiver;
+    private final int maximumHPReceiver;
+    private Character winner;
+    
+    
+    
+    public AttackController(Character attacker, Character receiver,Uplayer uplayer){
+        this.attacker = attacker;
+        this.receiver = receiver;
+        this.uplayer = uplayer;
+        
+        uplayer.getSkillBarPanel().setSkillEnable(attacker.getHPcontrol().getMaxHP());
+        
+        this.maxHPReceiver = receiver.getHPcontrol().getMaxHP();
+        this.maximumHPReceiver = this.maxHPReceiver;
     }
     
-    /**
-     * Start one match of fighting
-     */
-    public void duel(){
-        isDuel=true;
-        while(checkHP()){
-            attack();
-            if(winner==null){
-                swapRole();
-            }
+    public void attacking(){
+        if(attacker instanceof WBC){
+            TimerTask forwardWBC = new TimerTask(){
+                public void run(){
+                    attacker.setLocation(attacker.getX()+50, attacker.getY());
+                    uplayer.getHPBarPanel().getHPBarEnemy().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
+                    uplayer.getHPBarPanel().getHPBarBoss().setValue(maxHPReceiver - receiver.getHPcontrol().getHP());
+                    maxHPReceiver -= receiver.getHPcontrol().getHP();
+                    uplayer.getHPBarPanel().getHPBarEnemy().setString(""+receiver.getHPcontrol().getHP());
+                    uplayer.getHPBarPanel().getHPBarBoss().setString(""+receiver.getHPcontrol().getHP());
+                    ((Enemy) receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
+                    TimerTask attackWBC = new TimerTask(){
+                        public void run(){
+                            attacker.setLocation(attacker.getX()-50, attacker.getY());                            
+                        }
+                    };timer.schedule(attackWBC, 500);
+                }
+            }; timer.schedule(forwardWBC, 500);
         }
-        isDuel=false;
-        winnerControl();
+        else if(attacker instanceof Enemy){
+            TimerTask forwardEnemy = new TimerTask(){
+                public void run(){
+                    attacker.setLocation(attacker.getX()-20, attacker.getY());
+                    uplayer.getHPBarPanel().getHPBarWBC().setValue(receiver.getHPcontrol().getHP());
+                    uplayer.getHPBarPanel().getHPBarWBC().setString(""+receiver.getHPcontrol().getHP());
+                    ((WBC)receiver).getNumberHP().setText(""+receiver.getHPcontrol().getHP());
+                    
+                    TimerTask attackEnemy = new TimerTask(){
+                        public void run(){
+                            attacker.setLocation(attacker.getX()+20, attacker.getY());
+                        }
+                    };timer.schedule(attackEnemy, 500);
+                }
+            }; timer.schedule(forwardEnemy, 500);
+        } 
     }
     
-    public boolean getIsDuel(){
-        return isDuel;
+    public void setValue(){
+        receiver.getHPcontrol().decreaseHP(attacker.getPowerDefault());
+        
     }
     
-    private boolean checkHP(){
-        return attacker.getHPcontrol().getHP()!=0&&reciever.getHPcontrol().getHP()!=0;
+    public void BufferHP(){
+        attacker.getHPcontrol().increaseMaxHP(this.maximumHPReceiver);
+        attacker.getHPcontrol().heal();
+        uplayer.getHPBarPanel().getHPBarWBC().setString(((WBC)attacker).getHPcontrol().getHP()+"");
+        ((WBC) (attacker)).getNumberHP().setText(((WBC)attacker).getHPcontrol().getHP()+"");
     }
     
-    private void attack(){
-        if(reciever.getHPcontrol().getHP()-attacker.getPowerDefault()<0){
-            reciever.getHPcontrol().decreaseHP(reciever.getHPcontrol().getHP());
-            haveWinner=true;
-            winner=attacker;
-            loser=reciever;
-        }
-        else{
-            reciever.getHPcontrol().decreaseHP(attacker.getPowerDefault());
-        }
-    } 
-
-    private void swapRole(){
-        Character mid;
-        mid=attacker;
-        attacker=reciever;
-        reciever=mid;
+    public void setWinner(){
+        this.winner = attacker;
     }
-    
-    private void winnerControl(){
-        if(winner instanceof WBC){
-            if(loser instanceof BossEnemy){
-                //แสดงผล congrats
-            }
-            else{
-                winner.getHPcontrol().increaseMaxHP(loser.getHPcontrol().getMaxHP());
-                winner.getHPcontrol().heal();
-            }
-            
-        }
-        else if(winner instanceof Enemy){
-            //เชื่อมไปแสดงผลหน้า game over
-        }
-    }
-    
 }
+
+/*
+attackController.attacking();
+if(enemyPanel.getEnemy().getHPcontrol().getHP()>0){TimerTask attackWBC = new TimerTask(){public void run(){
+attackController = new AttackController(enemyPanel.getEnemy(),wbc,stgame.getUplayer());
+attackController.setValue();
+
+}};  timer.schedule(attackWBC, 1000);}
+else{TimerTask diedWBC = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+else if(enemyPanel.getEnemy() instanceof BossEnemy){
+    stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+    stgame.setEndGame("win",stgame);}
+enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
+attackController.BufferHP();}};  timer.schedule(wait, 1010);}};timer.schedule(diedWBC, 1000);}
+*/
+
+/*
+attackController.attacking();
+if(wbc.getHPcontrol().getHP()>0){TimerTask attackEnemy = new TimerTask(){public void run(){
+attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
+attackController.setValue();
+
+}};  timer.schedule(attackEnemy, 1000);}
+else{TimerTask diedEnemy = new TimerTask(){public void run(){TimerTask wait = new TimerTask(){public void run(){stgame.getUplayer().getHPBarPanel().turnOffWBCHPBar();
+if(enemyPanel.getEnemy() instanceof NormalEnemy) stgame.getUplayer().getHPBarPanel().turnOffEnemyHPBar();
+else if(enemyPanel.getEnemy() instanceof BossEnemy) stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
+wbc.setBounds(0, 0, 0, 0);
+stgame.setEndGame("lose",stgame);}}; timer.schedule(wait, 1010);}}; timer.schedule(diedEnemy, 1000);}
+*/

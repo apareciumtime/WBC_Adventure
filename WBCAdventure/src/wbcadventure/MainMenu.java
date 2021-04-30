@@ -6,10 +6,10 @@ import javax.swing.*;
 import static javax.swing.SwingConstants.SOUTH;
 import javax.swing.border.Border;
 public class MainMenu extends JFrame {
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
     private JLayeredPane layerPane = new JLayeredPane();
     public MainMenu(){
-        this.setSize(new Dimension(1920,1080));
+        this.setSize(1920,1080);
+//        this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
@@ -17,8 +17,13 @@ public class MainMenu extends JFrame {
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
         this.add(layerPane);
+        this.setTitle("White Blood Cell Adventure");
+        ImageIcon iconGame = new ImageIcon("src/source/iconGame.png");
+        this.setIconImage(iconGame.getImage());
         
     }
+    
+    
     public void setButtons(){
         JPanel pa=new JPanel();
         pa.setBounds(0,0,1920,1080);
@@ -46,7 +51,6 @@ public class MainMenu extends JFrame {
     
     public void setBackground(){
         JPanel bgPanel=new JPanel();
-        bgPanel.setBorder(border);
         bgPanel.setBounds(0,0,1920,1080);
         bgPanel.setOpaque(true);
         bgPanel.setLayout(null);
@@ -65,7 +69,7 @@ public class MainMenu extends JFrame {
         this.setVisible(false);
     }
     
-    public class Buttons extends JLabel{
+public class Buttons extends JLabel{
     private String name;
     private ImageIcon normal;
     private ImageIcon pass;
@@ -86,10 +90,11 @@ public class MainMenu extends JFrame {
               if(name.equals("Start")){
                   StartGame start=new StartGame();
                     start.setBackground();
-                    start.setPath();
+                   // start.setPath();
                     start.setUplayer();
                     start.setBattle();
-                  setVisibleToFalse();
+                    start.setInformation();
+                    setVisibleToFalse();
               }
               else if(name.equals("Load")){
                   

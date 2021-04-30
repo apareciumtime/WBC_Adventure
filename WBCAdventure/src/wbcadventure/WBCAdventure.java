@@ -12,7 +12,6 @@ public class WBCAdventure {
         MainMenu menu = new MainMenu();
         menu.setBackground();
         menu.setButtons();
-        //menu.add(new WBC());
         
 //        JFrame frame = new JFrame();
 //        frame.setSize(1920,1080);
