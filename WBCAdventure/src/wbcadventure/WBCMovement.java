@@ -285,7 +285,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -302,7 +302,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -319,7 +319,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -336,7 +336,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -353,7 +353,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -370,7 +370,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -387,7 +387,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -404,7 +404,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -421,7 +421,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -438,7 +438,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -455,7 +455,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -472,7 +472,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}   
@@ -489,7 +489,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -506,7 +506,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -523,7 +523,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -540,7 +540,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -557,7 +557,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -574,7 +574,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -591,7 +591,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
@@ -608,7 +608,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
                 stgame.getUplayer().getHPBarPanel().turnOffBossHPBar();
                 stgame.setEndGame("win",stgame);}
             enemyPanel.getEnemy().setBounds(0, 0, 0, 0);
-            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.1));
+            wbc.setPowerDefault((int)(wbc.getPowerDefault()*1.35));
             stgame.getUplayer().getAnotherPowerBar().setVisible(false);
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}

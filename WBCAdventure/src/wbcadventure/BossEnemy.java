@@ -23,10 +23,10 @@ public class BossEnemy extends Enemy {
         int wbcHP=wbc.getHPcontrol().getMaxHP();
         int enemyRandHP;
         switch(casenum){
-            case 0 : enemyRandHP=wbcHP*50+30; break;
+            case 0 : enemyRandHP=wbcHP*100+30; break;
             case 1 : enemyRandHP=wbcHP*128+10; break;
-            case 2 : enemyRandHP=wbcHP*50+10; break;
-            case 3 : enemyRandHP=wbcHP*55; break;
+            case 2 : enemyRandHP=wbcHP*200+10; break;
+            case 3 : enemyRandHP=wbcHP*550; break;
             default : enemyRandHP=wbcHP; break;
         }
         return enemyRandHP;

@@ -25,7 +25,7 @@ public abstract class Enemy extends Character {
         this.plusPowerDefault(randPower);
         
         numberHP = new JLabel(""+randHP,JLabel.CENTER);
-        numberHP.setFont(new Font("Courier New", Font.BOLD, 50));
+        numberHP.setFont(new Font("Courier New", Font.BOLD, 40));
         numberHP.setLayout(null);
         numberHP.setVisible(true);
 //        numberHP.setBorder(border);
