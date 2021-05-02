@@ -71,28 +71,28 @@ public class NormalEnemy extends Enemy {
             case 8 : enemyRandHP=(int)(wbcHP*1.8); break;
             case 9 : enemyRandHP=(int)(wbcHP*1.9); break;
             case 10 : enemyRandHP=(int)(wbcHP*1.25); break;
-            case 11 : enemyRandHP=(int)(wbcHP*0.89); break;
-            case 12 : enemyRandHP=(int)(wbcHP*0.87); break;
-            case 13 : enemyRandHP=(int)(wbcHP*0.88); break;
-            case 14 : enemyRandHP=(int)(wbcHP*0.89); break;
-            case 15 : enemyRandHP=(int)(wbcHP*0.9); break;
-            case 16 : enemyRandHP=(int)(wbcHP*0.91); break;
-            case 17 : enemyRandHP=(int)(wbcHP*0.82); break;
-            case 18 : enemyRandHP=(int)(wbcHP*0.93); break;
-            case 19 : enemyRandHP=(int)(wbcHP*0.94); break;
-            case 20 : enemyRandHP=(int)(wbcHP*0.95); break;
-            case 21 : enemyRandHP=(int)(wbcHP*0.96); break;
-            case 22 : enemyRandHP=(int)(wbcHP*0.97); break;
-            case 23 : enemyRandHP=(int)(wbcHP*0.98); break;
-            case 24 : enemyRandHP=(int)(wbcHP*0.99); break;
+            case 11 : enemyRandHP=(int)(wbcHP*1.29); break;
+            case 12 : enemyRandHP=(int)(wbcHP*1.27); break;
+            case 13 : enemyRandHP=(int)(wbcHP*1.28); break;
+            case 14 : enemyRandHP=(int)(wbcHP*1.29); break;
+            case 15 : enemyRandHP=(int)(wbcHP*1.251); break;
+            case 16 : enemyRandHP=(int)(wbcHP*1.21); break;
+            case 17 : enemyRandHP=(int)(wbcHP*1.22); break;
+            case 18 : enemyRandHP=(int)(wbcHP*1.293); break;
+            case 19 : enemyRandHP=(int)(wbcHP*1.253); break;
+            case 20 : enemyRandHP=(int)(wbcHP*1.295); break;
+            case 21 : enemyRandHP=(int)(wbcHP*1.296); break;
+            case 22 : enemyRandHP=(int)(wbcHP*1.297); break;
+            case 23 : enemyRandHP=(int)(wbcHP*1.298); break;
+            case 24 : enemyRandHP=(int)(wbcHP*1.299); break;
             case 25 : enemyRandHP=(int)(wbcHP); break;
-            case 26 : enemyRandHP=(int)(wbcHP*1.01); break;
-            case 27 : enemyRandHP=(int)(wbcHP*1.02); break;
-            case 28 : enemyRandHP=(int)(wbcHP*1.03); break;
-            case 29 : enemyRandHP=(int)(wbcHP*1.04); break;
-            case 30 : enemyRandHP=(int)(wbcHP*1.05); break;
-            case 31 : enemyRandHP=(int)(wbcHP*1.06); break;
-            case 32 : enemyRandHP=(int)(wbcHP*1.07); break;
+            case 26 : enemyRandHP=(int)(wbcHP*2.01); break;
+            case 27 : enemyRandHP=(int)(wbcHP*2.02); break;
+            case 28 : enemyRandHP=(int)(wbcHP*2.03); break;
+            case 29 : enemyRandHP=(int)(wbcHP*2.04); break;
+            case 30 : enemyRandHP=(int)(wbcHP*2.05); break;
+            case 31 : enemyRandHP=(int)(wbcHP*2.06); break;
+            case 32 : enemyRandHP=(int)(wbcHP*2.07); break;
             case 33 : enemyRandHP=(int)(wbcHP*2.08); break;
             case 34 : enemyRandHP=(int)(wbcHP*2.09); break;
             case 35 : enemyRandHP=(int)(wbcHP*2.1); break;
@@ -107,9 +107,9 @@ public class NormalEnemy extends Enemy {
             case 44 : enemyRandHP=(int)(wbcHP*2.19); break;
             case 45 : enemyRandHP=(int)(wbcHP*2.27); break;
             case 46 : enemyRandHP=(int)(wbcHP*2); break;
-            case 47 : enemyRandHP=(int)(wbcHP*3.1); break;
-            case 48 : enemyRandHP=(int)(wbcHP*4.2); break;
-            case 49 : enemyRandHP=(int)(wbcHP*5.3); break;
+            case 47 : enemyRandHP=(int)(wbcHP*2.4); break;
+            case 48 : enemyRandHP=(int)(wbcHP*2.5); break;
+            case 49 : enemyRandHP=(int)(wbcHP*3.3); break;
         }
         return enemyRandHP;
     }
@@ -125,11 +125,11 @@ public class NormalEnemy extends Enemy {
         int enemyHP=this.getHPcontrol().getHP();
         int enemyRandPower;
         switch(casenum){
-            case 0 : enemyRandPower=(int)(enemyHP*.1); break;
-            case 1 : enemyRandPower=(int)(enemyHP*.11); break;
-            case 2 : enemyRandPower=(int)(enemyHP*.12); break;
-            case 3 : enemyRandPower=(int)(enemyHP*.13); break;
-            default : enemyRandPower=(int)(enemyHP*.14); break;
+            case 0 : enemyRandPower=(int)(enemyHP*.08); break;
+            case 1 : enemyRandPower=(int)(enemyHP*.09); break;
+            case 2 : enemyRandPower=(int)(enemyHP*.1); break;
+            case 3 : enemyRandPower=(int)(enemyHP*.11); break;
+            default : enemyRandPower=(int)(enemyHP*.12); break;
         }
         return enemyRandPower;
     }
