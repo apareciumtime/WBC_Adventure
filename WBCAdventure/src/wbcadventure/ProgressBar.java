@@ -1,5 +1,6 @@
 package wbcadventure;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JProgressBar;
 import javax.swing.JLabel;
@@ -8,6 +9,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 public class ProgressBar extends JPanel{
+    
     private JLayeredPane layer = new JLayeredPane();
     
     private WBC wbcCharacter;
@@ -106,8 +108,10 @@ public class ProgressBar extends JPanel{
         hpBarWBC.setMaximum(wbcCharacter.getHPcontrol().getMaxHP());
         hpBarWBC.setValue(wbcCharacter.getHPcontrol().getMaxHP());
         hpBarWBC.setStringPainted(true);
+        hpBarWBC.setFont(new Font("Courier New", Font.BOLD, 26));
         hpBarWBC.setString(""+wbcCharacter.getHPcontrol().getHP());
     }
+    
     
     public void setEnemyHPBar(NormalEnemy enemyCharacter){
         this.enemyCharacter = enemyCharacter;
@@ -117,6 +121,7 @@ public class ProgressBar extends JPanel{
         
         hpBarEnemy.setMaximum(enemyCharacter.getHPcontrol().getMaxHP());
         hpBarEnemy.setStringPainted(true);
+        hpBarEnemy.setFont(new Font("Courier New", Font.BOLD, 26));
         hpBarEnemy.setString(""+(enemyCharacter.getHPcontrol().getMaxHP()));
         hpBarEnemy.setValue(0); 
            
@@ -130,6 +135,7 @@ public class ProgressBar extends JPanel{
         
         hpBarBoss.setMaximum(bossCharacter.getHPcontrol().getMaxHP());
         hpBarBoss.setStringPainted(true);
+        hpBarBoss.setFont(new Font("Courier New", Font.BOLD, 26));
         hpBarBoss.setString(""+(bossCharacter.getHPcontrol().getMaxHP()-bossCharacter.getHPcontrol().getHP()));
         hpBarBoss.setValue(0);
         
@@ -186,10 +192,5 @@ public class ProgressBar extends JPanel{
     
     public JProgressBar getHPBarBoss(){
         return hpBarBoss;
-    }
-    
-    
-    
-    
-    
+    } 
 }

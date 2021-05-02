@@ -16,7 +16,7 @@ public class BossEnemy extends Enemy{
         this.getEnemyLabel().setBounds(0,0,900,750);
         this.add(this.getEnemyLabel());
         
-        this.getNumberHP().setBounds(0,0,150,55);
+        this.getNumberHP().setBounds(150,0,150,55);
         this.getNumberHP().setText(""+this.getHPcontrol().getHP());
         this.add(getNumberHP());
     }
