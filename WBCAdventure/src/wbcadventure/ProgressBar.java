@@ -8,8 +8,6 @@ import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 public class ProgressBar extends JPanel{
-
-    
     private JLayeredPane layer = new JLayeredPane();
     
     private WBC wbcCharacter;
