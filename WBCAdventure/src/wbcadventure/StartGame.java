@@ -75,7 +75,7 @@ public class StartGame extends JFrame{
     
     private SoundController soundControllerStart;
     
-    private int setMute=1;
+    private int setMute;
     
     private MainMenu mainMenu;
     
@@ -404,6 +404,7 @@ public class StartGame extends JFrame{
                 @Override
                 public void mousePressed(MouseEvent e) {
                      go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_click.png"));
+                     System.out.println(setMute);
                      switch(setMute){
                          case 0 : soundControllerStart.getSoundControllerClip().stop(); break;
                          case 1 : soundControllerStart.getSoundControllerClip().start(); break;

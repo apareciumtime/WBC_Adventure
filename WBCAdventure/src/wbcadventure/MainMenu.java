@@ -14,6 +14,7 @@ public class MainMenu extends JFrame {
     private SoundController soundController;
     private StartGame start;
     Setting sett=new Setting();
+    private int forSound=1;
     public MainMenu(){
         this.setSize(1920,1080);
 //        this.setSize(new Dimension(1920,1080));
@@ -130,7 +131,6 @@ public class Buttons extends JLabel{
     private ImageIcon normal;
     private ImageIcon pass;
     private ImageIcon click;
-    private int forSound=1;
     public Buttons(String name,int x,int y){
         this.name=name;
         normal=new ImageIcon("src/source/buttons/Button"+name+"_normal.png");
@@ -152,6 +152,12 @@ public class Buttons extends JLabel{
                     start.setUplayer();
                     start.setBattle();
                     start.setInformation();
+                    if(forSound==1){
+                        start.unmuteSoundController();
+                    }
+                    else if(forSound==0){
+                        start.muteSoundController();
+                    }
                     setVisibleToFalse();
               }
               else if(name.equals("Load")){
