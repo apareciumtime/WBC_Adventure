@@ -129,7 +129,7 @@ public class PathGenerator {
             path.add(nextPathSet,Integer.valueOf(cntLayer));
             prevPathGen=nextPathGen;
             prevPathSet=nextPathSet;
-            if(enemyCoordinatePanelSet.size()>= (Math.log(boss.getHPcontrol().getMaxHP())/Math.log(2.5))*1.50){
+            if(enemyCoordinatePanelSet.size()>= (Math.log(boss.getHPcontrol().getMaxHP())/Math.log(2.5))*1.75){
                 switch(prevPathGen.getType()){
                     case WIDE_FORK :
                         whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(0).getX();
@@ -453,7 +453,7 @@ public class PathGenerator {
                 nextPathGen=new PathSetGenerator(PathType.SQUARE,battleObj,this);
                 bossArea.addEnemy(boss);
                 nextPathSet=nextPathGen.generateSquare(7,3,whereCanBeNextX,whereCanBeNextY,1,2,bossArea); 
-                path.add(nextPathSet,Integer.valueOf(0));
+                path.add(nextPathSet,Integer.valueOf(20));
                 xDes=nextPathSet.getX();
                 break;
             }

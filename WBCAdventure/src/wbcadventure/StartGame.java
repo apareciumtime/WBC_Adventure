@@ -511,7 +511,7 @@ public class EndGame extends JPanel{
                   System.exit(SOUTH);
               }
            }
-
+ 
            @Override
            public void mousePressed(MouseEvent e) {
                 setIcon(click);

@@ -342,8 +342,6 @@ public class PathSetGenerator {
         JLabel exit=new JLabel();
         this.addPathIconPlain(dr,exit,4,0,150);
         
-        
-        
         return dr;
     }
     
@@ -354,7 +352,6 @@ public class PathSetGenerator {
      * @return 
      */
     public JPanel generateUpRight(int xlocate,int ylocate){
-        System.out.println("gen Up Right at"+xlocate+","+ylocate);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(xlocate+150,ylocate);
 

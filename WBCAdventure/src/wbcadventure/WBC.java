@@ -46,7 +46,7 @@ public class WBC extends Character{
         
         numberHP = new JLabel(""+this.getHPcontrol().getHP(),JLabel.CENTER);
         numberHP.setBounds((int)imagecorner.getX(),(int)imagecorner.getY(),160,55);
-        numberHP.setFont(new Font("Courier New", Font.BOLD, 40));
+        numberHP.setFont(new Font("Courier New", Font.BOLD, 36));
         numberHP.setLayout(null);
         numberHP.setVisible(true);
 //        numberHP.setBorder(border);

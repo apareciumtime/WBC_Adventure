@@ -15,6 +15,10 @@ public class BossEnemy extends Enemy{
         this.getEnemyLabel().setIcon(this.getCharacIcon(0));
         this.getEnemyLabel().setBounds(0,0,900,750);
         this.add(this.getEnemyLabel());
+        
+        this.getNumberHP().setBounds(0,0,150,55);
+        this.getNumberHP().setText(""+this.getHPcontrol().getHP());
+        this.add(getNumberHP());
     }
     
     public int randomHP(WBC wbc){
@@ -39,9 +43,9 @@ public class BossEnemy extends Enemy{
         int wbcPower=wbc.getPowerDefault();
         int enemyRandPower;
         switch(casenum){
-            case 0 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0089); break;
-            case 1 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0067); break;
-            default : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0092); break;
+            case 0 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0019); break;
+            case 1 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0027); break;
+            default : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0032); break;
         }
         return enemyRandPower;
     }
