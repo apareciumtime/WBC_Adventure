@@ -1,5 +1,4 @@
 package wbcadventure;
-
 import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
@@ -49,7 +48,6 @@ public class PathSetGenerator {
      * @return 
      */
     public JPanel generateSquare(int x,int y,int xlocate,int ylocate,int type,int door,EnemyBlankPanel bos){
-        System.out.println("gen Square at "+xlocate+","+ylocate);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(xlocate+150*x,ylocate+150*y);
         if(type==0){
@@ -110,9 +108,6 @@ public class PathSetGenerator {
                 this.addPathIconSQ(square,cen,0,150*i,150*j);
             }
         }
-        
-        
-        
         return square;
     }
     
@@ -124,14 +119,11 @@ public class PathSetGenerator {
      * @return 
      */
     public JPanel generateWideFork(int i,int xlocate,int ylocate){
-        System.out.println("gen Fork at "+xlocate+","+ylocate+" long "+i);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(600+150*i,ylocate);
         
-        
         canBeNext.add(PathType.STRAIGHT);
         canBeNextLocate.add(new Point(xlocate+600+150*i,ylocate+150));
-        
         
         JPanel stfork=new JPanel();
         stfork.setBounds(xlocate,ylocate,600+150*i,450); 
@@ -223,7 +215,6 @@ public class PathSetGenerator {
      * @return 
      */
     public JPanel generateNarrowFork(int i,int xlocate,int ylocate){
-        System.out.println("gen Narrow Fork at "+xlocate+","+ylocate+" long "+i);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(xlocate+300+150*i,ylocate);
         
@@ -276,8 +267,6 @@ public class PathSetGenerator {
         JLabel exit=new JLabel();
         this.addPathIconPlain(narFork,exit,10,150+150*i,150);
         
-        
-        
         return narFork;
     }
     
@@ -289,7 +278,6 @@ public class PathSetGenerator {
      * @return 
      */
     public JPanel generateStraight(int i,int xlocate,int ylocate){
-        System.out.println("gen Straight at "+xlocate+","+ylocate+" long "+i);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(xlocate+150*i,ylocate);
         canBeNext.add(PathType.STRAIGHT);
@@ -302,8 +290,6 @@ public class PathSetGenerator {
         canBeNextLocate.add(new Point(xlocate+150*i,ylocate-150));
         canBeNext.add(PathType.NARROW_FORK);
         canBeNextLocate.add(rightUpCorner);
-//        canBeNext.add(PathType.SQUARE);
-//        canBeNextLocate.add(new Point(xlocate+150*i,ylocate-150));
         
         
         JPanel Straight =new JPanel();
@@ -335,7 +321,6 @@ public class PathSetGenerator {
      * @return 
      */
     public JPanel generateDownRight(int xlocate,int ylocate){
-        System.out.println("gen Down Right at "+xlocate+","+ylocate);
         locate=new Point(xlocate,ylocate);
         rightUpCorner=new Point(xlocate+150,ylocate);
         

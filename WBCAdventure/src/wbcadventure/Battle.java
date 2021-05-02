@@ -15,15 +15,15 @@ import javax.swing.JLayeredPane;
 import javax.swing.border.Border;
 import wbcadventure.MainMenu.Buttons;
 import wbcadventure.PathSetGenerator.PathType;
+
 public class Battle extends JPanel{
- 
     private WBC wbc = new WBC();
-    BossEnemy boss=new BossEnemy(wbc);
+    private BossEnemy boss=new BossEnemy(wbc);
     private JLayeredPane layerPane = new JLayeredPane();
     private StartGame stgame;
-    PathGenerator pGen=new PathGenerator(this);
+    private PathGenerator pGen=new PathGenerator(this);
+    
     public Battle(StartGame stgame){
-        
         this.stgame=stgame;
         layerPane.setBounds(0,0,1920,1080);
         layerPane.setOpaque(false);
@@ -31,7 +31,6 @@ public class Battle extends JPanel{
         layerPane.setLayout(null);
         this.add(layerPane);
         pGen.startGeneratePath();
-        System.out.println(pGen.getEnemyPanelArrayList());
     }
     
     public PathGenerator getPathGen(){

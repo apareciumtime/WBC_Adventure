@@ -1,5 +1,4 @@
 package wbcadventure;
-
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import wbcadventure.PathSetGenerator.PathType;
@@ -9,6 +8,7 @@ public class EnemyBlankPanel extends JPanel{
     private boolean beChoice;
     private ArrayList<Integer> mustBeDelete=new ArrayList<>();
     private Enemy enemyOnPanel;
+    
     public EnemyBlankPanel(PathType pt,boolean ch,ArrayList<Integer> a){
         OnPathType=pt;
         beChoice=ch;

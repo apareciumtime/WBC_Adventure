@@ -75,7 +75,7 @@ public class StartGame extends JFrame{
     
     private SoundController soundControllerStart;
     
-    private int setMute;
+    private int setMute=1;
     
     private MainMenu mainMenu;
     
@@ -505,6 +505,7 @@ public class EndGame extends JPanel{
                   soundControllerStart.getSoundControllerClip().stop();
                   oldSt.setVisible(false);
                   mainMenu.setVisible(true);
+                  mainMenu.getSoundController().getSoundControllerClip().start();
               }
               else if(name.equals("Exit")){
                   System.exit(SOUTH);

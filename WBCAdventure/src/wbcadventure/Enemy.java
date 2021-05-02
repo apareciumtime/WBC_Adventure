@@ -1,5 +1,4 @@
 package wbcadventure;
-
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
@@ -15,7 +14,7 @@ public abstract class Enemy extends Character {
     private int y;
     private int speedx=1;
     private int speedy=1;
-    private Border border = BorderFactory.createLineBorder(Color.gray,1);
+    
     public Enemy(WBC wbc){
         randHP=randomHP(wbc);
         this.getHPcontrol().increaseMaxHP(randHP);
@@ -28,11 +27,9 @@ public abstract class Enemy extends Character {
         numberHP.setFont(new Font("Courier New", Font.BOLD, 40));
         numberHP.setLayout(null);
         numberHP.setVisible(true);
-//        numberHP.setBorder(border);
 
         this.setOpaque(false);
         this.setVisible(true);
-//        this.setBorder(border);
         
     }
     public abstract int randomHP(WBC wbc);

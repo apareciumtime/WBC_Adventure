@@ -1,5 +1,4 @@
 package wbcadventure;
-
 import java.awt.Color;
 import java.awt.Point;
 import static java.lang.Thread.sleep;
@@ -32,6 +31,7 @@ public class PathGenerator {
     private WBC wbc;
     private BossEnemy boss;
     private EnemyBlankPanel bossArea=new EnemyBlankPanel(PathType.SQUARE,false,new ArrayList<>());
+    
     public PathGenerator(JPanel big){
         path=new JLayeredPane();
         path.setBounds(x, y,1000000000,1080);
@@ -51,7 +51,6 @@ public class PathGenerator {
         path.add(wbc,Integer.valueOf(99));
         wbc.setLocation(300, 300);
         
-        
         WBCMovement move=new WBCMovement(wbc,battleObj,battleObj.getStGame());
         wbc.addMouseListener(move);
         setUp(path);
@@ -64,14 +63,12 @@ public class PathGenerator {
         int whereCanBeNextY=0;
         int cntLayer=0;
         int bossHP=boss.getHPcontrol().getMaxHP();
+        
         while(true){
             int randomnum=rand.nextInt(prevPathGen.getCanBeNext().size());
-            System.out.println(randomnum);
             PathType whatCanBeNext=prevPathGen.getCanBeNext().get(randomnum);
             whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(randomnum).getX();
             whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(randomnum).getY();
-            System.out.println("locate array"+prevPathGen.getCanBeNextLocate().toString());
-            System.out.println("benext array"+prevPathGen.getCanBeNext().toString());
             switch(whatCanBeNext){
                 case WIDE_FORK: 
                     if(whereCanBeNextY>=300 && whereCanBeNextY<=450){
@@ -127,17 +124,12 @@ public class PathGenerator {
                     nextPathGen=new PathSetGenerator(PathType.UPRIGHT,battleObj,this);
                     nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY);  
                     break;
-//                case SQUARE: 
-//                    nextPathGen=new PathSetGenerator(PathType.SQUARE,battleObj,this);
-//                    nextPathSet=nextPathGen.generateSquare(7,3,whereCanBeNextX,whereCanBeNextY,1,2,boss);  
-//                    break;
                 default: break;
             }
             path.add(nextPathSet,Integer.valueOf(cntLayer));
             prevPathGen=nextPathGen;
             prevPathSet=nextPathSet;
             if(enemyCoordinatePanelSet.size()>= (Math.log(boss.getHPcontrol().getMaxHP())/Math.log(2.5))*1.50){
-                System.out.println("Stoppppp------------------------------");
                 switch(prevPathGen.getType()){
                     case WIDE_FORK :
                         whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(0).getX();
@@ -467,7 +459,6 @@ public class PathGenerator {
             }
             cntLayer++;
         }
-        //----------------------------------------------------
         path.add(allEnemyCoordinatePanel,Integer.valueOf(cntLayer+16));
         battleObj.getLayerPane().add(path,Integer.valueOf(0));
     }
@@ -504,7 +495,6 @@ public class PathGenerator {
                             setUp(enemy);
                             enemyCoordinatePanelSet.get(j).addEnemy(enemy);
                             enemyPanelArrayList.add(enemyCoordinatePanelSet.get(j));
-                            System.out.println(enemyCoordinatePanelSet);
                             enemyCoordinatePanelSet.set(j,null);
                             }
                         }
@@ -523,7 +513,7 @@ public class PathGenerator {
                     }    
                 }
             }
-        };time.schedule(move,3000,10100);
+        };time.schedule(move,0,10100);
     }
     
     /**

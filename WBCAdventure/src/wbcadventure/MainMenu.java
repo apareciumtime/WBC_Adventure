@@ -73,6 +73,14 @@ public class MainMenu extends JFrame {
         layerPane.add(pa,Integer.valueOf(1));
     }
     
+    public void restart(){
+        start=new StartGame(this);
+    }
+    
+    public SoundController getSoundController(){
+        return soundController;
+    }
+    
     public void setBackground(){
         JPanel bgPanel=new JPanel();
         bgPanel.setBounds(0,0,1920,1080);
@@ -138,9 +146,9 @@ public class Buttons extends JLabel{
               setIcon(click);
               if(name.equals("Start")){
                     soundController.getSoundControllerClip().stop();
+                    restart();
                     start.setVisible(true);
                     start.setBackground();
-                   // start.setPath();
                     start.setUplayer();
                     start.setBattle();
                     start.setInformation();

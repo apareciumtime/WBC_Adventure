@@ -1,19 +1,23 @@
 package wbcadventure;
 import javax.swing.*;
 import java.util.ArrayList;
+
 public abstract class Character extends JPanel {
     private HPcontroller characHP;
     private ArrayList<ImageIcon> characIcon=new ArrayList<>();
     private int powerDefault;
+    
     public Character(HPcontroller HP,int pw){
         characHP=HP;
         //characIcon=icon;
         powerDefault=pw;
     }
+    
     public Character(){
         characHP=new HPcontroller();
         powerDefault=0;
     }
+    
     /**
      * get HP controller of character
      * @return 
@@ -21,6 +25,7 @@ public abstract class Character extends JPanel {
     public HPcontroller getHPcontrol(){
         return characHP;
     }
+    
     /**
      * get imageicon of character at index i
      * @return 

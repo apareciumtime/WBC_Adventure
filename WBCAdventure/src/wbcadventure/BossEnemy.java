@@ -4,15 +4,14 @@ import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.border.Border;
-public class BossEnemy extends Enemy {
+
+public class BossEnemy extends Enemy{
     private int enemyRandHP;
+    
     public BossEnemy(WBC wbc){
         super(wbc);
-         
         this.addCharacIcon(new ImageIcon("src/source/character/Boss/Boss.gif"));
-        
         this.setBounds(0,0,900,750);
-        
         this.getEnemyLabel().setIcon(this.getCharacIcon(0));
         this.getEnemyLabel().setBounds(0,0,900,750);
         this.add(this.getEnemyLabel());

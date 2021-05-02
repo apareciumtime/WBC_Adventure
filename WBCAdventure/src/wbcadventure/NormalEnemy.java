@@ -5,10 +5,12 @@ import java.util.Random;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.border.Border;
+
 public class NormalEnemy extends Enemy {
     private static int nextCnt=0;
     private int cnt;
     private int characIcon;
+    
     public NormalEnemy(WBC wbc){
         super(wbc);
         
@@ -21,10 +23,7 @@ public class NormalEnemy extends Enemy {
         int randIcon=rand.nextInt(50)%2;
         
         this.setBounds(0,0,150,200);
-        //this.getEnemyLabel().setBounds(0,0,150,200);
-        
         this.getNumberHP().setBounds(0,0,150,55);
-        System.out.println(this.getHPcontrol().getHP());
         this.getNumberHP().setText(""+this.getHPcontrol().getHP());
         this.add(getNumberHP());
         
@@ -37,7 +36,6 @@ public class NormalEnemy extends Enemy {
                 this.getEnemyLabel().setLayout(null);
                 this.getEnemyLabel().setBounds(0,0,150,200);
                 this.add(this.getEnemyLabel());
-                System.out.println("Rand 0");
                 break;
             default:
                 this.getEnemyLabel().setIcon(this.getCharacIcon(1));
@@ -47,10 +45,8 @@ public class NormalEnemy extends Enemy {
                 this.getEnemyLabel().setLayout(null);
                 this.getEnemyLabel().setBounds(0,0,150,200);
                 this.add(this.getEnemyLabel());
-                System.out.println("Rand 1");
                 break;
-        }        
-        
+        }         
     }
     
     /**
