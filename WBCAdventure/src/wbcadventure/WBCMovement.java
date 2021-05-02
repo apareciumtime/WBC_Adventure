@@ -41,26 +41,31 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        boolean goFight=false;
-        wbc.getWBCLabel().setIcon(wbc.getCharacIcon(0));
-        if(enemyarr.get(0).getBeChoice()==true){
-            if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(0).getBounds())){
-                this.fight(enemyarr.get(0));
-                goFight=true;
+        try{
+            boolean goFight=false;
+            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(0));
+            if(enemyarr.get(0).getBeChoice()==true){
+                if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(0).getBounds())){
+                    this.fight(enemyarr.get(0));
+                    goFight=true;
+                }
+                else if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(1).getBounds())){
+                    this.fight(enemyarr.get(1));
+                    goFight=true;
+                }
             }
-            else if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(1).getBounds())){
-                this.fight(enemyarr.get(1));
-                goFight=true;
+            else{
+                if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(0).getBounds())){
+                    this.fight(enemyarr.get(0));
+                    goFight=true;
+                }
+            }
+            if(!goFight){
+                wbc.setLocation(x, y);
             }
         }
-        else{
-            if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(0).getBounds())){
-                this.fight(enemyarr.get(0));
-                goFight=true;
-            }
-        }
-        if(!goFight){
-            wbc.setLocation(x, y);
+        catch(IndexOutOfBoundsException ex){
+            
         }
     }
     @Override
