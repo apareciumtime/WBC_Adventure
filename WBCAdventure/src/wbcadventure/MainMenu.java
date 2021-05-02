@@ -1,12 +1,18 @@
 package wbcadventure;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import static javax.swing.SwingConstants.SOUTH;
+import java.io.File;
 import javax.swing.border.Border;
 public class MainMenu extends JFrame {
     private JLayeredPane layerPane = new JLayeredPane();
+    private SoundController soundController;
+    private StartGame start;
     Setting sett=new Setting();
     public MainMenu(){
         this.setSize(1920,1080);
@@ -21,8 +27,25 @@ public class MainMenu extends JFrame {
         this.setTitle("White Blood Cell Adventure");
         ImageIcon iconGame = new ImageIcon("src/source/iconGame.png");
         this.setIconImage(iconGame.getImage());
+        
+        start=new StartGame(this);
+        start.setVisible(false);
+        
         layerPane.add(sett,Integer.valueOf(4));
         sett.setVisible(false);
+        
+        try {
+            soundController = new SoundController(new File("src/source/sound/chocobo.wav"));
+            soundController.getSoundControllerClip().open(soundController.getAudio());
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        soundController.getSoundControllerClip().start();
+        
     }
     
     public void setButtons(){
@@ -114,7 +137,8 @@ public class Buttons extends JLabel{
            public void mouseClicked(MouseEvent e) {
               setIcon(click);
               if(name.equals("Start")){
-                  StartGame start=new StartGame();
+                    soundController.getSoundControllerClip().stop();
+                    start.setVisible(true);
                     start.setBackground();
                    // start.setPath();
                     start.setUplayer();
@@ -136,6 +160,8 @@ public class Buttons extends JLabel{
               }
               else if(name.equals("SoundOpen")&&forSound==1){
                   //mute sound
+                  start.muteSoundController();
+                  soundController.getSoundControllerClip().stop();
                   normal=new ImageIcon("src/source/buttons/ButtonSoundMute_normal.png");
                   pass=new ImageIcon("src/source/buttons/ButtonSoundMute_pass.png");
                   click=new ImageIcon("src/source/buttons/ButtonSoundMute_click.png");
@@ -143,6 +169,8 @@ public class Buttons extends JLabel{
               }
               else if(name.equals("SoundOpen")&&forSound==0){
                   //play sound
+                  start.unmuteSoundController();
+                  soundController.getSoundControllerClip().start();
                   normal=new ImageIcon("src/source/buttons/ButtonSoundOpen_normal.png");
                   pass=new ImageIcon("src/source/buttons/ButtonSoundOpen_pass.png");
                   click=new ImageIcon("src/source/buttons/ButtonSoundOpen_click.png");

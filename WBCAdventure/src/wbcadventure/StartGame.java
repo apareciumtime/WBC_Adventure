@@ -21,9 +21,15 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferStrategy;
 import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
 import java.text.AttributedCharacterIterator;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -67,9 +73,16 @@ public class StartGame extends JFrame{
     
     private Timer timer = new Timer();
     
-    public StartGame(){
+    private SoundController soundControllerStart;
+    
+    private int setMute;
+    
+    private MainMenu mainMenu;
+    
+    public StartGame(MainMenu mainMenu){
         battle = new Battle(this);
         uplayer = new Uplayer(battle.getWBC());
+        this.mainMenu = mainMenu;
         /**
          * Frame Setting
          */
@@ -85,6 +98,19 @@ public class StartGame extends JFrame{
         this.setTitle("White Blood Cell Adventure");
         ImageIcon iconGame = new ImageIcon("src/source/iconGame.png");
         this.setIconImage(iconGame.getImage());
+        
+        try {
+            soundControllerStart = new SoundController(new File("src/source/sound/nyancat.wav"));
+            soundControllerStart.getSoundControllerClip().open(soundControllerStart.getAudio());
+            soundControllerStart.getSoundControllerClip().stop();
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         
         /*Start KeyListener Zone*/
         this.addKeyListener(new KeyAdapter(){
@@ -283,6 +309,14 @@ public class StartGame extends JFrame{
         layerPane.add(end,Integer.valueOf(5));
     }
     
+    public void muteSoundController(){
+        this.setMute = 0;
+    }
+    
+    public void unmuteSoundController(){
+        this.setMute = 1;
+    }
+    
     public class BeforePlaying extends JPanel{
         public BeforePlaying(){
             this.setBounds(0,0,1920,1080);
@@ -370,6 +404,10 @@ public class StartGame extends JFrame{
                 @Override
                 public void mousePressed(MouseEvent e) {
                      go.setIcon(new ImageIcon("src/source/buttons/ButtonGo_click.png"));
+                     switch(setMute){
+                         case 0 : soundControllerStart.getSoundControllerClip().stop(); break;
+                         case 1 : soundControllerStart.getSoundControllerClip().start(); break;
+                     }
                 }
 
                 @Override
@@ -455,18 +493,18 @@ public class EndGame extends JPanel{
            public void mouseClicked(MouseEvent e) {
               setIcon(click);
               if(name.equals("Restart")){
+                  soundControllerStart.getSoundControllerClip().stop();
                   oldSt.setVisible(false);
-                  StartGame start=new StartGame();
+                  StartGame start=new StartGame(mainMenu);
                   start.setBackground();
                   start.setUplayer();
                   start.setBattle();
                   start.setInformation();
               }
               else if(name.equals("Menu")){
+                  soundControllerStart.getSoundControllerClip().stop();
                   oldSt.setVisible(false);
-                  MainMenu menu=new MainMenu();
-                  menu.setBackground();
-                  menu.setButtons();
+                  mainMenu.setVisible(true);
               }
               else if(name.equals("Exit")){
                   System.exit(SOUTH);
