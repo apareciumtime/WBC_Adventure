@@ -26,10 +26,10 @@ public class BossEnemy extends Enemy{
         int casenum=rand.nextInt(4);
         int wbcHP=wbc.getHPcontrol().getMaxHP();
         switch(casenum){
-            case 0 : enemyRandHP=wbcHP*10000+(int)(17409*.119); break;
-            case 1 : enemyRandHP=wbcHP*10000+(int)(10652*.104); break;
-            case 2 : enemyRandHP=wbcHP*10000+(int)(14106*.181); break;
-            case 3 : enemyRandHP=wbcHP*10000+(int)(18089*.156); break;
+            case 0 : enemyRandHP=wbcHP*10000+(int)(1709*.119); break;
+            case 1 : enemyRandHP=wbcHP*10000+(int)(1062*.104); break;
+            case 2 : enemyRandHP=wbcHP*10000+(int)(1416*.181); break;
+            case 3 : enemyRandHP=wbcHP*10000+(int)(1808*.156); break;
             default : enemyRandHP=wbcHP*10000; break;
         }
         return enemyRandHP;
@@ -43,9 +43,9 @@ public class BossEnemy extends Enemy{
         int wbcPower=wbc.getPowerDefault();
         int enemyRandPower;
         switch(casenum){
-            case 0 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0019); break;
-            case 1 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0027); break;
-            default : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0032); break;
+            case 0 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0089); break;
+            case 1 : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0077); break;
+            default : enemyRandPower = (int)(this.getHPcontrol().getMaxHP()*.0092); break;
         }
         return enemyRandPower;
     }
