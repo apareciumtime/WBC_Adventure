@@ -457,13 +457,13 @@ public class PathGenerator {
                 nextPathGen=new PathSetGenerator(PathType.SQUARE,battleObj,this);
                 bossArea.addEnemy(boss);
                 nextPathSet=nextPathGen.generateSquare(7,3,whereCanBeNextX,whereCanBeNextY,1,2,bossArea); 
-                path.add(nextPathSet,Integer.valueOf(20));
+                path.add(nextPathSet,Integer.valueOf(50));
                 xDes=nextPathSet.getX();
                 break;
             }
             cntLayer++;
         }
-        path.add(allEnemyCoordinatePanel,Integer.valueOf(cntLayer+16));
+        path.add(allEnemyCoordinatePanel,Integer.valueOf(51));
         battleObj.getLayerPane().add(path,Integer.valueOf(0));
     }
     

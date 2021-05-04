@@ -51,15 +51,15 @@ public class BossEnemy extends Enemy{
      */
     public int randomPower(WBC wbc){
         Random rand=new Random();
-        int casenum=rand.nextInt(2);
+        int casenum=rand.nextInt(4);
         int enemyHP=this.getHPcontrol().getHP();
         int wbcHP=wbc.getHPcontrol().getMaxHP();
         int wbcPower=wbc.getPowerDefault();
         int enemyRandPower;
         switch(casenum){
-            case 0 : enemyRandPower = (int)(wbcHP/10); break;
-            case 1 : enemyRandPower = (int)(wbcHP/14); break;
-            default : enemyRandPower = (int)(wbcHP/12); break;
+            case 0 : enemyRandPower = (int)(wbcHP/20); break;
+            case 1 : enemyRandPower = (int)(wbcHP/28); break;
+            default : enemyRandPower = (int)(wbcHP/24); break;
         }
         return enemyRandPower;
     }

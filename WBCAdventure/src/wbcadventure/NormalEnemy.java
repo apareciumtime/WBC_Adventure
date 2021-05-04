@@ -18,6 +18,8 @@ public class NormalEnemy extends Enemy {
     public NormalEnemy(WBC wbc){
         super(wbc);
         
+        this.plusPowerDefault(randomPower(wbc));
+        
         cnt=nextCnt++;
         
         this.addCharacIcon(new ImageIcon("src/source/character/Enemies/Enemy.gif"));

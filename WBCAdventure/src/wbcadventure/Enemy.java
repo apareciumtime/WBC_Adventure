@@ -24,9 +24,6 @@ public abstract class Enemy extends Character {
         this.getHPcontrol().increaseMaxHP(randHP);
         this.getHPcontrol().heal();
         
-        randPower=randomPower(wbc);
-        this.plusPowerDefault(randPower);
-        
         numberHP = new JLabel(""+randHP,JLabel.CENTER);
         numberHP.setFont(new Font("Courier New", Font.BOLD, 36));
         numberHP.setLayout(null);
