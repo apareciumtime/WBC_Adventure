@@ -42,7 +42,6 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
     public void mouseReleased(MouseEvent e) {
         try{
             boolean goFight=false;
-            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(0));
             if(enemyarr.get(0).getBeChoice()==true){
                 if(wbc.getWBCPanel().getBounds().intersects(enemyarr.get(0).getBounds())){
                     this.fight(enemyarr.get(0));
@@ -62,6 +61,7 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
             if(!goFight){
                 wbc.setLocation(x, y);
             }
+            wbc.getWBCLabel().setIcon(wbc.getCharacIcon(0));
         }
         catch(IndexOutOfBoundsException ex){
             
@@ -111,7 +111,6 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
             else if(enemyPanel.getEnemy() instanceof BossEnemy){
                 stgame.getUplayer().getHPBarPanel().setBossHPBar();
             }
-            
             attackController = new AttackController(wbc,enemyPanel.getEnemy(),stgame.getUplayer());
             attackController.setValue();
             attackController.attacking(); //WBC 1
