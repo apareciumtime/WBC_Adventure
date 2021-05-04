@@ -497,6 +497,12 @@ public class EndGame extends JPanel{
                   soundControllerStart.getSoundControllerClip().stop();
                   oldSt.setVisible(false);
                   StartGame start=new StartGame(mainMenu);
+                  if(mainMenu.getForSound()==1){
+                      start.unmuteSoundController();
+                  }
+                  else{
+                      start.muteSoundController();
+                  }
                   start.setBackground();
                   start.setUplayer();
                   start.setBattle();

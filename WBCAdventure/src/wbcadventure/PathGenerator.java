@@ -480,11 +480,11 @@ public class PathGenerator {
                         battleObj.getStGame().setEndGame("lose",battleObj.getStGame());
                         break;
                     }
-                    if(wbc.getXforBoostSpeed()+x>500){
+                    if(wbc.getXforBoostSpeed()+x>600){
                         x-=8;
                         path.setLocation(x,y);
                     }
-                    else if(wbc.getXforBoostSpeed()+x<=500){
+                    else if(wbc.getXforBoostSpeed()+x<=600){
                         x-=2;
                         path.setLocation(x,y);
                     }

@@ -102,6 +102,10 @@ public class MainMenu extends JFrame {
         this.setVisible(false);
     }
     
+    public int getForSound(){
+        return forSound;
+    }
+    
 public class Setting extends JPanel{
     private JLayeredPane lay=new JLayeredPane();
     private JLabel bg=new JLabel();
