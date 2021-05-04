@@ -62,7 +62,7 @@ public class NormalEnemy extends Enemy {
      */
     public int randomHP(WBC wbc){
         Random rand=new Random();
-        int casenum=rand.nextInt(1000)%50;
+        int casenum=rand.nextInt(1000)%52;
         int wbcHP=wbc.getHPcontrol().getMaxHP();
         int enemyRandHP = wbcHP;
         switch(casenum){
@@ -116,6 +116,8 @@ public class NormalEnemy extends Enemy {
             case 47 : enemyRandHP=(int)(wbcHP*1.59); break;
             case 48 : enemyRandHP=(int)(wbcHP*1.57); break;
             case 49 : enemyRandHP=(int)(wbcHP*1.54); break;
+            case 50 : enemyRandHP=(int)(wbcHP*3.1); break;
+            case 51 : enemyRandHP=(int)(wbcHP*3.2); break;
         }
         return enemyRandHP;
     }

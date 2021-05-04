@@ -14,7 +14,6 @@ public abstract class Character extends JPanel {
      */
     public Character(HPcontroller HP,int pw){
         characHP=HP;
-        //characIcon=icon;
         powerDefault=pw;
     }
     

@@ -117,7 +117,7 @@ public class PathGenerator {
                     } 
                     break;
                 case UPRIGHT:
-                    if(whereCanBeNextY>=150){
+                    if(whereCanBeNextY>=300){
                         nextPathGen=new PathSetGenerator(PathType.UPRIGHT,battleObj,this);
                         nextPathSet=nextPathGen.generateUpRight(whereCanBeNextX,whereCanBeNextY);
                     }
@@ -139,7 +139,6 @@ public class PathGenerator {
                         whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(0).getX();
                         whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(0).getY();
                         if(prevPathGen.getCanBeNextLocate().get(0).getY()==300){
-                            //เพิ่มstraight 1 ช่อง ค่อยลง*2 จบstraight
                             for(int c=0;c<5;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -162,7 +161,6 @@ public class PathGenerator {
                             }
                         }
                         else if(prevPathGen.getCanBeNextLocate().get(0).getY()==450){
-                            //เพิ่มstraight 1 ช่อง ค่อยลง จบstraight
                             for(int c=0;c<3;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -186,7 +184,6 @@ public class PathGenerator {
                             }
                         }
                         else if(prevPathGen.getCanBeNextLocate().get(0).getY()==600){
-                            //เพิ่มstraight 1 ช่อง พอดี
                             nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
                             nextPathSet=nextPathGen.generateStraight(1,whereCanBeNextX,whereCanBeNextY);
                             path.add(nextPathSet,Integer.valueOf(cntLayer));  cntLayer++;
@@ -201,7 +198,6 @@ public class PathGenerator {
                         whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(0).getX();
                         whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(0).getY();
                         if(prevPathSet.getY()==150){
-                            //เพิ่มstraight 1 ช่อง ค่อยลง*2 จบstraight
                             for(int c=0;c<5;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -224,7 +220,6 @@ public class PathGenerator {
                             }
                         }
                         else if(prevPathSet.getY()==300){
-                            // เพิ่มstraight 1 ช่อง ค่อยลง จบstraight
                             for(int c=0;c<3;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -248,7 +243,6 @@ public class PathGenerator {
                             }
                         }
                         else if(prevPathSet.getY()==450){
-                            // straight 1 ช่อง พอดี
                             nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
                             nextPathSet=nextPathGen.generateStraight(1,whereCanBeNextX,whereCanBeNextY);
                             path.add(nextPathSet,Integer.valueOf(cntLayer));  cntLayer++;
@@ -258,7 +252,6 @@ public class PathGenerator {
                             whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(2).getY();
                         }
                         else if(prevPathSet.getY()==600){
-                            // straight 1 ช่อง ค่อยขึ้น 1 จบstraight
                             for(int c=0;c<3;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -287,7 +280,6 @@ public class PathGenerator {
                         if(prevPathSet.getY()<600){
                             int num=((600-prevPathSet.getY())/150)*2+1;
                             for(int c=0;c<num;c++){
-                                //ตรง ลง ตรง ลง ตาม num
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
                                     nextPathSet=nextPathGen.generateStraight(1,whereCanBeNextX,whereCanBeNextY);
@@ -309,7 +301,6 @@ public class PathGenerator {
                             }
                         }
                         else if(prevPathSet.getY()==750){
-                            //ตรง ขึ้น1 ตรง
                             for(int c=0;c<3;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -336,7 +327,6 @@ public class PathGenerator {
                         whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(0).getX();
                         whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(0).getY();
                         if(prevPathSet.getY()==150){
-                            //ตรง ลง2 ตรง
                             for(int c=0;c<5;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -359,7 +349,6 @@ public class PathGenerator {
                             }
                         }
                         else if(prevPathSet.getY()==300){
-                            //ตรง ลง ตรง
                             for(int c=0;c<3;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -392,7 +381,6 @@ public class PathGenerator {
                             whereCanBeNextY=(int)prevPathGen.getCanBeNextLocate().get(2).getY();
                         }
                         else if(prevPathSet.getY()==600){
-                            //ตรง ขึ้น1 ตรง
                             for(int c=0;c<3;c++){
                                 if(c%2==0){
                                     nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
@@ -422,7 +410,6 @@ public class PathGenerator {
                         if(prevPathSet.getY()<600){
                             int num=((600-prevPathSet.getY())/150)*2+1;
                             for(int c=0;c<num;c++){
-                                //ตรง ลง ตรง ลง ตาม num
                                 if(c%2==0){
                                         nextPathGen=new PathSetGenerator(PathType.STRAIGHT,battleObj,this);
                                         nextPathSet=nextPathGen.generateStraight(1,whereCanBeNextX,whereCanBeNextY);
@@ -512,7 +499,8 @@ public class PathGenerator {
                     }
                     try {
                         sleep(50);
-                    } catch (InterruptedException ex) {
+                    } 
+                    catch (InterruptedException ex) {
                         ex.printStackTrace();
                     }    
                 }

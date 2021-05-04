@@ -1117,14 +1117,12 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
             stgame.getUplayer().getWBCPowerBar().setPower(wbc.getPowerDefault());
             attackController.BufferHP();}};  timer.schedule(wait, 50);}};timer.schedule(diedWBC, 1000);}
             
-//        System.out.println("arr to del "+enemyPanel.getMustBeDeleteArr());
         if(enemyPanel.getMustBeDeleteArr().size()==1){
             enemyarr.remove(0);
         }
         else{
             for(int in=enemyPanel.getMustBeDeleteArr().size()-1;in>=0;in--){
                 int del=enemyPanel.getMustBeDeleteArr().get(in);
-                System.out.println("delete "+del);
                 enemyarr.remove(del);
             }
         }

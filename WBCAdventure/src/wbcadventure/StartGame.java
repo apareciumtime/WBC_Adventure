@@ -89,7 +89,7 @@ public class StartGame extends JFrame{
         this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        this.setUndecorated(true);            //FullScreen
+        this.setUndecorated(true);            //FullScreen
         this.setLayout(null);  
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
@@ -245,12 +245,12 @@ public class StartGame extends JFrame{
             
             @Override
             public void keyPressed(KeyEvent e) {
-                //System.out.println(e.getKeyChar());
+                
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
-                //System.out.println(e.getKeyChar());
+                
             }
         });
         /*End KeyListener Zone*/
@@ -358,7 +358,6 @@ public class StartGame extends JFrame{
             BossHPLa.setOpaque(false);
             BossHPLa.setLayout(null);
             fontPanel.add(BossHPLa);
-//            BossHPLa.setBorder(border);
             BossHPLa.setFont(new Font("Courier New", Font.BOLD, 50));
              
             JLabel WBCHPLa=new JLabel(""+battle.getWBC().getHPcontrol().getHP(),JLabel.LEFT);
@@ -367,7 +366,6 @@ public class StartGame extends JFrame{
             WBCHPLa.setOpaque(false);
             WBCHPLa.setLayout(null);
             fontPanel.add(WBCHPLa);
-//            WBCHPLa.setBorder(border);
             WBCHPLa.setFont(new Font("Courier New", Font.BOLD, 50));
 
             JLabel go=new JLabel();
@@ -542,6 +540,4 @@ public class EndGame extends JPanel{
     }
 }
 }
-
-    
 }

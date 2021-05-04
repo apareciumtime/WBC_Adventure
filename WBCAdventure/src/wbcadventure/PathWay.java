@@ -47,7 +47,6 @@ public class PathWay {
         
     }
     
-    
     public ImageIcon getIcon(int index){
         if(pathType == 0){
             return platePlain.get(index);
@@ -56,6 +55,5 @@ public class PathWay {
             return square.get(index);
         }
         return null;
-    }
-      
+    }   
 }

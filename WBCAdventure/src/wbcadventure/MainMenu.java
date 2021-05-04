@@ -17,11 +17,10 @@ public class MainMenu extends JFrame {
     private int forSound=1;
     public MainMenu(){
         this.setSize(1920,1080);
-//        this.setSize(new Dimension(1920,1080));
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-//        this.setUndecorated(true);            //FullScreen
+        this.setUndecorated(true);            //FullScreen
         this.setVisible(true);
         layerPane.setBounds(0,0,1920,1080);
         this.add(layerPane);
@@ -56,19 +55,15 @@ public class MainMenu extends JFrame {
         pa.setLayout(null);
         
         Buttons start = new Buttons("Start",456,637);
-//        start.setBorder(border);
         pa.add(start);
         
         Buttons load = new Buttons("Load",996,637);
-//        load.setBorder(border);
         pa.add(load);
         
         Buttons setting = new Buttons("Setting",456,816);
-//        setting.setBorder(border);
         pa.add(setting);
         
         Buttons exit = new Buttons("Exit",996,816);
-//        exit.setBorder(border);
         pa.add(exit);
         
         layerPane.add(pa,Integer.valueOf(1));
@@ -142,7 +137,7 @@ public class Buttons extends JLabel{
         click=new ImageIcon("src/source/buttons/Button"+name+"_click.png");
         this.setIcon(normal);
         this.setOpaque(false);
-            this.setBounds(x,y,467,179);
+        this.setBounds(x,y,467,179);
         this.setLayout(null);
         this.addMouseListener(new MouseAdapter(){
            @Override
@@ -177,7 +172,6 @@ public class Buttons extends JLabel{
                   sett.setVisible(false);
               }
               else if(name.equals("SoundOpen")&&forSound==1){
-                  //mute sound
                   start.muteSoundController();
                   soundController.getSoundControllerClip().stop();
                   normal=new ImageIcon("src/source/buttons/ButtonSoundMute_normal.png");
@@ -186,7 +180,6 @@ public class Buttons extends JLabel{
                   forSound=0;
               }
               else if(name.equals("SoundOpen")&&forSound==0){
-                  //play sound
                   start.unmuteSoundController();
                   soundController.getSoundControllerClip().start();
                   normal=new ImageIcon("src/source/buttons/ButtonSoundOpen_normal.png");

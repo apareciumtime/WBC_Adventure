@@ -29,7 +29,6 @@ public class SkillBar extends JPanel{
      */
     public SkillBar(WBC wbc){
         this.wbc=wbc;
-//        this.setBorder(border);
         this.setLayout(null);
         
         setSkillUnable(0);
