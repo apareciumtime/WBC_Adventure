@@ -57,7 +57,7 @@ public class BossEnemy extends Enemy{
         int wbcPower=wbc.getPowerDefault();
         int enemyRandPower;
         switch(casenum){
-            case 0 : enemyRandPower = (int)(wbcHP*05); break;
+            case 0 : enemyRandPower = (int)(wbcHP*.05); break;
             case 1 : enemyRandPower = (int)(wbcHP*.0357); break;
             default : enemyRandPower = (int)(wbcHP*.04167); break;
         }
