@@ -17,10 +17,10 @@ public class SkillBar extends JPanel{
     
     private WBC wbc;
     
-    private Skill skill1 = new Skill(0,100,2000,2000);
-    private Skill skill2 = new Skill(1,2000,2000,5000);
-    private Skill skill3 = new Skill(2,5000,2000,15000);
-    private Skill skill4 = new Skill(3,10000,2000,50000);
+    private Skill skill1 = new Skill(0,500,2000,2000);
+    private Skill skill2 = new Skill(1,10000,2000,5000);
+    private Skill skill3 = new Skill(2,50000,2000,15000);
+    private Skill skill4 = new Skill(3,200000,2000,50000);
     
     private Border border = BorderFactory.createLineBorder(Color.gray,1);
 
@@ -66,7 +66,7 @@ public class SkillBar extends JPanel{
      * @param healthPointMax : The currently maximum of Health Point of White Blood Cell character 
      */
     public void setSkillEnable(int healthPointMax){
-        if(healthPointMax >= 50000){
+        if(healthPointMax >= 200000){
             if(skill1.getEnable() == false){
                 setSkillPending(0);
                 skill1.setEnable(true);
@@ -88,7 +88,7 @@ public class SkillBar extends JPanel{
                 skill4.setCanUse(true);
             }
         }
-        else if(healthPointMax >= 10000){
+        else if(healthPointMax >= 50000){
             if(skill1.getEnable() == false){
                 setSkillPending(0);
                 skill1.setEnable(true);
@@ -105,7 +105,7 @@ public class SkillBar extends JPanel{
                 skill3.setCanUse(true);
             }
         }
-        else if(healthPointMax >=  2000){
+        else if(healthPointMax >=  10000){
             if(skill1.getEnable() == false){
                 setSkillPending(0);
                 skill1.setEnable(true);

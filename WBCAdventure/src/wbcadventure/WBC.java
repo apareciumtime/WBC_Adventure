@@ -142,26 +142,26 @@ public class WBC extends Character{
             case 0: 
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill1loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
-                    this.plusPowerDefault(100);
-                    this.powerSkill = 100;
+                    this.plusPowerDefault(500);
+                    this.powerSkill = 500;
                     break;
             case 1:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill2loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
-                    this.plusPowerDefault(3500);
-                    this.powerSkill = 3500;
+                    this.plusPowerDefault(10000);
+                    this.powerSkill = 10000;
                     break;
             case 2:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill3loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
-                    this.plusPowerDefault(5000);
-                    this.powerSkill = 5000;
+                    this.plusPowerDefault(50000);
+                    this.powerSkill = 50000;
                     break;
             case 3:
                     skillEffect.setIcon(new ImageIcon("src/source/skillEffect/skill4loop.GIF"));
                     skillEffect.setBounds((int)imagecorner.getX(),(int)imagecorner.getY()-50,300,200);
-                    this.plusPowerDefault(10000);
-                    this.powerSkill = 10000;
+                    this.plusPowerDefault(200000);
+                    this.powerSkill = 200000;
                     break;
         }
         skillEffect.setVisible(true);
