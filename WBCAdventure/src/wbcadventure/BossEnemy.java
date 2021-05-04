@@ -8,6 +8,10 @@ import javax.swing.border.Border;
 public class BossEnemy extends Enemy{
     private int enemyRandHP;
     
+    /**
+     * Constructor of BossEnemy : Object from class BossEnemy is a JPanel which contain boss ImageIcon
+     * @param wbc 
+     */
     public BossEnemy(WBC wbc){
         super(wbc);
         this.addCharacIcon(new ImageIcon("src/source/character/Boss/Boss.gif"));
@@ -21,6 +25,11 @@ public class BossEnemy extends Enemy{
         this.add(getNumberHP());
     }
     
+    /**
+     * random Boss's HP by WBC's HP
+     * @param wbc
+     * @return enemyRandHP : contain number which is Boss's HP
+     */
     public int randomHP(WBC wbc){
         Random rand=new Random();
         int casenum=rand.nextInt(4);
@@ -35,6 +44,11 @@ public class BossEnemy extends Enemy{
         return enemyRandHP;
     }
     
+    /**
+     * random Boss's power by it's HP
+     * @param wbc
+     * @return enemyRandPower : contain number which is Boss's power
+     */
     public int randomPower(WBC wbc){
         Random rand=new Random();
         int casenum=rand.nextInt(2);

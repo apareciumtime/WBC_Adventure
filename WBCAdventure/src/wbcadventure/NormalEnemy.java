@@ -11,6 +11,10 @@ public class NormalEnemy extends Enemy {
     private int cnt;
     private int characIcon;
     
+    /**
+     * Constructor of NormalEnemy
+     * @param wbc 
+     */
     public NormalEnemy(WBC wbc){
         super(wbc);
         
@@ -143,6 +147,10 @@ public class NormalEnemy extends Enemy {
         return "NormalEnemy num : "+cnt+" hp : "+this.getHPcontrol().getHP()+"\n";
     }
     
+    /**
+     * return int represent type of NormalEnemy
+     * @return 
+     */
     public int getCharacIconNum(){
         return characIcon;
     }

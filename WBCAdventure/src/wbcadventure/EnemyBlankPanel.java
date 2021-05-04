@@ -9,6 +9,12 @@ public class EnemyBlankPanel extends JPanel{
     private ArrayList<Integer> mustBeDelete=new ArrayList<>();
     private Enemy enemyOnPanel;
     
+    /**
+     * Constructor of EnemyBlankPanel : class of blank panel to add enemy in the fixed location
+     * @param pt : type of path that blank panel live in
+     * @param ch : tell that this blank panel is on fork or not
+     * @param a : ArrayList of index which have to be delete if win this enemy
+     */
     public EnemyBlankPanel(PathType pt,boolean ch,ArrayList<Integer> a){
         OnPathType=pt;
         beChoice=ch;
@@ -17,7 +23,7 @@ public class EnemyBlankPanel extends JPanel{
      
     /**
      * get type of the path that this enemy stay
-     * @return 
+     * @return type of path -> ${OnPathType}
      */
     public PathType getPathType(){
         return OnPathType;
@@ -25,7 +31,7 @@ public class EnemyBlankPanel extends JPanel{
     
     /**
      * if this enemy is a choice in FORK, return true
-     * @return 
+     * @return boolean -> ${beChoice}
      */
     public boolean getBeChoice(){
         return beChoice;
@@ -33,7 +39,7 @@ public class EnemyBlankPanel extends JPanel{
     
     /**
      * get ArrayList of index that must be remove after this enemy died
-     * @return 
+     * @return ArrayList<Integer> -> ${mustBeDelete}
      */
     public ArrayList<Integer> getMustBeDeleteArr(){
         return mustBeDelete;
@@ -50,12 +56,16 @@ public class EnemyBlankPanel extends JPanel{
     
     /**
      * get NormalEnemy object from this blank
-     * @return 
+     * @return Enemy Object -> ${enemyOnPanel}
      */
     public Enemy getEnemy(){
         return enemyOnPanel;
     }
     
+    /**
+     * return string which tell HP of Enemy in blank panel / null
+     * @return String
+     */
     public String toString(){
         if(enemyOnPanel!=null)
             return "HP : "+enemyOnPanel.getHPcontrol().getMaxHP();

@@ -32,6 +32,10 @@ public class PathGenerator {
     private BossEnemy boss;
     private EnemyBlankPanel bossArea=new EnemyBlankPanel(PathType.SQUARE,false,new ArrayList<>());
     
+    /**
+     * Constructor of PathGenerator : class that generate path from start to end and translate path
+     * @param big : panel which contain path panel
+     */
     public PathGenerator(JPanel big){
         path=new JLayeredPane();
         path.setBounds(x, y,1000000000,1080);

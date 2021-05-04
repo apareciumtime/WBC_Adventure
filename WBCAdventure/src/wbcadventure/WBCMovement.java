@@ -26,7 +26,6 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
         WBCPanel=wbc.getWBCPanel();
         enemyarr=bt.getPathGen().getEnemyPanelArrayList();
         wbc.setXforBoostSpeed(300);
-        wbc.setYforBoostSpeed(300);
         
     }
     @Override
@@ -103,7 +102,6 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
             y=enemyPanel.getY();
         }
             wbc.setXforBoostSpeed(x);
-            wbc.setYforBoostSpeed(y);
             wbc.getWBCLabel().setIcon(wbc.getCharacIcon(2));
             stgame.getUplayer().getHPBarPanel().setWBCHPBar();
             

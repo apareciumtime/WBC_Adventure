@@ -8,30 +8,24 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 public class PathSetGenerator {
-    //ArrayList เก็บว่าตัวที่จะสร้างได้ต่อไปเป็นทางแบบไหนได้บ้าง และต้องต่อที่พิกัดอะไร
     private ArrayList<PathType> canBeNext=new ArrayList<>();
     private ArrayList<Point> canBeNextLocate=new ArrayList<>();
-    
-    //เก็บจุดที่อยู่ กับมุมขวาบนของpanelทาง
     private Point locate;
     private Point rightUpCorner;
-    
-    //เก็บชนิดของทาง
     private PathType type;
-    
-    //เอาตัวจาก class Battle มาใช้ด้วย
     private Battle battleObj;
-    
-    //เอาตัวจาก class PathGenerator มาใช้ด้วย
     private PathGenerator pathGenObj;
-    
-    
-    //Enum ชนิดของทาง
+
     public enum PathType{
         SQUARE,WIDE_FORK,STRAIGHT,NARROW_FORK,DOWNRIGHT,UPRIGHT;
     }
 
-    //constructor
+    /**
+     * Constructor of PathSetGenerator : class that generate block of one path type
+     * @param type : type of path
+     * @param bt : Battle object
+     * @param pg : PathGenerator object
+     */
     public PathSetGenerator(PathType type,Battle bt,PathGenerator pg){
         pathGenObj=pg;
         battleObj=bt;
@@ -290,8 +284,7 @@ public class PathSetGenerator {
         canBeNextLocate.add(new Point(xlocate+150*i,ylocate-150));
         canBeNext.add(PathType.NARROW_FORK);
         canBeNextLocate.add(rightUpCorner);
-        
-        
+
         JPanel Straight =new JPanel();
         Straight.setBounds(xlocate,ylocate,150*i,150);
         setUp(Straight);
@@ -308,9 +301,6 @@ public class PathSetGenerator {
                 pathGenObj.addEnemyCoordinate(enemyUpPanel);
             }
         }
-        
-        
-        
         return Straight;
     }
     

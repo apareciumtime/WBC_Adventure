@@ -23,6 +23,10 @@ public class Battle extends JPanel{
     private StartGame stgame;
     private PathGenerator pGen=new PathGenerator(this);
     
+    /**
+     * Constructor of Battle : Object from class Battle is a JPanel which contain path,WBC,Enemy and Boss
+     * @param stgame 
+     */
     public Battle(StartGame stgame){
         this.stgame=stgame;
         layerPane.setBounds(0,0,1920,1080);
@@ -33,24 +37,43 @@ public class Battle extends JPanel{
         pGen.startGeneratePath();
     }
     
+    /**
+     * get instance variable which is object from class PathGenerator
+     * @return  PathGenerator object -> ${pGen}
+     */
     public PathGenerator getPathGen(){
         return pGen;
     }
     
+    /**
+     * get instance variable which is object from class StartGame (the big panel of this battle panel)
+     * @return StartGame object -> ${stgame}
+     */
     public StartGame getStGame(){
         return stgame;
     }
     
+    /**
+     * get instance variable which is object from class WBC
+     * @return WBC object -> ${wbc}
+     */
     public WBC getWBC(){
         return wbc;
     }
     
+    /**
+     * get instance variable which is object from class BossEnemy
+     * @return BossEnemy object -> ${boss}
+     */
     public BossEnemy getBoss(){
         return boss;
     }
         
+    /**
+     * get instance variable which is JLayeredPane
+     * @return JLayeredPane -> ${layerPane}
+     */
     public JLayeredPane getLayerPane(){
         return layerPane;
     }
-    
 }
