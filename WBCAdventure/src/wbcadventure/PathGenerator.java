@@ -133,7 +133,7 @@ public class PathGenerator {
             path.add(nextPathSet,Integer.valueOf(cntLayer));
             prevPathGen=nextPathGen;
             prevPathSet=nextPathSet;
-            if(enemyCoordinatePanelSet.size()>= (Math.log(boss.getHPcontrol().getMaxHP())/Math.log(2.5))*1.75){
+            if(enemyCoordinatePanelSet.size()>= (Math.log(boss.getHPcontrol().getMaxHP())/Math.log(2.5))*1.50){
                 switch(prevPathGen.getType()){
                     case WIDE_FORK :
                         whereCanBeNextX=(int)prevPathGen.getCanBeNextLocate().get(0).getX();

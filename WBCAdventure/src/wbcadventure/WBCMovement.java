@@ -95,6 +95,8 @@ public class WBCMovement implements MouseListener,MouseMotionListener{
             wbc.getWBCPanel().setLocation(enemyPanel.getX()-250,enemyPanel.getY()+400);
             x=enemyPanel.getX()-250;
             y=enemyPanel.getY()+400;
+            enemyPanel.getEnemy().setPowerDefault(((BossEnemy)enemyPanel.getEnemy()).randomPower(wbc));
+            stgame.getUplayer().getAnotherPowerBar().setPower(enemyPanel.getEnemy().getPowerDefault());
         }
         else{
             wbc.getWBCPanel().setLocation(enemyPanel.getX()-150,enemyPanel.getY());
